@@ -1,0 +1,11 @@
+.HomeDeliveryForm {
+    .lablacoLogo {
+        width: 87px;
+        height: 17px;
+        margin: 24px auto 0;
+
+        @media (min-width: 1280px) {
+            display: none;
+        }
+    }
+}

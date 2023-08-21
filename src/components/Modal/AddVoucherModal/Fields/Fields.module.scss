@@ -1,0 +1,124 @@
+.Fields {
+    width: 85%;
+    margin: 0 auto;
+    padding: 44px 0 20px 0;
+    .modalTitle {
+        margin: 37px 0 16px 0;
+        text-transform: uppercase;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-size: 15px;
+    }
+    &__selectField#selectFieldBlock {
+        margin-bottom: 11px;
+        position: relative;
+        & > div {
+            height: 26px;
+        }
+        p {
+            font-size: 15px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            margin: 0;
+        }
+        & > div[variant="underline"] {
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            bottom: 0;
+            input {
+                width: 100%;
+                font-family: var(--my-abcdiatypesemi-mono-regular);
+                bottom: 3px;
+            }
+            span {
+                font-family: var(--my-abcdiatypesemi-mono-regular);
+            }
+        }
+        .percentsign{
+            position: absolute;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-size: 0.75rem;
+            bottom: 6px;
+            left: 8px;
+        }
+        .percentsign[data-error="false"]{
+            visibility: hidden;
+        }
+    }
+    &__simplefield {
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        margin-bottom: 10px;
+        p {
+            font-size: 15px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            margin: 0;
+        }
+        input {
+            height: 26px;
+            border: none;
+            border-bottom: 1px solid var(--grey);
+            width: 100%;
+            padding: 0 8px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+        }
+        input[invalid="true"] {
+            border: 1px solid var(--tomato);
+            &::placeholder {
+                color: var(--tomato);
+                opacity: 1;
+            }
+        }
+    }
+    &__selectFieldDropdown#selectFieldDropdown {
+        margin-bottom: 11px;
+        p {
+            font-size: 15px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            margin: 0;
+            position: relative;
+        }
+        & > div[variant="underline"] {
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            bottom: 0;
+            height: 24px;
+            margin: 5px 0;
+            input {
+                width: 100%;
+                font-family: var(--my-abcdiatypesemi-mono-regular);
+                bottom: 2px;
+                &::placeholder {
+                    font-size: 14px;
+                    font-family: var(--my-abcdiatypesemi-mono-regular);
+                }
+            }
+        }
+    }
+}
+
+.voucherValues {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    &.fullwidthfield {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+    &__space {
+        width: 20px;
+    }
+    & > div:first-child {
+        width: 100%;
+        input {
+            height: 26px;
+            border: none;
+            border-bottom: 1px solid var(--grey);
+            width: 100%;
+            padding: 0 8px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+        }
+        input[invalid="true"] {
+            border: 1px solid var(--tomato);
+            &::placeholder {
+                color: var(--tomato);
+                opacity: 1;
+            }
+        }
+    }
+}

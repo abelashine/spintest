@@ -1,0 +1,116 @@
+.Button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  background-color: black !important;
+  color: white !important;
+
+  &[data-tooltip]:hover::after {
+    z-index: 10;
+    position: absolute;
+    content: attr(data-tooltip);
+    top: -110%;
+    width: max-content;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 40px 40px 40px 40px;
+    color: black;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 0.9rem;
+    font-weight: bolder;
+    padding: 10px;
+    text-transform: none;
+
+    @media (max-width: 720px) {
+      width: auto;
+    }
+  }
+
+  &.white {
+    background-color: var(--white);
+    font-family: var(--avenir-next-bold);
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  &.disabled {
+    background-color: rgba(255, 255, 255, 0.5);
+    font-family: var(--avenir-next-bold);
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+  }
+
+  &.monochromatic {
+    background-color: var(--white);
+    color: var(--black);
+    border: 1px solid var(--black);
+  }
+
+  &.black {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--avenir-next-bold);
+    text-transform: uppercase;
+  }
+
+  &.blue {
+    background-color: var(--clear-blue);
+    font-family: var(--avenir-next-bold);
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  &.green {
+    background-color: var(--light-green);
+    font-family: var(--avenir-next-bold);
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  &.transparent {
+    background-color: transparent;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    border: 1px solid var(--white);
+    color: var(--white);
+  }
+
+  &.warnTransparent {
+    background-color: transparent;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    border: 2px solid var(--red-pink);
+    color: var(--red-pink);
+  }
+
+  &.extraLarge {
+    padding: 15px;
+    font-size: 1.125rem;
+    letter-spacing: 1.13px;
+    border-radius: 28px;
+  }
+
+  &.large {
+    padding: 13.5px 5px;
+    font-size: 0.9375rem;
+    letter-spacing: 0.93px;
+    border-radius: 23px;
+  }
+
+  &.middle {
+    padding: 11px;
+    font-size: 0.8125rem;
+    letter-spacing: 0.79px;
+    border-radius: 20px;
+  }
+
+  &.red {
+    background-color: var(--red-pink);
+    font-family: var(--avenir-next-bold);
+    color: var(--white);
+    text-transform: uppercase;
+  }
+}

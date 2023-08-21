@@ -1,0 +1,77 @@
+.FollowingButtons {
+  display: flex;
+  align-items: center;
+  width: 160px;
+  height: 30px;
+  margin-top: 28px;
+
+  button[type="button"] {
+    height: 30px;
+    font-size: 14px;
+
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    padding: 4.5px 8px;
+
+    &.shareButton {
+      width: 80px;
+      margin-right: 11px;
+
+      svg {
+        width: 11px;
+        height: 9px;
+        margin-left: 8px;
+      }
+    }
+
+    &.openButton {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background-color: transparent;
+      .triangle {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &.chatBtn {
+      background-color: transparent;
+      border: 1px solid var(--white);
+      color: var(--white);
+      .chatIcon {
+        margin: 3px 0 0 5px;
+      }
+    }
+
+    &.followingButton {
+      display: flex;
+      align-items: baseline;
+      padding: 4.5px 8px;
+      text-transform: initial;
+      align-items: center;
+
+      .triangle {
+        width: 18px;
+        height: 18px;
+        margin-left: 2px;
+        position: relative;
+        bottom: 2px;
+      }
+    }
+
+    &.editButton {
+      border: 1px solid var(--white);
+      background-color: transparent;
+      color: var(--white);
+      text-transform: initial;
+
+      svg {
+        margin-left: 6px;
+        width: 15px;
+        height: 14px;
+      }
+    }
+  }
+}

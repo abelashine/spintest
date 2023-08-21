@@ -1,0 +1,10 @@
+.Map {
+  .marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 57px;
+    height: 57px;
+    will-change: transform;
+  }
+}

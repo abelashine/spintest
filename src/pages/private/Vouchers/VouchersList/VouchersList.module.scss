@@ -1,0 +1,39 @@
+.VouchersList {
+    list-style: none;
+    padding: 0;
+    margin: 46px 0 20px 0;
+    &__item {
+        display: flex;
+        align-items: center;
+        margin: 16px 0;
+        &_icon {
+            width: 52px;
+            height: 40px;
+            margin: 0 22px;
+        }
+        &_content {
+            flex-grow: 1;
+            word-break: break-all;
+            p {
+                margin: 4px 0;
+            }
+            .title {
+                font-size: 18px;
+            }
+            .text {
+                font-size: 14px;
+            }
+        }
+        &_button {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-right: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+        }
+    }
+}

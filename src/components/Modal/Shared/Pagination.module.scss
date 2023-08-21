@@ -1,0 +1,17 @@
+.stepsProgressBar {
+  width: 125px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 29px;
+
+  div {
+    width: 26px;
+    height: 2px;
+    background-color: #d5d5d5;
+
+    &.current {
+      background-color: black;
+    }
+  }
+}

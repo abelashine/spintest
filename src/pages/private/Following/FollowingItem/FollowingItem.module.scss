@@ -1,0 +1,87 @@
+.FollowingItem {
+  display: flex;
+  justify-content: space-between;
+
+  .profileInfo {
+    display: flex;
+    .photo {
+      min-width: 91px;
+      max-width: 91px;
+      height: 91px;
+      margin-right: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--white);
+    }
+
+    .profileSummary {
+      display: flex;
+      flex-direction: column;
+      margin-top: 7px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+
+      .slug {
+        padding-right: 17px;
+        font-size: 1.3125rem;
+        word-break: break-all;
+
+        @media (min-width: 1280px) {
+          word-break: initial;
+        }
+
+        a {
+          color: var(--white);
+          text-decoration: none;
+        }
+      }
+
+      .hashtag {
+        margin: 3px 0 2px;
+        font-size: 1rem;
+      }
+
+      .city {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  button {
+    width: 74px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    align-self: flex-end;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 0.875rem;
+    color: var(--black);
+    border-radius: 14px;
+  }
+  .closedBtn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background-color: transparent;
+  }
+  .followBtn {
+    background-color: var(--white);
+    color: var(--black);
+    width: auto;
+
+    .triangle {
+      width: 18px;
+      height: 18px;
+      position: relative;
+      left: 2px;
+      bottom: 2px;
+    }
+  }
+  .chatBtn {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    .chatIcon {
+      margin: 3px 0 0 5px;
+    }
+  }
+}

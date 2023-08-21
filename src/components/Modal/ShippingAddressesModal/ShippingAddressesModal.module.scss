@@ -1,0 +1,57 @@
+.modalHeader {
+  margin-bottom: 18px;
+
+  svg {
+    position: absolute;
+    width: 54px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.modalBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .modalTitle {
+    margin-top: 5px;
+    margin-bottom: 60px;
+  }
+
+  .shippingAddresses {
+    width: 90%;
+
+    .address {
+      margin-top: 8px;
+      border: 2px solid black;
+      border-radius: 13px;
+      padding: 10px 20px;
+
+      .addressName {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .addressInscription {
+        font-weight: normal;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .buttons {
+    margin-top: 82px;
+
+    & > button:not(:first-child) {
+      margin-top: 13px;
+    }
+  }
+}

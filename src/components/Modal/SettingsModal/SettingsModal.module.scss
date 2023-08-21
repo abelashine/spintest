@@ -1,0 +1,29 @@
+.SettingsModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .returnButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    padding: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .bigIconContainer {
+    margin: 22px auto 0 auto;
+  }
+  h1 {
+    font-size: inherit;
+    text-align: center;
+    margin-bottom: 55px;
+    font-weight: normal;
+  }
+  .cancelButton {
+    margin-top: 40px;
+  }
+}

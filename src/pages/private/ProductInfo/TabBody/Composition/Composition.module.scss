@@ -1,0 +1,58 @@
+.Composition {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  line-height: 16.6px;
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  color: #ffffff;
+
+  @media (min-width: 1280px) {
+    padding: 0 35.6%;
+  }
+
+  .CompositionText {
+    padding: 16px;
+    font-size: 15.5px;
+
+    @media (min-width: 1280px) {
+      padding: 16px 0;
+    }
+  }
+  .CompositionComponents {
+    padding: 16px;
+    padding-top: 0px;
+
+    @media (min-width: 1280px) {
+      padding: 0 0 16px;
+    }
+  }
+
+  .productBenefits {
+    padding-left: 16px;
+    list-style-type: none;
+
+    li {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 13px;
+      font-size: 1.125rem;
+
+      span {
+        text-transform: uppercase;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 14px;
+      }
+      .marksign {
+        width: 18px;
+        height: 13px;
+        margin-left: 28px;
+        margin-right: 0;
+      }
+    }
+  }
+}

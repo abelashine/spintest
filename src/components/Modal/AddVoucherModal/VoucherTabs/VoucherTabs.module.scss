@@ -1,0 +1,30 @@
+.VoucherTabs {
+    display: flex;
+    border-bottom: 2px solid var(--black);
+    margin: 0 20px;
+    button {
+        width: calc(100% / 3);
+        background: transparent;
+        border: none;
+        appearance: none;
+        outline: none;
+        padding: 12px 0;
+        cursor: pointer;
+        flex-grow: 1;
+        text-transform: uppercase;
+        .underLine {
+            position: relative;
+            top: 12px;
+            display: block;
+            height: 3px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+    }
+    button.activeTab {
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        .underLine {
+            background-color: var(--black);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.summaryInfo {
+    margin-top: 51px;
+    margin-bottom: 73px;
+    .valuewrap{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__valueblock {
+        line-height: 1.4;
+        margin-bottom: 8px;
+        p {
+            margin: 0 0 4px 0;
+            font-size: 1rem;
+        }
+    }
+    &__totalblock {
+        text-align: end;
+        p {
+            margin: 0 0 4px 0;
+            font-size: 1rem;
+        }
+        p:last-child {
+            font-size: 30px;
+        }
+    }
+    .crossedthrough {
+        text-decoration: line-through;
+    }
+}

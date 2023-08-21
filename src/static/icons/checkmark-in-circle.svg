@@ -1,0 +1,11 @@
+<svg width="84" height="84" viewBox="0 0 26 26"
+    xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#212126">
+        <circle fill="#212126" stroke="#212126" cx="13" cy="13" r="12.5" />
+        <g transform="matrix(.55 0 0 .55 6.8 6.3)" stroke="#212126" fill="#fff">
+            <circle strokeWidth="2" cx="12" cy="12" r="12" stroke="#fff" />
+            <circle transform="translate(2 2)" strokeWidth="2" cx="10" cy="10" r="10" fill="#212126" />
+            <path d="M15.4 9.9a.6.6 0 00-.8 0l-3.6 4-.6-.6-1-1.2s0 0 0 0a.6.6 0 00-.9 0l-.2.3c-.2.2-.2.5 0 .7l2.2 2.5h.1l.4.2h0l.4-.2 4.3-4.7c.2-.2.2-.5 0-.7l-.2-.3s0 0 0 0z" strokeWidth="1.56" stroke="#fff" fill="#fff" />
+        </g>
+    </g>
+</svg>

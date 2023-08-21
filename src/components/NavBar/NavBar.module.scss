@@ -1,0 +1,145 @@
+@media (max-width: 602px) {
+  .NavBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    color: var(--white);
+    border-top: 1px solid var(--black);
+    overflow: hidden;
+
+    .NavBar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      backdrop-filter: blur(10px) brightness(1.5) saturate(150%);
+      background-color: red;
+      opacity: 0.5;
+      z-index: -1;
+    }
+  }
+  .brand {
+    display: none;
+  }
+}
+@media (min-width: 601px) {
+  .NavBar {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    z-index: 10;
+    width: 10px;
+    height: 100%;
+    display: flex;
+    border-right: 1px solid var(--black, #0a0b0c);
+    align-items: center;
+    padding: 0 30px;
+    color: var(--white);
+    flex-direction: column;
+    overflow: hidden;
+    margin-right: 60px;
+    padding-right: 40px;
+    .NavBar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      backdrop-filter: blur(10px) brightness(1.5) saturate(150%);
+      background-color: red;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .brand {
+      position: relative;
+      padding-top: 40px;
+
+      width: 10px;
+      left: -20px;
+    }
+    .home_logo {
+      padding-top: 100px;
+    }
+    .chat_logo {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  .underChatRedDot {
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+  }
+}
+
+.uploadButton {
+  width: 40px;
+  height: 40px;
+
+  div {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.avatarButton {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  background-color: transparent;
+
+  div {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    background-color: var(--white);
+    border-radius: 50%;
+
+    &.emptyAvatar {
+      background-color: #000;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: contain;
+  }
+}
+
+div[class^="ProductInfo"] + .NavBar {
+  display: none;
+}

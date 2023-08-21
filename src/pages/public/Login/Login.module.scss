@@ -1,0 +1,105 @@
+.Login {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 10px;
+  border-left: 1px solid var(--black);
+  border-right: 1px solid var(--black);
+  padding-top:50px ;
+
+  &[data-steptwo="1"] {
+    background-image: none;
+  }
+  &__topLabelPasswordStep {
+    &_topRow {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50px;
+      .backArrow {
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        border: none;
+        background-color: black;
+        cursor: pointer;
+      }
+      svg {
+        transform: scale(0.5);
+      }
+    }
+    .userAvatar {
+      margin: 0;
+      img {
+        display: block;
+        width: 156px;
+        height: 156px;
+        margin: 44px auto 0 auto;
+        border-radius: 50%;
+      }
+      figcaption {
+        margin: 44px 0;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        color: var(--black);
+        font-size: 1.125rem;
+        text-align: center;
+      }
+    }
+  }
+  &__topLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &_ConnectLogo {
+      padding-top: 90px;
+      width: 185px;
+    }
+    &_tagline {
+      padding-top: 40px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 1.3125rem;
+      letter-spacing: 1.31px;
+      color: var(--black);
+      text-align: center;
+      margin: 10px 0 120px 0;
+    }
+  }
+  .logoImg {
+    width: 132px;
+  }
+  .topLogoImg {
+    width: 55px;
+  }
+  .logoHeader {
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    color: var(--black);
+    font-size: 60px;
+    text-align: center;
+  }
+  .loginForm {
+    width: 309px;
+    margin: 0 auto;
+    .inputContainerDiv {
+      position: relative;
+      img {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+    .buttons {
+      margin-top: 30px;
+      @media (min-width: 1280px) {
+        margin-top: 50px;
+      }
+      & > button:not(:first-child) {
+        margin-top: 13px;
+      }
+    }
+  }
+}

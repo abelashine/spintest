@@ -1,0 +1,96 @@
+.UserSmall {
+  display: flex;
+  width: 100%;
+  min-height: 59px;
+
+  @media (max-width: 1279px) {
+    overflow-x: hidden;
+    min-height: 69px;
+  }
+
+  .avatar {
+    width: 59px;
+    min-width: 59px;
+    height: 59px;
+  }
+
+  .InfoContainer {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 15px;
+    color: #ffffff;
+    line-height: 17.7px;
+  }
+  .InfoTag {
+    font-size: 19.4px;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+
+    a {
+      color: var(--white);
+      text-decoration: none;
+    }
+  }
+  .InfoLocationDate {
+    margin-top: 2px;
+    font-size: 11px;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+  }
+
+  .InfoOpenContainer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s, max-height 0.3s;
+    display: none;
+  }
+
+  .InfoOpenContainerExpanded {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    max-height: initial;
+    width: 100%;
+    -moz-transition: opacity 0.3s, max-height 0.3s;
+    -ms-transition: opacity 0.3s, max-height 0.3s;
+    transition: opacity 0.3s, max-height 0.3s;
+    opacity: 1;
+    display: flex;
+  }
+
+  .InfoOpenImage {
+    width: 199px;
+    height: 169px;
+    border-radius: 8px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .InfoOpenText {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    color: #ffffff;
+  }
+
+  .DropdownBox {
+    display: flex;
+    align-items: center;
+    padding-right: 22pt;
+  }
+  .Dropdown {
+    margin-top: 20px;
+    width: 16pt;
+    height: 9pt;
+    align-self: flex-start;
+  }
+  .DropdownOpen {
+    transform: rotate(180deg);
+    margin-top: 20px;
+    width: 16pt;
+    height: 9pt;
+    align-self: flex-start;
+  }
+}

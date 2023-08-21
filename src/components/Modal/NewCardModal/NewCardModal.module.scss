@@ -1,0 +1,94 @@
+.NewCardModal {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+
+  .backButton {
+    position: absolute;
+    width: 54px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .stepsProgressBar {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 29px;
+
+    div {
+      width: 26px;
+      height: 2px;
+      background-color: #d5d5d5;
+
+      &.current {
+        background-color: black;
+      }
+    }
+  }
+  .bigIconContainer {
+    margin: 22px auto 0 auto;
+  }
+  h1 {
+    font-size: inherit;
+    text-align: center;
+    margin-bottom: 55px;
+    font-weight: normal;
+  }
+
+  form {
+    height: 277px;
+  }
+
+  label {
+    margin-bottom: 8px;
+    color: var(--black);
+
+    & > input[type="text"] {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 1rem;
+    }
+
+    & > span:last-child {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 1rem;
+      color: var(--black);
+    }
+  }
+
+  .cardNumber {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #b4b4b4;
+  }
+
+  .ccvDateRow {
+    display: flex;
+    margin-bottom: 7px;
+    & > div {
+      width: 91px;
+      margin-top: 9px;
+      margin-right: 19px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #b4b4b4;
+    }
+  }
+  .buttonsContainer {
+    margin-top: 55px;
+
+    button {
+      width: 100%;
+      max-width: 368px;
+      margin: 0 auto;
+      @media (max-width: 900px) {
+        margin-left: 10% !important;
+        width: 80% !important;
+      }
+    }
+  }
+}

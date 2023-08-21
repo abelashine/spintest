@@ -1,0 +1,27 @@
+name: Build & Deploy to development server
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and Deploy new SPIN development version
+        uses: fifsky/ssh-action@v0.0.5
+        with:
+          command: |
+            exec ssh-agent bash
+            ssh-add /root/.ssh/id_rsa_github
+            rm -rf spin_dev
+            git clone git@github.com:lablaco/spin.git spin_dev
+            cd spin_dev
+            git checkout develop
+            cp ../project_envs/react_app_envs/env.staging ./.env.staging
+            npm install
+            npm run build:staging
+            cp -r build/* /root/api/django/static/build
+          host: ${{ secrets.SSH_HOST }}
+          user: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}

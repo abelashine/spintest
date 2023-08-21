@@ -1,0 +1,229 @@
+footer {
+  margin-bottom: -100px;
+  border-left: solid 1px #ffffff;
+  border-right: solid 1px #ffffff;
+}
+
+.Subscriptions {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  border-left: solid 1px #ffffff;
+  border-right: solid 1px #ffffff;
+
+  .main {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-grow: 1;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 36px;
+    overflow: auto;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 1441px) {
+      height: calc(100vh - 210px);
+    }
+
+    .section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 400px;
+      color: var(--white);
+      text-align: center;
+      padding: 0 23px;
+      overflow: hidden;
+      transition: all ease-in-out 0.3s;
+      background-size: cover !important;
+      background: transparent;
+      cursor: pointer;
+      border-bottom: 1px solid white;
+
+      @media (min-width: 1024px) {
+        padding: 0 52px;
+      }
+
+      @media (min-width: 1441px) {
+        min-height: 100%;
+      }
+
+      @media (max-width: 1024px) {
+        min-height: 200px;
+        padding: 0 36px;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+
+        &.active {
+          justify-content: flex-start;
+          min-height: 634px;
+
+          h2 {
+            position: static;
+            margin-top: 55px;
+            transform: none;
+            font-size: 36px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-weight: 400;
+          }
+
+          h3 {
+            position: static;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            opacity: 1;
+            font-size: 21px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-weight: 400;
+          }
+
+          p {
+            position: static;
+            padding-top: 10px;
+            padding-bottom: 70px;
+            opacity: 1;
+            font-size: 16px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+          }
+
+          button {
+            position: static;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+
+      h2 {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        text-align: center;
+        font-weight: 400;
+
+
+        @media (max-width: 1279px) {
+          font-size: 24px;
+        }
+      }
+
+      button {
+        position: relative;
+        top: 100%;
+        text-decoration: none;
+
+        @media (min-width: 1440px) {
+          width: 368px;
+          margin: 100px auto 0;
+        }
+      }
+
+      &.essential {
+        border-left: 1px solid white;
+
+        &.active {
+          @media (max-width: 1279px) {}
+        }
+      }
+
+      &.prime {
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+
+        &.active {
+          @media (max-width: 1279px) {}
+        }
+      }
+
+      &.whitelabel {
+        border-right: 1px solid white;
+
+        &.active {
+          @media (max-width: 1279px) {}
+        }
+      }
+
+      &:hover {
+        height: auto;
+
+        h2 {
+          position: static;
+          transform: none;
+        }
+
+        h3 {
+          position: static;
+          opacity: 1;
+        }
+
+        p {
+          position: static;
+          opacity: 1;
+          padding-top: 16px;
+        }
+
+        button {
+          position: static;
+        }
+      }
+
+      h3 {
+        position: relative;
+        top: 100%;
+        opacity: 0;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-size: 21px;
+        transition: all ease 0.3s;
+        text-align: center !important;
+        font-weight: 400;
+
+        @media (max-width: 768px) {
+          font-size: 21px;
+        }
+      }
+
+      p {
+        position: relative;
+        top: 100%;
+        opacity: 0;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-size: 16px;
+        transition: all ease 0.3s;
+        text-align: left !important;
+
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
+      }
+
+      button {
+        display: block;
+        height: 55px;
+        margin-bottom: 30px;
+        border-radius: 28px;
+
+        @media (max-width: 450px) {
+          width: 100%;
+        }
+
+        @media (min-width: 451px) {
+          width: 50%;
+        }
+
+        @media (min-width: 769px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.SubscriptionReceiptsModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+
+    .backButton {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      padding: 23px;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+    .logoImg {
+      width: 55px;
+    }
+  }
+  .modalBody {
+    display: flex;
+    flex-direction: column;
+    .modalTitle {
+      text-align: center;
+      font-size: 15px;
+    }
+    .bodyContent {
+      width: 100%;
+      margin: 30px auto;
+      .tableBody {
+        height: 300px;
+        overflow: auto;
+      }
+      table {
+        table-layout: fixed;
+        text-align: left;
+        border-collapse: collapse;
+        width: 100%;
+
+        th {
+          width: 20%;
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-size: 15px;
+        }
+        td {
+          width: 20%;
+          padding: 5px 10px 5px 0;
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-size: 15px;
+        }
+        .tableBody {
+          td {
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+    }
+
+    .button {
+      margin: 40px 0 20px 0;
+      button:last-child {
+        background-color: var(--tomato);
+      }
+      button + button {
+        margin-top: 20px;
+      }
+    }
+  }
+}

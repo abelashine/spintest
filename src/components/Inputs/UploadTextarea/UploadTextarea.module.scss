@@ -1,0 +1,40 @@
+.UploadTextarea {
+    width: 100%;
+
+    label {
+        display: block;
+        position: relative;
+        textarea {
+            background-color: inherit;
+            border: none;
+            resize: none;
+            color: #fff;
+            margin-top: 6px;
+            height: 1px;
+            overflow: hidden;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+            padding: 5px 0px 10px;
+            max-height: 90px;
+            border-radius: 0;
+            &::placeholder {
+                opacity: 0.2;
+                font-family: var(--my-abcdiatypesemi-mono-regular);
+            }
+        }
+        div {
+            position: absolute;
+            bottom: 12px;
+            color: var(--grey);
+            font-family: Arial;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+    }
+    .errorText {
+        color: var(--tomato);
+        margin-top: 4px;
+        display: inline-block;
+        font-size: 14px;
+    }
+}

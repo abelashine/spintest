@@ -1,0 +1,32 @@
+.summaryInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 51px;
+    margin-bottom: 73px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        &:last-child {
+            text-align: right;
+        }
+
+        span {
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+    }
+
+    .total {
+        margin-top: 8px;
+        margin-right: 8px;
+
+        span:last-child {
+            font-size: 30px;
+        }
+    }
+    .crossedthrough{
+        text-decoration: line-through;
+    }
+}

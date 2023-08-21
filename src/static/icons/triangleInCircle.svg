@@ -1,0 +1,6 @@
+<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#FFF" fill="none" fillRule="evenodd">
+        <rect width="28" height="28" rx="14" transform="translate(1 1)" />
+        <path fill="#FFF" strokeLinecap="round" strokeLinejoin="round" d="M15 11l4 8h-8z" />
+    </g>
+</svg>

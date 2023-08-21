@@ -1,0 +1,14 @@
+.IsDisabledFieldHOC {
+  position: relative;
+  &__tooltip {
+    position: absolute;
+    display: inline-block;
+    color: var(--main-bg-color);
+    background-color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    bottom: 0;
+    z-index: 201;
+    max-width: 75vw;
+  }
+}

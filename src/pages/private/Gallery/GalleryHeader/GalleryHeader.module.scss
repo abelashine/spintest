@@ -1,0 +1,17 @@
+.GalleryHeader {
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__backarrow {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+    }
+    &__slugname {
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-size: 18px;
+        margin: 0;
+    }
+}

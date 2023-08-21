@@ -1,0 +1,115 @@
+.SelectCityV3 {
+  cursor: pointer;
+  min-height: 35px;
+  position: relative;
+  background-color: var(--main-bg-color);
+  color: var(--black);
+  border-radius: 17px;
+  border: 1px solid var(--black);
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-size: 0.75rem;
+  overflow: hidden;
+  .field {
+    background-color: transparent;
+    height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 24px 0 17px;
+    position: relative;
+    z-index: 1;
+    color: var(--black);
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+  .label {
+    position: absolute;
+    left: 17px;
+    top: 5px;
+    font-size: 20px;
+    transition: 0.2s linear;
+  }
+
+  // on error
+  &[data-invalid="true"] {
+    border-color: var(--tomato);
+    .label {
+      font-size: 10px;
+      opacity: 1;
+      top: 3px;
+      color: var(--tomato);
+    }
+    .field {
+      top: 5px;
+      &::placeholder {
+        opacity: 1;
+        color: var(--tomato);
+      }
+    }
+  }
+
+  // on focuse
+  &[data-focus="true"] {
+    .field {
+      top: 5px;
+      &::placeholder {
+        color: var(--black);
+      }
+    }
+    .label {
+      font-size: 10px;
+      opacity: 0.5;
+      top: 3px;
+      color: var(--black);
+    }
+  }
+
+  img {
+    position: absolute;
+    right: 17px;
+    top: 10px;
+    cursor: pointer;
+  }
+  .arrowBtn {
+    transform: rotate(-90deg);
+  }
+  .openArrowBtn {
+    transform: rotate(90deg);
+  }
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--spin-dark-grey2);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.OptionsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 202px;
+  overflow-y: auto;
+  scrollbar-color: var(--black) transparent;
+  scrollbar-width: thin;
+  font-size: 14px;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--black);
+  }
+  li {
+    padding: 8px 17px;
+    cursor: pointer;
+  }
+}

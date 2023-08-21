@@ -1,0 +1,13 @@
+.RentalPeriod {
+    h3 {
+        margin: 0;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        color: var(--white);
+        font-size: 22px;
+    }
+    &__fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+}

@@ -1,0 +1,40 @@
+.fieldsInputs {
+  padding: 16px 35px 44px;
+  & > div {
+    margin-bottom: 27px;
+  }
+  & > button[type="submit"] {
+    margin: 33px 0 42px 0 !important;
+    max-width: 100% !important;
+  }
+  @media (min-width: 950px) {
+    width: 344px;
+    margin: 0 auto;
+  }
+
+  & > div {
+    &:not(:first-of-type) {
+      margin-top: 7px;
+    }
+  }
+
+  .pickupInStore {
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+    label {
+      margin-right: 20px;
+    }
+    p {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 15px;
+      letter-spacing: 0.09px;
+      margin: 0;
+    }
+  }
+}
+
+.delimiter {
+  height: 1px;
+  background-color: var(--white);
+}

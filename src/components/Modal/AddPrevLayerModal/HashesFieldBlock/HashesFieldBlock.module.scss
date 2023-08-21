@@ -1,0 +1,23 @@
+.hashtagsBlock {
+    margin-bottom: 27px;
+    &__field {
+        position: relative;
+        img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: rotate(180deg);
+        }
+    }
+    &__hashtags_hashtag {
+        display: inline-block;
+        background-color: var(--black);
+        color: var(--white);
+        padding: 5px;
+        border-radius: 5px;
+        margin: 10px 10px 0 0;
+        font-size: 15px;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        cursor: pointer;
+    }
+}

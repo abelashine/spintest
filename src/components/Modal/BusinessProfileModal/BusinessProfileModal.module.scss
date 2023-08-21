@@ -1,0 +1,309 @@
+.businessForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var( --main-bg-color);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  color: var(--black);
+  border-left: 1px solid var(--black);
+  border-right: 1px solid var(--black);
+  overflow: hidden;
+  z-index: 9999;
+
+  .signupForm {
+    width: 309px;
+
+    .imageUploader {
+      width: 156px;
+      height: 156px;
+    }
+    .imageUploaderStepOne {
+      width: 200px;
+      height: 200px;
+    }
+    .imageUploader,
+    .imageUploaderStepOne {
+      margin: 38px auto 0;
+      border-radius: 50%;
+      overflow: hidden;
+
+      & > label {
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: transparent;
+        color: var(--black);
+        font-size: 0.875rem;
+        border: 2px solid var(--black);
+        &[invalid] {
+          border-color: var(--tomato);
+          color: var(--tomato);
+        }
+        div[data-label-text] {
+          margin-top: 20px;
+          span:first-child {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+
+    .imageUploaderStepOneRectangular {
+      width: 311px;
+      height: 115px;
+    }
+
+    .imageUploader,
+    .imageUploaderStepOneRectangular {
+      margin: 38px auto 0;
+      overflow: hidden;
+
+      & > label {
+        overflow: hidden;
+        background-color: transparent;
+        color: var(--black);
+        font-size: 0.875rem;
+        border: 2px solid var(--black);
+        border-radius: 25px;
+
+        &[invalid] {
+          border-color: var(--tomato);
+          color: var(--tomato);
+        }
+
+        div[data-label-text] {
+          margin-top: 20px;
+          span:first-child {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+
+    .formMessage {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 1.125rem;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    input[placeholder="City"] {
+      &::placeholder {
+        color: black;
+        opacity: 1;
+      }
+    }
+
+    label {
+      margin-bottom: 14px;
+      div[data-label-text="labelBlock"] {
+        flex-direction: column-reverse;
+        padding: 0 10%;
+        margin-top: 30px;
+      }
+    }
+
+    // .selects {
+    //   & > div {
+    //     margin-bottom: 14px;
+    //   }
+    //   & > div:last-child {
+    //     margin-bottom: 0;
+    //   }
+    // }
+
+    .terms {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      label {
+        margin-bottom: 0;
+      }
+      img {
+        height: 25px;
+        width: 25px;
+        margin-right: 10px;
+      }
+    }
+
+    .termsLink {
+      text-decoration: none;
+      color: var(--light-blue);
+    }
+
+    button {
+      margin-top: 32px;
+    }
+  }
+
+  .stepsProgressBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 29px 0;
+
+    div {
+      width: 26px;
+      height: 2px;
+      background-color: var(--grey);
+      margin-right: 10px;
+
+      &.current {
+        background-color: var(--black);
+      }
+    }
+  }
+}
+
+.errorText {
+  color: var(--tomato);
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-size: 0.8rem;
+}
+.firstStepText {
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-size: 1.125rem;
+  text-align: center;
+  margin-top: 40px;
+  p {
+    margin: 0;
+    span {
+      color: #239eff;
+      word-break: break-all;
+    }
+  }
+}
+.secondStepText {
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-size: 1.125rem;
+  text-align: center;
+  margin-top: 40px;
+  p {
+    margin: 0;
+    span {
+      color: #239eff;
+      word-break: break-all;
+    }
+  }
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.inputContainerDiv {
+  position: relative;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  height: 70px;
+  padding-top: 10px;
+}
+
+.backArrow {
+  padding: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  left: 10px;
+}
+
+.skip {
+  padding: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+}
+.top_label {
+  display: flex;
+  align-items: center;
+}
+
+.connect_logo {
+  width: 55px;
+  margin-left: 10px;
+}
+
+.randomMargin {
+  width: 100px;
+  height: 10px;
+}
+
+.phoneContainer {
+  display: flex;
+  align-items: center;
+}
+
+.phoneField {
+  width: 75%;
+  margin-left: auto;
+}
+
+.phoneCodes {
+  width: 20%;
+}
+select {
+  background-color: var(--spin-light-grey1) !important;
+  margin-bottom: 8px;
+}
+option {
+  background-color: var(--spin-light-grey1) !important;
+}
+.customUpload {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  color: white;
+  height: 33.6px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 12px;
+  width: 100%;
+  background-color: black;
+}
+.add {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--spin-light-grey1);
+  margin: 10;
+}
+
+.submit {
+  background-color: var(--light-blue) !important;
+}
+.stepsProgressBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 29px 0;
+}
+
+.stepsProgressBar div {
+  width: 26px;
+  height: 2px;
+  background-color: black;
+  margin-right: 10px;
+}
+
+
+
+.stepsProgressBar div:not(.current) {
+  background-color: black; 
+}
+
+.stepsProgressBar div.current ~ div {
+  background-color: #9c9c9c; /* Set the color for the future steps */
+}

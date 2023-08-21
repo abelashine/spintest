@@ -1,0 +1,229 @@
+.Select {
+  display: block;
+  width: 100%;
+  margin: 50px;
+  appearance: none;
+  padding-left: 5px;
+  border: 1px var(--black) solid;
+  border-radius: 20px;
+  ::selection {
+    color: black;
+  }
+  
+
+  input{
+    width: 90%;
+    color: var(--black)  !important;
+  }
+
+  &[invalid] {
+    border: 1px solid var(--tomato) !important;
+
+    & > input::placeholder {
+      color: var(--tomato) !important;
+    }
+
+    & > input{
+      color: var(--tomato) !important;
+      & + .label {
+        position: absolute;
+        top: 0;
+        font-size: 0.625rem;
+        height: 0;
+      }
+    }
+
+    & > span {
+      color: var(--tomato) !important;
+    }
+  }
+
+  &[variant="outlined"] {
+    height: 35px;
+    position: relative;
+    z-index: 1;
+    padding: 13px 17px 7px;
+    background-color: var(--main-bg-color);
+    color: var(--black);
+    border-radius: 17px;
+    border: 1px solid var(--black);
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 0.75rem;
+
+    input {
+      outline: none;
+    }
+
+    &[opened="true"] {
+      border-radius: 17px 17px 0 0;
+      border-bottom: none;
+
+      .arrow {
+        transform: translateY(-50%) rotate(90deg);
+      }
+
+      .optionsWrapper {
+        display: block;
+      }
+
+      & + .overlay {
+        display: block;
+      }
+    }
+
+    .label {
+      position: absolute;
+      top: calc(50% - 2px);
+      left: 17px;
+      transform: translateY(-50%);
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 1.1875rem;
+      background-color: transparent;
+      border: none;
+      color: var(--black);
+      transition: all 0.1s ease-in;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      right: 17px;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    .optionsWrapper {
+      display: none;
+      position: absolute;
+      left: -1px;
+      top: 34px;
+      width: calc(100% + 2px);
+      padding: 5px 5px 10px 17px;
+      border: 1px solid var(--spin-light-grey1);
+      border-top: none;
+      overflow: hidden;
+      background-color: var(--main-bg-color);
+      border-radius: 0 0 17px 17px;
+    }
+
+    .options {
+      max-height: 202px;
+      overflow-y: auto;
+      text-transform: uppercase;
+      font-size: 1.1875rem;
+      scrollbar-color: var(--spin-light-grey1) transparent;
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: var(--spin-light-grey1);
+      }
+
+      .option {
+        cursor: pointer;
+        padding: 10.5px 10px;
+      }
+    }
+  }
+  &[variant="underline"] {
+    height: 34px;
+    position: relative;
+    background-color: var(--spin-light-grey1);
+    color: var(--black);
+    border-bottom: 1px solid var(--grey);
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 0.75rem;
+
+    & input {
+      outline: none;
+      width: 90% !important;
+
+      &::placeholder {
+        color: #000;
+      }
+    }
+
+    &[opened="true"] {
+      .arrow {
+        transform: translateY(-50%) rotate(90deg);
+      }
+
+      .optionsWrapper {
+        display: block;
+      }
+
+      & + .overlay {
+        display: block;
+      }
+    }
+
+    .label {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      position: absolute;
+      bottom: 6px;
+      border: none;
+      color: var(--black);
+      transition: all 0.1s ease-in;
+      vertical-align: bottom;
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: -3px;
+      right: 5px;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    .optionsWrapper {
+      z-index: 3;
+      display: none;
+      position: absolute;
+      left: -1px;
+      top: 34px;
+      width: 100%;
+      border: 1px solid var(--black);
+      overflow: hidden;
+      background-color: var(--spin-light-grey1);
+    }
+
+    .options {
+      max-height: 202px;
+      overflow-y: auto;
+      scrollbar-color: var(--spin-light-grey1);
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: var(--spin-light-grey1);
+      }
+
+      .option {
+        cursor: pointer;
+        padding: 10.5px 10px;
+      }
+    }
+  }
+}
+
+.placeHolderNoOpacity::placeholder {
+    opacity: 1;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  opacity: 0.9;
+  z-index: 0;
+}

@@ -1,0 +1,33 @@
+$white-border: 1px solid white;
+
+@mixin white-frame {
+  & > :first-child,
+  & > :not(:last-child) {
+    border-right: $white-border;
+  }
+}
+
+.HeaderPreAuth {
+  display: flex;
+  width: 100%;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  border: $white-border;
+  @include white-frame();
+
+  @media (max-width: 1279px) {
+    height: 47px;
+  }
+
+  &__logoContainer {
+    height: 100%;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 55px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.Vouchers {
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    color: var(--white);
+    &__buttonblock {
+        padding: 22px 22px 10px 22px;
+        button {
+            max-width: 368px;
+            margin: 0 auto;
+        }
+    }
+}

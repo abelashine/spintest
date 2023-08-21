@@ -1,0 +1,19 @@
+.TextFieldV2 {
+  position: relative;
+  display: block;
+  padding: 2px 5px 2px 5px;
+  border-bottom: 0.5px solid var(--grey);
+  &[invalid] {
+    border: 0.5px solid var(--tomato);
+    input::placeholder {
+      color: var(--tomato);
+    }
+  }
+  input {
+    border: none;
+    color: var(--black);
+  }
+  input::placeholder {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,57 @@
+.imagesGroup {
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: 1fr 1fr;
+    height: 180px;
+    padding: 0 26px;
+    margin-bottom: 39px;
+    gap: 1px;
+    justify-content: center;
+
+    @media (min-width: 950px) {
+        grid-template-columns: repeat(5, 180px);
+        grid-template-rows: 1fr;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .mainImage {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        border-radius: 9px;
+        width: 180px;
+
+        @media (min-width: 950px) {
+            width: None;
+            grid-column: initial;
+            grid-row: initial;
+        }
+
+        span {
+            top: 79px;
+
+            @media (min-width: 950px) {
+                top: 66px;
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    label {
+        padding: 27px 0 0;
+        color: var(--grey);
+        overflow: hidden;
+        font-size: 0.625rem;
+        border-radius: 9px;
+        span {
+            top: 35px;
+
+            @media (min-width: 950px) {
+                top: 66px;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

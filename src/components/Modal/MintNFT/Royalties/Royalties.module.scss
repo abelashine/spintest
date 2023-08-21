@@ -1,0 +1,120 @@
+.Royalties {
+  width: 100%;
+  margin-bottom: 37px;
+  &__formtitle {
+    margin: 21px 0;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+  }
+  &__addBtnblock {
+    padding: 0 4px;
+    &_btn {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      color: #000;
+      font-size: 18px;
+      text-align: center;
+      margin-right: 9px;
+      cursor: pointer;
+      line-height: 100%;
+    }
+    &_text {
+      font-size: 15.5px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+    }
+  }
+  &__usersList {
+    list-style: none;
+    margin-top: 32px;
+    padding: 0 11px 0 4px;
+    width: 100%;
+    &_item {
+      display: flex;
+      align-items: center;
+      margin: 15px 0;
+      .photo {
+        min-width: 58px;
+        max-width: 58px;
+        height: 58px;
+        margin-right: 28px;
+        border-radius: 50%;
+        border: 1px solid var(--white);
+        position: relative;
+        background-color: lightgrey;
+        img:first-child {
+          background-color: lightgrey;
+        }
+        .CheckImage {
+          position: absolute;
+          top: 0;
+          right: -8px;
+          z-index: -1;
+        }
+        &__verticalLine {
+          width: 2px;
+          height: 35px;
+          background-color: #fff;
+          margin: 0 auto;
+          position: absolute;
+          bottom: -35px;
+          right: 0;
+          left: 0;
+        }
+      }
+      .avatarImg {
+        img:first-child {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      svg {
+        min-width: 15px;
+        min-height: 15px;
+      }
+      .profileSummary {
+        flex-direction: column;
+        margin-top: 7px;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        flex-grow: 1;
+        .slug {
+          padding-right: 17px;
+          font-size: 1.3125rem;
+          word-break: break-all;
+          display: block;
+          @media (min-width: 1280px) {
+            word-break: initial;
+          }
+
+          a {
+            color: var(--white);
+            text-decoration: none;
+          }
+        }
+
+        .hashtag {
+          margin: 3px 0 2px;
+          font-size: 1rem;
+        }
+
+        .city {
+          font-size: 0.875rem;
+        }
+      }
+      .deleteCross {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+      }
+      .percentage {
+        font-size: 0.875rem;
+      }
+    }
+    &_item:last-child .photo__verticalLine {
+      display: none;
+    }
+  }
+}

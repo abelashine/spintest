@@ -1,0 +1,40 @@
+.UploadTextareaV2 {
+    height: auto !important;
+    textarea {
+        background-color: inherit;
+        border: none;
+        resize: none;
+        height: 1px;
+        overflow: hidden;
+        width: 100%;
+        padding: 2px 5px 2px 5px;
+        max-height: 90px;
+        border-radius: 0;
+        border-bottom: 1px solid var(--grey);
+        padding-left: 5px;
+        &::placeholder {
+            opacity: 1;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+        }
+    }
+    &[data-invalid] textarea {
+        border: 1px solid var(--tomato);
+    }
+    &[data-invalid] textarea::placeholder {
+        color: var(--tomato);
+    }
+    div {
+        position: absolute;
+        bottom: 12px;
+        color: var(--grey);
+        font-family: Arial;
+        font-size: 14px;
+        opacity: 0.5;
+    }
+    .errorText {
+        color: var(--tomato);
+        margin-top: 4px;
+        display: inline-block;
+        font-size: 14px;
+    }
+}

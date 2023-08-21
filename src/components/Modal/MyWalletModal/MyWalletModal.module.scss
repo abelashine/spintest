@@ -1,0 +1,60 @@
+.MyWalletModal {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+
+  .backButton {
+    position: absolute;
+    width: 54px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .bigIconContainer {
+    margin: 22px auto 0 auto;
+  }
+  h1 {
+    font-size: inherit;
+    text-align: center;
+    margin-bottom: 55px;
+    font-weight: normal;
+  }
+
+  .cards {
+    height: 300px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+  }
+
+  .card {
+    display: flex;
+    position: relative;
+    height: 200px;
+    width: 100%;
+    border-radius: 12px;
+    border: 2px solid var(--black);
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+    .cardInfo {
+      align-self: flex-end;
+      margin-left: 20px;
+      margin-bottom: 23px;
+      .cardName {
+        text-transform: uppercase;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        margin-bottom: 6px;
+      }
+    }
+  }
+  .buttonsContainer {
+    margin-top: auto;
+  }
+}

@@ -1,0 +1,34 @@
+.RentFieldsTwo {
+    position: relative;
+    &__firstBlock,
+    &__secondBlock {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-bottom: 27px;
+        align-items: flex-end;
+        position: relative;
+        h3 {
+            margin: 0;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            color: var(--white);
+            position: absolute;
+            font-size: 16px;
+            top: 0;
+        }
+        & > div {
+            margin-top: 20px;
+        }
+    }
+    &__firstBlock label {
+        z-index: 2;
+    }
+    .errorText {
+        color: var(--tomato);
+        margin-top: 4px;
+        display: inline-block;
+        font-size: 14px;
+        position: absolute;
+        bottom: -40px;
+    }
+}

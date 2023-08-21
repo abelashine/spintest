@@ -1,0 +1,208 @@
+.SubscriptionPayment {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  font-family: var(--roobert);
+  color: var(--white);
+  overflow-y: auto;
+  z-index: 100;
+
+  .section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    color: var(--white);
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
+    background-size: cover !important;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 1px solid var(--white);
+
+    h2 {
+      margin-bottom: 0;
+      position: static;
+      transform: none;
+      font-size: 36px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-weight: 400;
+    }
+
+    h3 {
+      margin-top: 0;
+      position: static;
+      opacity: 1;
+      font-size: 18px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-weight: 400;
+    }
+
+    p {
+      text-align: left;
+      position: static;
+      padding-top: 10px;
+      opacity: 1;
+      font-size: 16px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+    }
+
+    button {
+      width: 40%;
+      margin-left: 30%;
+      position: static;
+      display: flex;
+      justify-content: center;
+    }
+
+    .topText {
+      margin: 29px 14px 0;
+
+      @media (min-width: 992px) {
+        margin: 29px 0 0;
+        padding: 0 26.5%;
+      }
+
+      justify-content: center;
+      text-align: center;
+    }
+
+    .delimiter {
+      margin-right: 5%;
+      margin-left: 5%;
+      font-size: 12px;
+
+      @media (min-width: 1200px) {
+        margin-right: 26.5%;
+        margin-left: 26.5%;
+      }
+
+      height: 1px;
+      background-color: var(--white);
+    }
+
+    .square {
+      img {
+        width: 60px;
+        height: 60px;
+
+        @media (min-width: 768px) {
+          width: 123px;
+          height: 123px;
+        }
+      }
+    }
+
+    table {
+      table-layout: fixed;
+      width: 100%;
+      margin: 15px 5px 0;
+
+      @media (min-width: 1200px) {
+        margin: 10px 0 0;
+        padding: 0% 19.5% 0 10.5%;
+      }
+
+      text-align: left;
+
+      th {
+        width: 5%
+      }
+
+      th+th {
+        padding-top: 2%;
+        width: 19%;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-size: 12px;
+
+        @media (min-width: 768px) {
+          font-size: 15px;
+        }
+      }
+
+      td {
+        width: 5%;
+      }
+
+      td+td {
+        width: 19%;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-size: 12px;
+
+        @media (min-width: 768px) {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .currentCheckoutTab {
+      margin: 29px 14px 0;
+
+      @media (min-width: 992px) {
+        margin: 29px 0 0;
+        padding: 0 26.5%;
+      }
+
+      & form {
+        &>* {
+          &:not(:first-child) {
+            margin-top: 33px;
+          }
+        }
+
+        label {
+          position: relative;
+          font-size: 18px;
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--white);
+            border-radius: 10px;
+          }
+
+          input {
+            height: 27px;
+            margin-bottom: 8px;
+            padding-bottom: 0;
+            border-bottom-width: 0;
+          }
+
+          input::placeholder {
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-size: 18px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.PrinterCheckBox {
+  cursor: pointer;
+
+  &__input {
+    display: none;
+  }
+
+  &__img {
+    @media (min-width: 768px) {
+      height: 19px;
+    }
+
+    height: 12px;
+
+  }
+}

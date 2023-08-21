@@ -1,0 +1,101 @@
+.modalHeader {
+  margin-bottom: 18px;
+  &__closeBtn {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+}
+
+.modalBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  form {
+    width: 100%;
+    .avatar {
+      position: relative;
+      width: 84px;
+      height: 84px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid #000;
+      background-color: lightgrey;
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .inputFields {
+      width: 85%;
+      margin: 0 auto;
+      .modalTitle {
+        margin: 37px 0 16px 0;
+        text-transform: uppercase;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-size: 15px;
+      }
+      &__selectField {
+        margin-bottom: 11px;
+        & > div {
+          height: 24px;
+        }
+        &_label {
+          font-size: 15px;
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+          margin: 0;
+        }
+        & > div[variant="underline"] {
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+          bottom: 0;
+          input {
+            width: 100%;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            bottom: 2px;
+          }
+        }
+      }
+      &__selectFieldDropdown {
+        margin-bottom: 11px;
+        &_label {
+          font-size: 15px;
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+          margin: 0;
+          position: relative;
+        }
+        & > div[variant="underline"] {
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+          bottom: 0;
+          height: 24px;
+          margin: 5px 0;
+          input {
+            width: 100%;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            bottom: 2px;
+            &::placeholder {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  div.buttons {
+    margin-top: 30px;
+    button[type="submit"],
+    button[type="button"] {
+      max-width: 100%;
+      margin: 0;
+    }
+    & > button:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+}

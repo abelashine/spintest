@@ -1,0 +1,51 @@
+.PickUpForm {
+  .lablacoLogo {
+    width: 87px;
+    height: 17px;
+    margin: 24px auto 0;
+
+    @media (min-width: 1280px) {
+      display: none;
+    }
+  }
+  input {
+    margin-bottom: 0 !important;
+  }
+  .BottomButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button {
+      overflow: hidden;
+      max-width: 368px;
+    }
+    #paypalcontainer {
+      position: absolute;
+      top: 14px;
+      transform: scale(1.5);
+      width: 100%;
+      overflow: hidden;
+      opacity: 0.001;
+      & > div > div {
+        position: relative;
+        top: -6px;
+        width: 100%;
+      }
+    }
+    #pay-with-crypto{
+      width: 357px !important;
+    height: 55px !important;
+    cursor: pointer;
+    }
+  }
+
+  #pay-with-crypto{
+    width: 357px !important;
+    height: 55px !important;
+    cursor: pointer;
+  }
+  .crypto-pay-bannerr{
+    background-color: red;
+  }
+
+}

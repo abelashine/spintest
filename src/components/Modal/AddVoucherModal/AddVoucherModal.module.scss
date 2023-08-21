@@ -1,0 +1,43 @@
+.modalHeader {
+    display: block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.AddVoucherModal {
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    color: var(--black);
+    margin-bottom: 10px;
+    &__avatar {
+        width: 84px;
+        height: 84px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: var(--main-bg-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 40px;
+        }
+    }
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        margin: 22px 0;
+    }
+    div.buttons {
+        button[type="submit"],
+        button[type="button"] {
+            max-width: 100%;
+            margin: 0;
+        }
+        & > button:not(:first-child) {
+            margin-top: 15px;
+        }
+    }
+}

@@ -1,0 +1,168 @@
+.modalOverlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--zIndex-modal-overlay);
+  overflow-y: auto;
+  background-color: rgba(33, 33, 38, 0.9);
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #212126;
+    opacity: 0.9;
+  }
+
+  @media (min-width: 1280px) {
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .modalWindow {
+    position: fixed;
+    align-items: center;
+    z-index: 3;
+    padding: 23px;
+    width: 100%;
+    border-radius: 33px;
+
+    @media (min-width: 500px) {
+      width: 390px;
+    }
+    @media (min-width: 800px) {
+      width: 500px;
+    }
+    @media (min-width: 1280px) {
+      width: 600px;
+    }
+  }
+}
+
+.modalHeader {
+  position: relative;
+  display: flex;
+  top :30vh;
+  margin-bottom: 20px;
+
+  .closeButton {
+    position: absolute;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+}
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  color: var(--white);
+
+  .closeButtonParent {
+    position: relative;
+    width :100%;
+    justify-content: left;
+    align-items: left;
+  
+    .closeButton {
+      position: absolute;
+      left: 0px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .header {
+    color: var(--white);
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+  }
+  .borderContainer {
+    border: 1.2px solid white;
+    border-radius: 15px;
+    height: 142px;
+    margin-top: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: 500px) {
+      width: 350px;
+    }
+    @media (min-width: 800px) {
+      width: 450px;
+    }
+    @media (min-width: 1280px) {
+      width: 450px;
+    }
+  }
+
+  .selectButton{
+    height: 142px;
+    margin-top: 10px;
+    width: 90%;
+    @media (min-width: 500px) {
+      width: 350px;
+    }
+    @media (min-width: 800px) {
+      width: 450px;
+    }
+    @media (min-width: 1280px) {
+      width: 450px;
+    }
+  }
+  .textContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--white);
+
+    .wrapper {
+      display: flex;
+      flex-direction: row;
+      margin: 10px 0px 0px 20px;
+    }
+
+    .text {
+      color: var(--white);
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18.5472px;
+      line-height: 22px;
+    }
+
+    .passage {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      padding-left: 50px;
+      padding-right: 20px;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 10px;
+    }
+    
+  }
+
+  .CheckboxBlack {
+    cursor: pointer;
+    &__input {
+      display: none;
+    }
+    &__img {
+      margin-right: 10px;
+      height: 19px;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,36 @@
+.ImageChecked {
+  position: relative;
+  .MainImage {
+    display: block;
+    border-radius: 50px;
+    width: 67px;
+    height: 67px;
+  }
+  .CheckImage {
+    margin-left: 55px;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    z-index: -1;
+  }
+  .Main59 {
+    width: 59px;
+    height: 59px;
+  }
+  .Small59 {
+    margin-left: 48px;
+    width: 18px;
+    height: 18px;
+  }
+  .Main44 {
+    width: 44px;
+    height: 44px;
+  }
+  .Small44 {
+    margin-left: 50%;
+    width: 14px;
+    height: 14px;
+  }
+}

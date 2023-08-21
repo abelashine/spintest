@@ -1,0 +1,9 @@
+.CheckboxBlack {
+    cursor: pointer;
+    &__input {
+        display: none;
+    }
+    &__img {
+        height: 19px;
+    }
+}

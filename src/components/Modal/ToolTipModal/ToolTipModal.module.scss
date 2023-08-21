@@ -1,0 +1,13 @@
+.toolTipModal {
+  & > div {
+    align-items: center;
+  }
+  &__closeBtn {
+    width: 14px;
+    cursor: pointer;
+  }
+  &__text {
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 14px;
+  }
+}

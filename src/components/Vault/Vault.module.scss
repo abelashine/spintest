@@ -1,0 +1,164 @@
+.Vault {
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 1280px) {
+      justify-content: center;
+    }
+
+    .mainTitle {
+      font-size: 1.375rem;
+      text-transform: uppercase;
+    }
+
+    span {
+      margin-left: 15px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 0.75rem;
+    }
+  }
+
+  .wardrobeList {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 0 26px 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+
+    @media (min-width: 1280px) {
+      width: 70vw;
+      margin: 26px auto 0;
+    }
+
+    .wardrobeItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+      }
+
+      &:not(:first-child) {
+        margin-bottom: 16px;
+      }
+
+      .wardrobeProductInfo {
+        word-break: break-all;
+        display: flex;
+        flex-grow: 1;
+        cursor: pointer;
+        color: var(--white);
+        .photoWrap {
+          width: 64px;
+          height: 64px;
+          min-width: 64px;
+          margin-right: 12px;
+          .wardrobeProductPhoto {
+            figure {
+              height: 100%;
+
+              img {
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+          }
+          @media (max-width: 1279px) {
+            border-radius: 8px;
+            overflow: hidden;
+          }
+        }
+
+        .wardrobeProductSummary {
+          display: flex;
+          flex-direction: column;
+          .wardrobeProductName {
+            word-break: break-all;
+          }
+          .wardrobeProductOwner,
+          .wardrobeProductPrice {
+            margin-top: 3px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-size: 0.875rem;
+          }
+
+          .wardrobeProductPrice {
+            font-size: 0.75rem;
+          }
+        }
+        .rentTerm,
+        .missTerm {
+          text-transform: uppercase;
+          line-height: 1.3;
+          font-size: 8px;
+        }
+        .missTerm {
+          color: var(--tomato);
+        }
+        .rentTerm {
+          color: var(--clear-blue);
+        }
+      }
+
+      & > button {
+        width: 101px;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    width: 120px;
+    margin-left: 20px;
+    button {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      margin: 4px 7px 0 0;
+      width: 120px;
+    }
+    @media (max-width: 700px) {
+      flex-direction: column;
+      width: 95px;
+      button {
+        font-size: 12px;
+        padding: 9px 10px;
+        width: 95px;
+      }
+    }
+  }
+}
+
+.EmptyVault {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 101px;
+  }
+  .emptyVaultMessage {
+    margin-top: 34px;
+    font-size: 1.125rem;
+    text-align: center;
+  }
+}
+
+.piecesAmount {
+  margin-top: 6px;
+}
+
+.settingsSvg {
+  cursor: pointer;
+  align-self: center;
+  position: absolute;
+  right: 32px;
+}

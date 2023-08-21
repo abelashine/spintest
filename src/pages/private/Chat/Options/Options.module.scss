@@ -1,0 +1,62 @@
+.Options {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 17px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(120%);
+    height: 1px;
+    background-color: white;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 10px;
+    cursor: pointer;
+
+    &.declineButton {
+      margin-left: 35px;
+      margin-right: 52px;
+      .circle {
+        background-color: #f63d54;
+      }
+    }
+
+    &.acceptButton {
+      margin-right: 23px;
+      .circle {
+        background-color: #1ff19c;
+      }
+    }
+
+    span {
+      display: block;
+      margin-top: 7px;
+    }
+  }
+}
+.circle {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  img {
+    width: 20px;
+    height: 16px;
+  }
+}

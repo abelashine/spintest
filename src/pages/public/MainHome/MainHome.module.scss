@@ -1,0 +1,70 @@
+.HomeRedesign {
+
+  .main {
+    margin: 0 auto 50px;
+    max-width: 550px;
+
+  }
+
+  .title {
+    color: white;
+    font-weight: 200;
+    margin: 5px 10px;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    @media (max-width: 768px) {
+      margin: 3px 20px;
+      transition: ease 0.5s;
+    }
+  }
+
+  .row {
+    display: flex;
+    width: 200px;
+    margin: 0px 5px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: grab;
+    height: 190px;
+    flex: 1;
+  }
+
+  .tiles {
+    padding: 0 5px;
+    margin: 0;
+    height: 190px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+      padding: 0 20px;
+      transition: ease 0.5s;
+    }
+  }
+
+  .container {
+    height: 240px;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+    @media (max-width: 768px) {
+      height: 190px;
+      transition: ease 0.5s;
+    }
+  }
+
+  .title_no_data {
+    text-align: center;
+    color: white;
+    padding-right: 20px;
+    margin-top: 11px;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+}

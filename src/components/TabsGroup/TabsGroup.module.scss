@@ -1,0 +1,139 @@
+.TabsGroup {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.1px solid var(--black);
+  overflow: hidden;
+  color: black;
+
+  @media (min-width: 1280px) {
+    justify-content: center;
+  }
+
+  & > button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 0;
+    padding: 0 0 10px;
+    background: transparent;
+    border: none;
+    color: var(--black);
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    appearance: none;
+    outline: none;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    img {
+      opacity: 0.5;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 134px;
+    }
+
+    svg {
+      path {
+        stroke: var(--grey);
+      }
+    }
+
+    &.fill {
+      svg {
+        path {
+          fill: var(--grey);
+        }
+      }
+    }
+
+    &.notactiveTab .innerContainer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: black;
+    }
+    &.notactiveTab .myLabel {
+      width: 80px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      position: relative;
+      z-index: 2;
+    }
+    &.notactiveTab .circle {
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      top: 40%;
+      left: 23%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      border-radius: 50%;
+      background-color: var(--main-bg-color);
+      border: 1px solid black;
+    }
+
+    &.activeTab {
+      color: white;
+      // background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem;
+
+      &::before {
+        display: block;
+      }
+
+      svg {
+        path {
+          stroke: var(--white);
+        }
+      }
+
+      img {
+        opacity: 1;
+      }
+
+      &.activeTab .innerContainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white !important;
+      }
+
+      &.activeTab .myLabel {
+        background-color: black;
+        width: 80px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        position: relative;
+        z-index: 2;
+      }
+
+      &.activeTab .circle {
+        background-color: red !important;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        position: absolute;
+        top: 40%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+      }
+
+      &.fill {
+        svg {
+          path {
+            fill: var(--white);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 19 19">
+    <defs>
+        <clipPath id="x5iva">
+            <path fill="#fff" d="M4.739 8.739a4 4 0 0 1 4-4h1.524a4 4 0 0 1 4 4v1.524a4 4 0 0 1-4 4H8.74a4 4 0 0 1-4-4z" />
+        </clipPath>
+    </defs>
+    <g>
+        <g>
+            <g>
+                <path fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="50" strokeWidth="1.59" d="M.857 6.07A5.212 5.212 0 0 1 6.07.856" />
+            </g>
+            <g>
+                <path fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="50" strokeWidth="1.59" d="M6.07 18.146a5.212 5.212 0 0 1-5.213-5.212" />
+            </g>
+            <g>
+                <path fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="50" strokeWidth="1.59" d="M18.146 12.934a5.212 5.212 0 0 1-5.212 5.212" />
+            </g>
+            <g>
+                <path fill="none" stroke="#fff" strokeLinecap="round" strokeMiterlimit="50" strokeWidth="1.59" d="M12.934.857a5.212 5.212 0 0 1 5.212 5.212" />
+            </g>
+            <g>
+                <path fill="none" stroke="#fff" strokeMiterlimit="50" strokeWidth="3.18" d="M4.739 8.739a4 4 0 0 1 4-4h1.524a4 4 0 0 1 4 4v1.524a4 4 0 0 1-4 4H8.74a4 4 0 0 1-4-4z" clipPath='url("#x5iva")' />
+            </g>
+        </g>
+    </g>
+</svg>

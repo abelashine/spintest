@@ -1,0 +1,33 @@
+.ProductSuccess {
+  display: flex;
+  margin: 12px 0 5px 0;
+  align-items: center;
+  &__productImage {
+    width: 92px;
+    height: 92px;
+    background-color: #fff;
+    border-radius: 9px;
+    margin-right: 47px;
+  }
+  .circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      min-width: 20px;
+      width: 20px;
+      height: 16px;
+      min-height: 16px;
+      border-radius: 0;
+    }
+    &.passed {
+      background-color: #1ff19c;
+    }
+    &.declined {
+      background-color: #f63d54;
+    }
+  }
+}

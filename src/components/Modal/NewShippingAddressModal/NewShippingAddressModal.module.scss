@@ -1,0 +1,151 @@
+.Modal {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+
+  .buttons {
+    margin-top: 50px;
+
+    & > button {
+      max-width: 100%;
+    }
+
+    & > button:not(:first-child) {
+      margin-top: 13px;
+    }
+  }
+  .stepsProgressBar {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 29px;
+
+    div {
+      width: 26px;
+      height: 2px;
+      background-color: #d5d5d5;
+
+      &.current {
+        background-color: black;
+      }
+    }
+  }
+}
+
+.modalHeader {
+  margin-bottom: 18px;
+
+  svg {
+    position: absolute;
+    width: 54px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.modalBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .modalTitle {
+    margin-top: 5px;
+    margin-bottom: 55px;
+  }
+
+  .details {
+    width: 80%;
+
+    form {
+      & > div,
+      & > div:first-child {
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+
+        span,
+        input[type="text"] {
+          width: 100%;
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-size: 1rem;
+        }
+      }
+    }
+
+    label {
+      margin-bottom: 5px;
+
+      span,
+      input {
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-size: 1rem;
+        color: var(--black);
+      }
+    }
+
+    .detailsTitle {
+      margin: 10px 0 10px 0;
+    }
+
+    .detailsTitle:not(:first-child) {
+      margin-bottom: 0;
+    }
+    .clientNameField {
+      margin-top: 5px;
+    }
+    .phoneNumberLabel {
+      font-size: 10px;
+      color: var(--grey);
+      margin: 10px 0 0 0;
+    }
+    .phoneLine {
+      display: flex;
+      height: 40px;
+      padding-bottom: 5 px;
+      margin-bottom: 5px;
+      .countryCode {
+        width: 140px;
+        margin-right: 10px;
+        & div {
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+        }
+        span {
+          font-family: var(--my-abcdiatypesemi-mono-regular);
+        }
+        & > div {
+          display: flex;
+          height: 100%;
+          position: relative;
+          input {
+            position: static;
+          }
+          svg {
+            margin-right: 5px;
+            position: relative;
+            top: 22px;
+          }
+        }
+      }
+      .phoneNumber {
+        flex-grow: 1;
+        label {
+          height: 100%;
+        }
+      }
+      label input {
+        padding: 9px 17px 9px 0;
+        height: 39px;
+      }
+    }
+    .cityField div svg {
+      bottom: 0;
+      right: 8px;
+    }
+  }
+}

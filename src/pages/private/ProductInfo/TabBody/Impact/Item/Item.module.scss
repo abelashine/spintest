@@ -1,0 +1,72 @@
+.Item {
+  display: flex;
+  flex-direction: row;
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  margin: 25px;
+
+  .waterIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 61px;
+    height: 61px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+  }
+
+  .ItemImageContainer {
+    width: 87px;
+    min-height: 68px;
+    justify-content: center;
+  }
+
+  .ItemImage {
+    width: 59px;
+    height: 59px;
+    border-radius: 30px;
+  }
+
+  .ItemText {
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .ItemFrom {
+    text-align: left;
+
+    span {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+    }
+
+    sub {
+      font-size: 0.6rem;
+    }
+  }
+  .ItemTo {
+    display: flex;
+    min-width: 100%;
+    align-self: flex-end;
+
+    .info {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      div {
+        text-align: left;
+      }
+    }
+
+    span {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+    }
+  }
+
+  .ItemIcon {
+    height: 27px;
+    width: 24px;
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,16 @@
+.EmptyBrandTab {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__plusIcon {
+        cursor: pointer;
+    }
+    &__inscription {
+        margin: 40px 0;
+        font-size: 1.125rem;
+    }
+    button{
+        max-width: 420px;
+    }
+}

@@ -1,0 +1,52 @@
+.DateTextFields {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  height: 35px;
+  padding: 0 17px;
+  background-color: var(--main-bg-color);
+  color: var(--black);
+  border-radius: 17px;
+  border: 1px solid var(--black);
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-size: 0.75rem;
+  position: relative;
+  &__input {
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    color: var(--black);
+    transition: all 0.1s ease-in;
+    padding-left: 0;
+    margin-top: 10px;
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+  &__placeholderLabel {
+    font-size: 20px;
+    position: absolute;
+  }
+  &__placeholderLabel[data-touched="true"] {
+    font-size: 10px;
+    top: 4px;
+    opacity: 0.5;
+  }
+  &__placeholderLabel[data-invalid="true"] {
+    font-size: 10px;
+    top: 4px;
+    opacity: 1;
+    color: var(--tomato);
+  }
+  &__input[data-invalid="true"] {
+    color: var(--tomato);
+  }
+  &__backarrow {
+    transform: rotate(-90deg);
+  }
+  &[data-invalid="true"] {
+    border-color: var(--tomato);
+  }
+}

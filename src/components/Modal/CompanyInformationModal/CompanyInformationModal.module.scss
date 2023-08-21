@@ -1,0 +1,80 @@
+.Modal {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+
+  .buttons {
+    margin-top: auto;
+
+    & > button:not(:first-child) {
+      margin-top: 13px;
+    }
+  }
+}
+
+.modalHeader {
+  margin-bottom: 18px;
+}
+
+.modalBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .logoText {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    color: var(--white);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12px;
+    font-size: 10px;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    .plus {
+      font-size: 26px;
+    }
+  }
+
+  .modalTitle {
+    margin-top: 5px;
+    margin-bottom: 55px;
+  }
+
+  .details {
+    width: 80%;
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    .detailsTitle {
+      margin: 10px 0 10px 0;
+    }
+
+    .detailsTitle:not(:first-child) {
+      margin-bottom: 0;
+    }
+    .phoneLine {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      .phoneNumberLabel {
+        font-size: 10px;
+        color: var(--grey);
+        position: absolute;
+        z-index: 2;
+        top: -1px;
+      }
+      .countryCode {
+        width: 80px;
+        margin-right: 33px;
+      }
+      .phoneNumber {
+        width: 100%;
+      }
+    }
+  }
+}

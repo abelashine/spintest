@@ -1,0 +1,88 @@
+.TransactionItem {
+  display: flex;
+  width: 100%;
+  position: relative;
+  &__avatar {
+    width: 59px;
+    height: 59px;
+    min-width: 59px;
+    background-color: var(--main-bg-color);
+    position: relative;
+    z-index: 1;
+    & > div {
+      border-radius: 50%;
+      border: 1px solid var(--white);
+      & > span[data-icon="bluemark"] {
+        top: -3px;
+        right: 0px;
+      }
+    }
+  }
+  &__data {
+    flex-grow: 1;
+    color: var(--white);
+    &_commondata {
+      height: 59px;
+      margin-left: 15px;
+      margin-top: 10px;
+      position: relative;
+      a {
+        font-size: 19.4px;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+        text-decoration: none;
+        color: var(--white);
+      }
+      p {
+        margin: 0;
+        margin-top: 2px;
+        font-size: 11px;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+      }
+    }
+    &_details {
+      margin: 0 26px 26px 15px;
+      font-size: 15px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      .imageWrapper {
+        max-width: 400px;
+        img {
+          width: 100%;
+          border-radius: 22px;
+        }
+      }
+
+      p {
+        margin: 5px 0;
+      }
+      .daterow {
+        font-size: 11px;
+        margin-top: 10px;
+      }
+      .delete {
+        text-align: end;
+        color: var(--tomato);
+        cursor: pointer;
+      }
+    }
+  }
+  & > img {
+    position: absolute;
+    top: 20px;
+    right: 32px;
+    cursor: pointer;
+  }
+  & > img.opened {
+    transform: rotate(90deg);
+  }
+  & > img.closed {
+    transform: rotate(-90deg);
+  }
+}
+
+.textlink {
+  display: inline;
+  a {
+    color: #239eff;
+    text-decoration: none;
+  }
+}

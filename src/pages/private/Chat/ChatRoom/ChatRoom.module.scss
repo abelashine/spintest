@@ -1,0 +1,77 @@
+.ChatRoom {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  color: black;
+
+  .unread_marker {
+    border-radius: 50%;
+    background-color: rgb(246, 61, 84);
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: -45px;
+    top: 40%;
+    transform: translateY(-50%);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .room_image {
+    border-radius: 50%;
+    width: 91px;
+    min-width: 91px;
+    height: 91px;
+    margin: 0 -10px 0 10px;
+
+    div {
+      border-radius: 50%;
+    }
+
+    span {
+      top: 4px;
+      right: 4px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+
+    .interlocutorSlug {
+      font-size: 16px;
+      margin-top: -25px;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      color: #0A0B0C;
+      font-style: normal;
+      font-weight: bold;
+
+      line-height: normal;
+    }
+
+    .lastMessage {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      color: #858585;
+    }
+    
+
+    .slug {
+      display: flex;
+      margin-top: 3px;
+      font-size: 1rem;
+      
+    }
+  }
+}

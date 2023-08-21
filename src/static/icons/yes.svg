@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>symbole/verified/yes</title>
+    <defs>
+        <path d="M8.79673161,4.22520517 L8.81478434,4.24325791 L8.81478434,4.24325791 L8.90078173,4.33219789 C9.18525573,4.6264058 9.18525573,5.09317352 8.90078173,5.38738143 L6.53122793,7.83801482 C6.39878207,7.97499261 6.22726114,8.0513777 6.05125158,8.06658833 L5.94538389,8.06836911 C5.76896234,8.05908667 5.59496944,7.98851341 5.45799165,7.85606755 L5.43993892,7.83801482 L5.43993892,7.83801482 L4.21216332,6.56822813 C3.92768933,6.27402022 3.92768933,5.8072525 4.21216332,5.51304459 L4.29816071,5.42410461 C4.5895416,5.12275347 5.07004585,5.11467099 5.37139699,5.40605188 L5.38944972,5.42410461 L5.38944972,5.42410461 L5.98503193,6.03938313 L7.72349534,4.24325791 C8.01487623,3.94190677 8.49538047,3.93382428 8.79673161,4.22520517 Z" id="path-1"></path>
+    </defs>
+    <g id="SPIN---MOBILE" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SPIN---POPUP---FIRST-TIME-USER---3" transform="translate(-110.000000, -347.000000)">
+            <g id="Group-14" transform="translate(74.000000, 347.000000)">
+                <g id="Group-21" transform="translate(1.000000, 0.000000)">
+                    <g id="symbole/verified/yes" transform="translate(35.300106, 0.000000)">
+                        <ellipse id="Oval" fill="#239EFF" cx="6.05144681" cy="6.04063636" rx="6.05144681" ry="6.04063636"></ellipse>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="checked" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

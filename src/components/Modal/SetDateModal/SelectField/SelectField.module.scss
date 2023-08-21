@@ -1,0 +1,59 @@
+.SelectField {
+  height: fit-content;
+  position: relative;
+  z-index: 111111;
+  padding: 3.5px 4px 5px 6px;
+  border: 1px solid var(--black);
+  border-radius: 8.4px;
+  background-color: var(--main-bg-color);
+  size: 6px;
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  cursor: pointer;
+  .typerow {
+    label {
+      size: 5px;
+      color: #ACB4BC;
+      margin-left: 2px;
+    }
+    input {
+      display: block;
+      background-color: transparent;
+      color: var(--black);
+      border: none;
+      outline: none;
+      width: 100%;
+      &::placeholder {
+        color: var(--black);
+        opacity: 1;
+        font-family: var(--my-abcdiatypesemi-mono-regular);
+      }
+    }
+  }
+  &[data-value="false"] {
+    border: 1px solid var(--black);
+    .typerow input {
+      color: var(--black);
+      &::placeholder {
+        opacity: 0.5;
+      }
+    }
+  }
+  .list {
+    max-height: 170px;
+    overflow-y: auto;
+    margin: 0 0 0 3px;
+    padding: 0;
+    scrollbar-color: var(--black) transparent;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: var(--black);
+    }
+    li {
+      line-height: 1.5;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.ProductPhotoCard {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  background-color: var(--white);
+  border-radius: 9px;
+
+  @media (min-width: 1280px) {
+    border-radius: 19px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+
+    @media (min-width: 1280px) {
+      border-radius: 19px;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.AddMemory {
+    &__imagefield {
+        margin: 11px 0;
+        &_label {
+            font-size: 15px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            margin: 0;
+        }
+        &_input {
+            border: 1px solid #000;
+            border-radius: 33px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 10px;
+            font-size: 15px;
+            font-family: var(--my-abcdiatypesemi-mono-regular);
+            cursor: pointer;
+            input {
+                display: none;
+            }
+            &[data-error="true"] {
+                color: var(--tomato);
+                border-color: var(--tomato);
+            }
+        }
+        &_uploadedImg {
+            position: relative;
+            margin-top: 10px;
+            img {
+                border-radius: 33px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+            span {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: var(--main-bg-color);
+                color: var(--white);
+                transform: rotate(45deg);
+                font-size: 24px;
+                text-align: center;
+                line-height: 16px;
+                position: absolute;
+                top: 25px;
+                left: 15px;
+                cursor: pointer;
+            }
+        }
+    }
+}

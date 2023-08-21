@@ -1,0 +1,26 @@
+.Impact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 1280px) {
+    padding: 0 35.6%;
+  }
+
+  .ImpactText {
+    padding: 14px;
+    line-height: 21px;
+    font-size: 15px;
+    color: #ffffff;
+
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-weight: 400;
+    line-height: 21px;
+  }
+  .ImpactItems {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #ffffff;
+  }
+}

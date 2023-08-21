@@ -1,0 +1,28 @@
+name: Build & Deploy to production server
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and Deploy new SPIN production version
+        uses: fifsky/ssh-action@v0.0.5
+        with:
+          command: |
+            exec ssh-agent bash
+            ssh-add /root/.ssh/id_rsa_github
+            rm -rf spin
+            git clone git@github.com:lablaco/spin.git
+            cd spin
+            git checkout master
+            cp ../project_envs/react_app_envs/env.production ./.env.production
+            npm install
+            npm run build
+            scp -r build/* ${{ secrets.SSH_USERNAME_PROD }}@${{ secrets.SSH_HOST_PROD }}:/${{ secrets.SSH_USERNAME_PROD }}/api/django/static/build
+            git stash
+          host: ${{ secrets.SSH_HOST }}
+          user: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}

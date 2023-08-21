@@ -1,0 +1,47 @@
+.NotificationsBurger {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  appearance: none;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  .notificationsCounter {
+    position: absolute;
+    top: -11px;
+    right: -11px;
+    z-index: -1;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--avenir-next-bold);
+    font-size: 0.625rem;
+    background-color: var(--water-lemon);
+    color: var(--white);
+    border-radius: 50%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0px);
+    height: 6px;
+    width: 6px;
+    background-color: var(--white);
+    border-radius: 50%;
+    box-shadow: -8px -8px 0 0 var(--white), 0px -8px 0 0 var(--white),
+      8px -8px 0 0 var(--white), -8px 0px 0 0 var(--white),
+      8px 0px 0 0 var(--white), -8px 8px 0 0 var(--white),
+      0px 8px 0 0 var(--white), 8px 8px 0 0 var(--white);
+  }
+}

@@ -1,0 +1,184 @@
+.Signup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  color: var(--black);
+  border-left: 1px solid var(--black);
+  border-right: 1px solid var(--black);
+  overflow: hidden;
+  .backArrow {
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .signupForm {
+    width: 309px;
+
+    .imageUploader {
+      width: 156px;
+      height: 156px;
+    }
+    .imageUploaderStepOne {
+      width: 200px;
+      height: 200px;
+    }
+    .imageUploader,
+    .imageUploaderStepOne {
+      margin: 38px auto 0;
+      border-radius: 50%;
+      overflow: hidden;
+
+      & > label {
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: transparent;
+        color: var(--black);
+        font-size: 0.875rem;
+        border: 2px solid var(--black);
+        &[invalid] {
+          border-color: var(--tomato);
+          color: var(--tomato);
+        }
+        div[data-label-text] {
+          margin-top: 20px;
+          span:first-child {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+
+    .formMessage {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 1.125rem;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    input[placeholder="City"] {
+      &::placeholder {
+        color: black;
+        opacity: 1;
+      }
+    }
+
+    label {
+      margin-bottom: 14px;
+      div[data-label-text="labelBlock"] {
+        flex-direction: column-reverse;
+        padding: 0 10%;
+        margin-top: 30px;
+      }
+    }
+
+    .selects {
+      & > div {
+        margin-bottom: 14px;
+      }
+      & > div:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .terms {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      label {
+        margin-bottom: 0;
+      }
+      img {
+        height: 25px;
+        width: 25px;
+        margin-right: 10px;
+      }
+    }
+
+    .termsLink {
+      text-decoration: none;
+      color: black;
+    }
+
+    button {
+      margin-top: 32px;
+    }
+  }
+
+  .stepsProgressBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 29px 0;
+  }
+
+  .stepsProgressBar div {
+    width: 26px;
+    height: 2px;
+    background-color: var(--grey);
+    margin-right: 10px;
+  }
+
+  .stepsProgressBar div.current {
+    background-color: black;
+  }
+  .stepsProgressBar div.filled {
+    background-color: black;
+  }
+  .stepsProgressBar div.notfilled {
+    background-color: #ACB4BC;
+  } .stepsProgressBar div.what {
+    background-color: red;
+  }
+
+ 
+}
+
+.Header {
+  align-self: stretch;
+  align-items: flex-start;
+  margin-top: 10px;
+  height: 70px;
+  padding-top: 10px;
+  .logoTopImg {
+    width: 55px;
+  }
+}
+
+.errorText {
+  color: var(--tomato);
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-size: 0.8rem;
+}
+.firstStepText {
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-size: 1.125rem;
+  text-align: center;
+  margin-top: 40px;
+  p {
+    margin: 0;
+    span {
+      color: #239eff;
+      word-break: break-all;
+    }
+  }
+}
+
+.inputContainerDiv {
+  position: relative;
+}
+
+.top_label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.connect_logo {
+  width: 100px;
+}
+.emailMessage {
+  color: #5858ed !important;
+}

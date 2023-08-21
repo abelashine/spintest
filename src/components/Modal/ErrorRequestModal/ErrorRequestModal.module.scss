@@ -1,0 +1,63 @@
+.ErrorRequestModal > div {
+  z-index: 222222;
+}
+.modalHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  .closeButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 61px;
+    height: 61px;
+    padding: 23px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  h1 {
+    margin: auto;
+    font-size: 24pt;
+    text-align: center;
+    font-weight: bolder;
+    color: var(--tomato);
+  }
+}
+
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  .checkIcon {
+    margin: 45pt auto 5pt;
+  }
+  .bodyContent {
+    display: flex;
+    justify-content: space-between;
+    margin: 40pt auto;
+    padding: 0 10px;
+    font-size: 20px;
+  }
+  .bodyMessage {
+    max-width: 75%;
+  }
+  .info {
+    margin: auto;
+    cursor: pointer;
+    svg {
+      width: 50px;
+      height: 50px;
+      cursor: auto;
+      path {
+        fill: var(--tomato);
+      }
+    }
+  }
+  .button {
+    margin: 0 0 20px 0;
+    button {
+      background-color: var(--tomato);
+    }
+  }
+}

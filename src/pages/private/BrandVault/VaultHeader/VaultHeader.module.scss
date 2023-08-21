@@ -1,0 +1,26 @@
+.VaultHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--my-abcdiatypesemi-mono-regular);
+  color: var(--white);
+  height: 40px;
+  position: relative;
+  &__backButton {
+    position: absolute;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  &__switcher {
+    display: flex;
+    cursor: pointer;
+    &_slug {
+      margin-right: 10px;
+    }
+    &_arrow {
+      transform: rotate(-90deg);
+    }
+  }
+}

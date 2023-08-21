@@ -1,0 +1,24 @@
+.ButtonContainer {
+  padding: 0 13px;
+
+  & > button {
+    margin-bottom: 14px;
+    font-family: var(--my-abcdiatypesemi-mono-regular) !important;
+  }
+
+  @media (min-width: 1280px) {
+    width: 368px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    padding: 16px 5px;
+    font-size: 1.125rem;
+    border-radius: 28px;
+  }
+}

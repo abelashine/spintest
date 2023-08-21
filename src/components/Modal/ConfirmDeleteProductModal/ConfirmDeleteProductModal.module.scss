@@ -1,0 +1,119 @@
+.ConfirmDeleteProductModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 80px;
+
+    .backButton {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      padding: 23px;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+      }
+    }
+    span {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-size: 24px;
+    }
+    .logoImg {
+      width: 55px;
+    }
+  }
+
+  .circle {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.redCircle {
+      background-color: var(--tomato);
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .mainMessage {
+    margin-top: 34px;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 22px;
+    text-align: center;
+    color: var(--main-bg-color);
+
+    strong {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+    }
+  }
+
+  .secondaryMessage {
+    display: flex;
+    align-items: center;
+    margin: 88px 25px 120px 0;
+    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-size: 1rem;
+    color: var(--main-bg-color);
+    p {
+      margin: 0;
+    }
+
+    strong {
+      font-family: var(--my-abcdiatypesemi-mono-regular);
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 16px;
+      width: 16px;
+      height: 16px;
+      margin-left: 60px;
+      background-color: var(--main-bg-color);
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 12px;
+    }
+  }
+
+  .buttonContainer {
+    .confirmButton {
+      height: 55px;
+      margin-bottom: 5px;
+      background-color: var(--red-pink);
+      color: var(--white);
+      font-family: var(--avenir-next-bold);
+      font-size: 18px;
+      letter-spacing: 1.13px;
+      border-radius: 70px;
+    }
+
+    .cancelButton {
+      height: 55px;
+      margin-bottom: 5px;
+      background-color: var(--white);
+      color: var(--black);
+      font-family: var(--avenir-next-bold);
+      font-size: 18px;
+      letter-spacing: 1.13px;
+      border: 1px solid;
+      border-radius: 70px;
+    }
+  }
+}

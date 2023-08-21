@@ -1,0 +1,45 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "es2020": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "google",
+        "prettier",
+        "prettier/babel",
+        "prettier/react"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "require-jsdoc": 0,
+        "valid-jsdoc": 0,
+        "react/prop-types": 0
+    },
+    "ignorePatterns": [
+        "/src/static/**",
+        "/src/build/**",
+        "!/src/static/data/",
+        "!/src/static/data/**"
+    ],
+    "globals": {
+        "process": true
+    }
+}
