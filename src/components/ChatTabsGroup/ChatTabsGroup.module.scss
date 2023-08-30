@@ -6,10 +6,10 @@
   color: black;
   margin-top: 10px;
   gap: 30px;
-  @media (min-width: 601px) {
-    display: flex;
-    flex-direction: row;
-  }
+  // @media (min-width: 601px) {
+  //   display: flex;
+  //   flex-direction: row;
+  // }
 
   & > button {
     color: var(--black);
@@ -63,8 +63,8 @@
       }
 
       &.activeTab .innerContainer {
-        @media (min-width: 601px) {
-        }
+        // @media (min-width: 601px) {
+        // }
         position: relative;
         display: flex;
         flex-direction: column;
@@ -146,8 +146,8 @@
       }
 
       &.activeTab .innerContainer {
-        @media (min-width: 601px) {
-        }
+        // @media (min-width: 601px) {
+        // }
         position: relative;
         display: flex;
         flex-direction: column;

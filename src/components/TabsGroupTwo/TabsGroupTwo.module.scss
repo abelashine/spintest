@@ -4,10 +4,10 @@
   overflow: hidden;
   color: black;
   margin-top: 10px;
-  @media (min-width: 601px) {
-    display: flex;
-    flex-direction: row;
-  }
+  // @media (min-width: 601px) {
+  //   display: flex;
+  //   flex-direction: row;
+  // }
 
   & > button {
     color: var(--black);
@@ -104,8 +104,8 @@
       }
 
       &.activeTab .innerContainer {
-        @media (min-width: 601px) {
-        }
+        // @media (min-width: 601px) {
+        // }
         position: relative;
         display: flex;
         flex-direction: column;
@@ -169,10 +169,10 @@
   overflow: hidden;
   color: black;
   margin-top: 10px;
-  @media (min-width: 601px) {
-    display: flex;
-    flex-direction: row;
-  }
+  // @media (min-width: 601px) {
+  //   display: flex;
+  //   flex-direction: row;
+  // }
 
   & > button {
     color: var(--black);
@@ -269,8 +269,8 @@
       }
 
       &.activeTab .innerContainer {
-        @media (min-width: 601px) {
-        }
+        // @media (min-width: 601px) {
+        // }
         position: relative;
         display: flex;
         flex-direction: column;

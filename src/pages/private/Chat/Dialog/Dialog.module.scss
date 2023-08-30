@@ -5,14 +5,14 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  @media (min-width: 601px) {
-    position: fixed;
-    right: 10px;
-    width: 75vw;
-    margin-left: 10px;
-    // overflow: scroll;
-    // height: 1000px;
-  }
+  // @media (min-width: 601px) {
+  //   position: fixed;
+  //   right: 10px;
+  //   width: 75vw;
+  //   margin-left: 10px;
+  //   // overflow: scroll;
+  //   // height: 1000px;
+  // }
 
   & ~ div[class^="NavBar_NavBar"] {
     display: none;
@@ -21,10 +21,10 @@
   .nav {
     position: fixed;
     top: 0;
-    @media (min-width: 601px) {
-      height: 120px;
-      width: 100%;
-    }
+    // @media (min-width: 601px) {
+    //   height: 120px;
+    //   width: 100%;
+    // }
     height: 65px;
     width: 100%;
     z-index: 1;
@@ -43,12 +43,12 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    @media (min-width: 601px) {
-      .imgBack {
-        background-color: red;
-        display: none;
-      }
-    }
+    // @media (min-width: 601px) {
+    //   .imgBack {
+    //     background-color: red;
+    //     display: none;
+    //   }
+    // }
   }
 
   &::before {
@@ -68,12 +68,12 @@
     flex-direction: column;
     align-items: center;
     right: 35%;
-    @media (min-width: 601px) {
-      position: absolute;
-      left: 30px;
-      width: 45px;
-      height: 45px;
-    }
+    // @media (min-width: 601px) {
+    //   position: absolute;
+    //   left: 30px;
+    //   width: 45px;
+    //   height: 45px;
+    // }
   }
 
   .interlocutor_avatar {
@@ -88,13 +88,13 @@
     position: absolute;
     width: 100vw;
     top: 80%;
-    @media (min-width: 601px) {
-      position: absolute;
-      font-size: 18px;
-      font-family: var(--abcdiatypesemi-mono-regular);
-      top: 20%;
-      left: 80%;
-    }
+    // @media (min-width: 601px) {
+    //   position: absolute;
+    //   font-size: 18px;
+    //   font-family: var(--abcdiatypesemi-mono-regular);
+    //   top: 20%;
+    //   left: 80%;
+    // }
     font-weight: bold;
 
     text-align: center;
@@ -146,11 +146,11 @@
     width: 100%;
     input {
       display: block;
-      @media (min-width: 601px) {
-        position: relative;
-        top: 30px;
-        width: 74vw;
-      }
+      // @media (min-width: 601px) {
+      //   position: relative;
+      //   top: 30px;
+      //   width: 74vw;
+      // }
       width: 100%;
       border-radius: 17px;
       border: none;
@@ -193,12 +193,12 @@
     .sendButton {
       width: 58px;
       height: 28px;
-      @media (min-width: 601px) {
-        position: relative;
-        top: -10px;
-        right: -96%;
-        // bottom: unset;
-      }
+      // @media (min-width: 601px) {
+      //   position: relative;
+      //   top: -10px;
+      //   right: -96%;
+      //   // bottom: unset;
+      // }
       position: absolute;
       border-radius: 1.8125rem;
       background-color: var(--black, #0a0b0c);
@@ -214,12 +214,12 @@
       font-size: 12px;
     }
     .sendButtonClicked {
-      @media (min-width: 601px) {
-        position: relative;
-        top: -10px;
-        right: -71.6%;
-        bottom: unset;
-      }
+      // @media (min-width: 601px) {
+      //   position: relative;
+      //   top: -10px;
+      //   right: -71.6%;
+      //   bottom: unset;
+      // }
       width: 58px;
       height: 28px;
       position: absolute;
@@ -254,13 +254,13 @@
     height: 100vw;
     width: 398px;
   }
-  @media (min-width: 601px) {
-    position: fixed;
-    margin-left: 70px;
-    width: 398px;
-    border-right: 1px black solid;
-    height: 100vw;
-  }
+  // @media (min-width: 601px) {
+  //   position: fixed;
+  //   margin-left: 70px;
+  //   width: 398px;
+  //   border-right: 1px black solid;
+  //   height: 100vw;
+  // }
   margin-bottom: 34px;
   font-family: var(--abcdiatypesemi-mono-regular);
   color: #0a0b0c;
@@ -270,10 +270,10 @@
     padding-bottom: 20px;
 
     .profileSummaryWrapper {
-      @media (min-width: 601px) {
-        margin-left: 70px;
-        width: 398px;
-      }
+      // @media (min-width: 601px) {
+      //   margin-left: 70px;
+      //   width: 398px;
+      // }
       display: flex;
       justify-content: space-between;
       margin-top: 40px;
@@ -461,10 +461,10 @@
   line-height: normal;
   text-transform: uppercase;
   position: absolute;
-  @media (min-width: 601px) {
-    top: 3vw;
-    left: 10vw;
-  }
+  // @media (min-width: 601px) {
+  //   top: 3vw;
+  //   left: 10vw;
+  // }
   top: 5%;
   left: 50%;
   transform: translateX(-50%);

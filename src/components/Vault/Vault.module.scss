@@ -47,12 +47,12 @@
     }
 
     .wardrobeItem {
-      @media (min-width: 601px) {
-        display: flex;
-        justify-content: space-between;
-        margin-left: 10%;
-        margin-right: 23.75%;
-      }
+      // @media (min-width: 601px) {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   margin-left: 10%;
+      //   margin-right: 23.75%;
+      // }
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -189,10 +189,10 @@
     max-width: 101px;
   }
   .emptyVaultMessage {
-    @media (min-width: 601px) {
-      position: absolute;
-      top: 329px;
-    }
+    // @media (min-width: 601px) {
+    //   position: absolute;
+    //   top: 329px;
+    // }
     margin-top: 34px;
     font-size: 1.125rem;
     text-align: center;
@@ -203,20 +203,20 @@
 
 .piecesAmount {
   margin-top: 16px;
-  @media (min-width: 601px) {
-    position: absolute;
-    left: 5.625%;
-    top: 5%;
-  }
+  // @media (min-width: 601px) {
+  //   position: absolute;
+  //   left: 5.625%;
+  //   top: 5%;
+  // }
 }
 
 .piecesAmountEmpty {
   margin-top: 16px;
-  @media (min-width: 601px) {
-    position: absolute;
-    left: 5.625%;
-    top: 5%;
-  }
+  // @media (min-width: 601px) {
+  //   position: absolute;
+  //   left: 5.625%;
+  //   top: 5%;
+  // }
 }
 .settingsSvg {
   cursor: pointer;

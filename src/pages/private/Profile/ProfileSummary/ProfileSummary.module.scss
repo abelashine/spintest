@@ -1,12 +1,12 @@
 .profileSummaryWrapperContainer {
-  @media (min-width: 601px) {
-    position: fixed;
-    left: 0%;
-    top: 10px;
-    right: 0;
-    width: 23.11%;
-    margin-left: 1.39%;
-  }
+  // @media (min-width: 601px) {
+  //   position: fixed;
+  //   left: 0%;
+  //   top: 10px;
+  //   right: 0;
+  //   width: 23.11%;
+  //   margin-left: 1.39%;
+  // }
 
   @media (max-width: 601px) {
     .desktopAvatar {
@@ -21,37 +21,37 @@
     }
     font-family: var(--abcdiatypesemi-mono-regular);
     color: #0a0b0c;
-    @media (min-width: 601px) {
-      .mobileAvatar {
-        display: none;
-      }
+    // @media (min-width: 601px) {
+    //   .mobileAvatar {
+    //     display: none;
+    //   }
 
-      position: fixed;
-      left: 3.6%;
-      top: 5.1%;
-      width: 27.66%;
-      margin-left: 1.39%;
-      padding-bottom: 1.4%;
-      border-bottom: 1px solid black;
-    }
+    //   position: fixed;
+    //   left: 3.6%;
+    //   top: 5.1%;
+    //   width: 27.66%;
+    //   margin-left: 1.39%;
+    //   padding-bottom: 1.4%;
+    //   border-bottom: 1px solid black;
+    // }
 
     .profileSummaryInfo {
       display: flex;
       flex-direction: column;
       margin-left: 5%;
-      @media (min-width: 601px) {
-        margin-top: 1.0556vw;
-      }
+      // @media (min-width: 601px) {
+      //   margin-top: 1.0556vw;
+      // }
 
       .more {
         position: absolute;
         right: 10px;
         font-family: var(--abcdiatypesemi-mono-regular);
         font-weight: bold;
-        @media (min-width: 601px) {
-          position: relative;
-          margin-left: 0.5vw;
-        }
+        // @media (min-width: 601px) {
+        //   position: relative;
+        //   margin-left: 0.5vw;
+        // }
       }
 
       .profileFullName {
@@ -209,13 +209,13 @@
         height: 72px;
         margin: 0;
       }
-      @media (min-width: 601px) {
-        position: absolute;
-        right: 0;
-        min-width: 120px;
-        width: 120px;
-        height: 120px;
-      }
+      // @media (min-width: 601px) {
+      //   position: absolute;
+      //   right: 0;
+      //   min-width: 120px;
+      //   width: 120px;
+      //   height: 120px;
+      // }
 
       img {
         width: 100%;

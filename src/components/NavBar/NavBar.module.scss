@@ -50,80 +50,80 @@
   background-color: #d8dbde;
   z-index: 90;
 }
-@media (min-width: 601px) {
-  .NavBar {
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    z-index: 10;
-    width: 5%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 30px;
-    gap: 1px;
-    background-color: #d8dbde;
-    color: var(--white);
-    border-right: 1px solid var(--black);
-    padding-top: 32px;
-    gap: 48px;
+// @media (min-width: 601px) {
+//   .NavBar {
+//     position: fixed;
+//     bottom: 0;
+//     top: 0;
+//     z-index: 10;
+//     width: 5%;
+//     height: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: center;
+//     padding: 0 30px;
+//     gap: 1px;
+//     background-color: #d8dbde;
+//     color: var(--white);
+//     border-right: 1px solid var(--black);
+//     padding-top: 32px;
+//     gap: 48px;
 
-    // position: fixed;
-    // bottom: 0;
-    // top: 0;
-    // z-index: 10;
-    // width: 10px;
-    // height: 100%;
-    // display: flex;
-    // border-right: 1px solid var(--black, #0a0b0c);
-    // align-items: center;
-    // padding: 0 30px;
-    // color: var(--white);
-    // flex-direction: column;
-    // margin-right: 60px;
-    // padding-right: 40px;
-    // .NavBar::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   backdrop-filter: blur(10px) brightness(1.5) saturate(150%);
-    //   background-color: red;
-    //   opacity: 0.5;
-    //   z-index: -1;
-    // }
+//     // position: fixed;
+//     // bottom: 0;
+//     // top: 0;
+//     // z-index: 10;
+//     // width: 10px;
+//     // height: 100%;
+//     // display: flex;
+//     // border-right: 1px solid var(--black, #0a0b0c);
+//     // align-items: center;
+//     // padding: 0 30px;
+//     // color: var(--white);
+//     // flex-direction: column;
+//     // margin-right: 60px;
+//     // padding-right: 40px;
+//     // .NavBar::before {
+//     //   content: "";
+//     //   position: absolute;
+//     //   top: 0;
+//     //   left: 0;
+//     //   right: 0;
+//     //   bottom: 0;
+//     //   backdrop-filter: blur(10px) brightness(1.5) saturate(150%);
+//     //   background-color: red;
+//     //   opacity: 0.5;
+//     //   z-index: -1;
+//     // }
 
-    .brand {
-      margin-bottom: 12px;
-      width: 50px;
-      height: 18.5px;
-    }
-    .home_logo {
-      width: 21.421px;
-      height: 22px;
-    }
-    .ar_logo {
-      width: 38px;
-      height: 38px;
-    }
-    .chat_logo {
-      width: 24px;
-      height: 17.019px;
-    }
-    .menu_logo {
-      width: 24px;
-      height: 24px;
-    }
-    .avatarButton {
-      width: 36px;
-      height: 36px;
-    }
-  }
-}
+//     .brand {
+//       margin-bottom: 12px;
+//       width: 50px;
+//       height: 18.5px;
+//     }
+//     .home_logo {
+//       width: 21.421px;
+//       height: 22px;
+//     }
+//     .ar_logo {
+//       width: 38px;
+//       height: 38px;
+//     }
+//     .chat_logo {
+//       width: 24px;
+//       height: 17.019px;
+//     }
+//     .menu_logo {
+//       width: 24px;
+//       height: 24px;
+//     }
+//     .avatarButton {
+//       width: 36px;
+//       height: 36px;
+//     }
+//   }
+// }
 
 button {
   display: flex;

@@ -1,15 +1,11 @@
-@media (min-width: 601px) {
-  * {
-    background-color: red;
-  }
-}
+
 .Chat {
-  @media (min-width: 601px) {
-    margin-left: 70px;
-    width: 398px;
-    border-right: 1px black solid;
-    height: 100vw;
-  }
+  // @media (min-width: 601px) {
+  //   margin-left: 70px;
+  //   width: 398px;
+  //   border-right: 1px black solid;
+  //   height: 100vw;
+  // }
   margin-bottom: 34px;
   font-family: var(--abcdiatypesemi-mono-regular);
   color: #0a0b0c;
@@ -22,10 +18,10 @@
     // border-bottom: 2px solid var(--white);
 
     .profileSummaryWrapper {
-      @media (min-width: 601px) {
-        margin-left: 70px;
-        width: 398px;
-      }
+      // @media (min-width: 601px) {
+      //   margin-left: 70px;
+      //   width: 398px;
+      // }
       display: flex;
       justify-content: space-between;
       margin-top: 40px;
@@ -214,10 +210,10 @@
   line-height: normal;
   text-transform: uppercase;
   position: absolute;
-  @media (min-width: 601px) {
-    top: 3vw;
-    left: 15vw;
-  }
+  // @media (min-width: 601px) {
+  //   top: 3vw;
+  //   left: 15vw;
+  // }
   top: 5%;
   left: 50%;
   transform: translateX(-50%);

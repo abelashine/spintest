@@ -8,15 +8,15 @@
   @media (max-width: 601px) {
     border-bottom: 0.1px solid var(--black);
   }
-  @media (min-width: 601px) {
-    position: fixed;
-    left: 3.6%;
-    top: 0;
-    height: 5.0%;
-    width: 27.66%;
-    margin-left: 1.39%;
-    border-bottom: 1px solid black;
-  }
+  // @media (min-width: 601px) {
+  //   position: fixed;
+  //   left: 3.6%;
+  //   top: 0;
+  //   height: 5.0%;
+  //   width: 27.66%;
+  //   margin-left: 1.39%;
+  //   border-bottom: 1px solid black;
+  // }
 
   .chatIcon {
     margin-left: 1.2rem;
@@ -43,9 +43,9 @@
   .backArrowParent {
     position: relative;
     top: 3px;
-    @media (min-width: 601px) {
-      display: none;
-    }
+    // @media (min-width: 601px) {
+    //   display: none;
+    // }
   }
   .profileSwitcher {
     position: relative;
@@ -59,15 +59,15 @@
       word-break: break-all;
       right: 0;
 
-      @media (min-width: 601px) {
-        position: relative;
-        font-size: 16px;
-        margin-top: 16%;
-        left: 0;
-        font-family: var(--abcdiatypesemi-mono-medium);
-        word-break: break-all;
-        right: 0;
-      }
+      // @media (min-width: 601px) {
+      //   position: relative;
+      //   font-size: 16px;
+      //   margin-top: 16%;
+      //   left: 0;
+      //   font-family: var(--abcdiatypesemi-mono-medium);
+      //   word-break: break-all;
+      //   right: 0;
+      // }
     }
 
     .arrow {
@@ -79,14 +79,14 @@
         z-index: 1;
       }
 
-      @media (min-width: 601px) {
-        position: absolute;
-        bottom: -3%;
-        left: auto;
-        right: -20%;
-        transform: rotate(-90deg) translateX(-1px);
-        z-index: 1;
-      }
+      // @media (min-width: 601px) {
+      //   position: absolute;
+      //   bottom: -3%;
+      //   left: auto;
+      //   right: -20%;
+      //   transform: rotate(-90deg) translateX(-1px);
+      //   z-index: 1;
+      // }
     }
   }
 

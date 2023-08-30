@@ -17,11 +17,11 @@
     &_nft {
       font-size: 10px;
       color: black;
-      @media (min-width: 601px) {
-        position: absolute;
-        left: 5.625%;
-        top: 5%;
-      }
+      // @media (min-width: 601px) {
+      //   position: absolute;
+      //   left: 5.625%;
+      //   top: 5%;
+      // }
       line-height: 14px;
     }
     h3 {
@@ -132,10 +132,10 @@
   .emptyShopDescription {
     margin-top: 34px;
     color: #929292;
-    @media (min-width: 601px) {
-      position: absolute;
-      top: 329px;
-    }
+    // @media (min-width: 601px) {
+    //   position: absolute;
+    //   top: 329px;
+    // }
 
     font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 1.125rem;
