@@ -47,7 +47,7 @@
     color: var(--black);
     border-radius: 17px;
     border: 1px solid var(--black);
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 0.75rem;
 
     input {
@@ -76,7 +76,7 @@
       top: calc(50% - 2px);
       left: 17px;
       transform: translateY(-50%);
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-size: 1.1875rem;
       background-color: transparent;
       border: none;
@@ -134,7 +134,7 @@
     background-color: var(--spin-light-grey1);
     color: var(--black);
     border-bottom: 1px solid var(--grey);
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 0.75rem;
 
     & input {
@@ -161,7 +161,7 @@
     }
 
     .label {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       position: absolute;
       bottom: 6px;
       border: none;

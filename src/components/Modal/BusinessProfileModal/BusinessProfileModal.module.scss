@@ -4,12 +4,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var( --main-bg-color);
+  background-color: var(--main-bg-color);
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   color: var(--black);
   border-left: 1px solid var(--black);
   border-right: 1px solid var(--black);
@@ -86,7 +86,7 @@
     }
 
     .formMessage {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-size: 1.125rem;
       text-align: center;
       margin: 30px 0;
@@ -162,12 +162,12 @@
 
 .errorText {
   color: var(--tomato);
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   font-size: 0.8rem;
 }
 .firstStepText {
-  font-family: var(--my-abcdiatypesemi-mono-regular);
-  font-size: 1.125rem;
+  font-family: var(--abcdiatypesemi-mono-regular);
+  font-size: 18px;
   text-align: center;
   margin-top: 40px;
   p {
@@ -179,8 +179,8 @@
   }
 }
 .secondStepText {
-  font-family: var(--my-abcdiatypesemi-mono-regular);
-  font-size: 1.125rem;
+  font-family: var(--abcdiatypesemi-mono-regular);
+  font-size: 18px;
   text-align: center;
   margin-top: 40px;
   p {
@@ -244,12 +244,12 @@
 }
 
 .phoneField {
-  width: 75%;
+  width: 73%;
   margin-left: auto;
 }
 
 .phoneCodes {
-  width: 20%;
+  width: 25%;
 }
 select {
   background-color: var(--spin-light-grey1) !important;
@@ -271,14 +271,7 @@ option {
   background-color: black;
 }
 .add {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--spin-light-grey1);
-  margin: 10;
+
 }
 
 .submit {
@@ -298,10 +291,8 @@ option {
   margin-right: 10px;
 }
 
-
-
 .stepsProgressBar div:not(.current) {
-  background-color: black; 
+  background-color: black;
 }
 
 .stepsProgressBar div.current ~ div {

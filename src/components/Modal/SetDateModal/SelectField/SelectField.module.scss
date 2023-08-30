@@ -7,7 +7,7 @@
   border-radius: 8.4px;
   background-color: var(--main-bg-color);
   size: 6px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   cursor: pointer;
   .typerow {
     label {
@@ -25,7 +25,7 @@
       &::placeholder {
         color: var(--black);
         opacity: 1;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
       }
     }
   }

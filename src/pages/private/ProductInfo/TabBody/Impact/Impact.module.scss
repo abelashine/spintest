@@ -11,11 +11,32 @@
     padding: 14px;
     line-height: 21px;
     font-size: 15px;
-    color: #ffffff;
-
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    color: black;
+    color: var(--black, #0a0b0c);
+    font-family: var(--abcdiatypesemi-mono-regular);
+    font-size: 14px;
+    font-style: normal;
     font-weight: 400;
+    line-height: normal;
+  }
+  .ImpactTexttwo {
+    padding: 14px;
     line-height: 21px;
+    font-size: 15px;
+    color: black;
+    color: var(--black, #0a0b0c);
+    font-family: var(--abcdiatypesemi-mono-regular);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #000;
+    font-family: var(--italianoldstylemtstd-regular);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
   }
   .ImpactItems {
     display: flex;

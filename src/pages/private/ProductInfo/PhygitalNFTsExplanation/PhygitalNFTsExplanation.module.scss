@@ -4,12 +4,10 @@
   justify-content: center;
   align-items: flex-start;
   line-height: 16.6px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
-  color: #ffffff;
-  border-bottom: 1px solid var(--white);
+  font-family: var(--abcdiatypesemi-mono-regular);
+  color: black;
   padding: 0px 0px 20px 16px;
-  margin-bottom: 20px;
-
+  background-color: #D8DBDE;
   @media (min-width: 1280px) {
     padding: 0 35% 20px;
   }
@@ -24,7 +22,7 @@
 
     .header {
       text-align: left;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-weight: 600;
       font-size: 15.5px;
       line-height: 19px;
@@ -40,12 +38,11 @@
       min-width: 37px;
       min-height: 37px;
       border-radius: 50%;
-      border: 1.3px solid #ffffff;
     }
 
     span {
       margin: 0px 5px 0px 15px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-weight: 400;
       font-size: 15.5px;
       line-height: 19px;

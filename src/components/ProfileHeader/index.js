@@ -7,7 +7,7 @@ import yellowMarkCircle from "../../static/icons/yellowMarkCircle.svg";
 import chaticonV3 from "../../static/icons/chaticonV3.svg";
 import plusBtnV1 from "../../static/icons/plusBtnV1.svg";
 import backArrow from "../../static/icons/back-long.png";
-import backArrow2 from "../../static/icons/back-arrow.svg"
+import backArrow2 from "../../static/icons/back-arrow.svg";
 import { profileActions } from "../../actions/profile";
 
 import NotificationsBurger from "../NotificationsBurger";
@@ -36,6 +36,7 @@ const ProfileHeader = ({
   const userInfo = useSelector((state) => state.authReducer.userInfo);
 
   const [userSubscription, setUserSubscription] = useState(false);
+  console.log(isSwitchOpened);
 
   const openUploadSelection = () => {
     setIsUploadSelectionOpened(true);
@@ -83,9 +84,7 @@ const ProfileHeader = ({
         {pathname === `/${viewAs}/following` ||
         pathname === `/${viewAs}/spins` ||
         pathname === `/${viewAs}/profile/chat` ? (
-          <div className={styles.backarrow}>
-            <img width={21} style={{marginTop:7}} src={backArrow} alt="Back arrow" onClick={() => history.goBack()}/>
-          </div>
+          <></>
         ) : (
           <NotificationsBurger
             onClick={() => {
@@ -99,7 +98,7 @@ const ProfileHeader = ({
         )}
 
         {isMenuVisible && <MenuModal onClose={() => setIsMenuVisible(false)} />}
-
+        <div className={styles.profileBorder}></div>
         <div
           className={styles.profileSwitcher}
           onClick={() => {
@@ -108,16 +107,23 @@ const ProfileHeader = ({
             }
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              gap: 3,
-            }}
-          >
-            <span className={styles.profileName}>
-              {!viewAs ? store && store.slug : slug || ""}
+          <div>
+            <span className={styles.profileContainer}>
+              <div className={styles.backArrow}>
+                <img
+                  src={backArrow}
+                  alt="Back arrow"
+                  onClick={() => history.goBack()}
+                />
+              </div>
+              <span className={styles.profileName}>
+                {!viewAs ? store && store.slug : slug || ""}
+              </span>
+              {store && viewAs && viewAs === store.slug && !isPublic && (
+                <div className={styles.arrow}>
+                  <img width={10} src={backArrow2} alt="Back arrow" />
+                </div>
+              )}
             </span>
             {!!isBrand ? (
               <span data-icon="bluemark">
@@ -149,15 +155,12 @@ const ProfileHeader = ({
               <></>
             )}
           </div>
-          {store && viewAs && viewAs === store.slug && !isPublic && (
-            <div className={styles.arrow}>
-              <img width={10}  src={backArrow2} alt="Back arrow" />
-            </div>
-          )}
         </div>
         <SwitchProfile
           isOpened={isSwitchOpened}
-          onClose={() => setIsSwitchOpened(false)}
+          onClose={() => {
+            setIsSwitchOpened(false);
+          }}
         />
 
         <div className={styles.navBar}>

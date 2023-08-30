@@ -3,7 +3,7 @@ import styles from "./SelectGender.module.scss";
 import { useField, Field } from "formik";
 import backArrow from "../../../static/icons/back-arrow.svg";
 import backArrowV3 from "../../../static/icons/back-arrowV3.svg";
-import { businessAccountTypes as  accountTypes} from "../../../static/data/dataForForms" ;
+import { businessAccountTypes as accountTypes } from "../../../static/data/dataForForms";
 import OptionsList from "./OptionsList";
 
 const SelectBusinessTypes = ({ name }) => {
@@ -11,6 +11,7 @@ const SelectBusinessTypes = ({ name }) => {
   const [isFocus, setIsFocus] = useState(false);
   const [options, setOptions] = useState([]);
   const [clicked, setClicked] = useState(false);
+  const [valuereceived, setvalueReceived] = useState("");
   const fieldWrapRef = useRef(null);
 
   useEffect(() => {
@@ -21,7 +22,6 @@ const SelectBusinessTypes = ({ name }) => {
     }
   }, [isFocus]);
 
-  
   useEffect(() => {
     setOptions(accountTypes);
   }, []);
@@ -32,9 +32,10 @@ const SelectBusinessTypes = ({ name }) => {
   };
 
   const onChooseHandler = (value) => {
-    helpers.setValue(value), setClicked(false);
+    helpers.setValue(value);
+    setvalueReceived(value);
+    setClicked(!clicked);
   };
-
   const fieldInvalid = meta.error && meta.touched && !isFocus;
   const arrowBtn = fieldInvalid ? backArrowV3 : backArrow;
   const arrowBtnClass = clicked ? styles.openArrowBtn : styles.arrowBtn;
@@ -49,18 +50,19 @@ const SelectBusinessTypes = ({ name }) => {
         data-invalid={fieldInvalid}
         data-focus={isFocus || correctValue}
         ref={fieldWrapRef}
+        onClick={() => {
+          setvalueReceived("");
+          setClicked(!clicked);
+        }}
       >
-        <Field
-          name={name}
-          className={styles.field}
-          onBlur={onBlurHandler}
-          placeholder={inputPlaceHolder}
-          autoComplete="off"
-          onClick={() => {
-            setClicked(true);
-          }}
-        />
         <span className={styles.label}>Category</span>
+        <br />
+        <span
+          className={styles.child}
+          style={{ position: "absolute", left: "10px" }}
+        >
+          {valuereceived.length > 1 && <span>{valuereceived}</span>}
+        </span>
         <img src={arrowBtn} alt="Arrow" className={arrowBtnClass} />
         {clicked && (
           <OptionsList options={options} onChooseHandler={onChooseHandler} />

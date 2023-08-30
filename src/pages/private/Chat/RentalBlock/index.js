@@ -74,26 +74,17 @@ const RentalBlock = ({
       />
       <div className={styles.RentalBlock__image}>
         <img src={productImage} alt="Product" />
-        <div>
-          <span
-            data-delay={
-              messageType === "rentOneDayDelay" || messageType === "rentOverdue"
-            }
-          >
-            {+day_count || 1} Day {timeStr}
-          </span>
-        </div>
       </div>
       {!me && (
         <button
-          className={styles.RentalBlock__actionBtn}
+          className={styles.actionBtn}
           type="button"
           onClick={givaBackHandler}
           data-delay={
             messageType === "rentOneDayDelay" || messageType === "rentOverdue"
           }
         >
-          Give back
+          GIVE BACK
         </button>
       )}
     </section>

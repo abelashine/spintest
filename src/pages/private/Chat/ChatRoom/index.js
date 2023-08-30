@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Avatar from "../../../../components/Avatar";
+import Dialog from "../../../../pages/private/Chat/Dialog";
 import styles from "./ChatRoom.module.scss";
+
 
 export default ({
   chatRoomId,
@@ -37,6 +39,7 @@ export default ({
               ? `${lastMessage.message.slice(0, 23)}...`
               : lastMessage.message}....
               <div className={styles.hour}>.</div>
+
           </p>
         </div>
       </div>

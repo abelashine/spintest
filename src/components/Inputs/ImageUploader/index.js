@@ -87,7 +87,6 @@ const ImageUploader = ({
     }
   }
 
-  console.log("plus", plus);
   return (
     <label
       className={styles.ImageUploader}
@@ -133,15 +132,52 @@ const ImageUploader = ({
       ) : preview ? (
         <img src={preview} alt="" />
       ) : (
-        <div className={styles.labelText} data-label-text="labelBlock">
-          <img src={plus} width={15} />
-          <br />
-          <span>{placeholder || ""}</span>
-          <br />
-          <span>{props.message || ""}</span>
-          {!props.message &&
-            (meta.touched ? <span>{meta.error}</span> : <div></div>)}
-        </div>
+        <>
+          {props.top ? (
+            <div className={styles.labelTextTop} data-label-text="labelBlock">
+              <br />
+              {props.profile_logo ? (
+                <img
+                  className={styles.imgTopCircle}
+                  src={plus}
+                  width={15}
+                  style={{ marginTop: -15 }}
+                />
+              ) : (
+                <img
+                  className={styles.imgTop}
+                  src={plus}
+                  width={15}
+                  style={{ marginTop: -15 }}
+                />
+              )}
+
+              <span className={styles.imagePlaceholderTop}>
+                {placeholder || ""}
+              </span>
+              <br />
+              <span>{props.message || ""}</span>
+              <br />
+
+              <br />
+              {!props.message &&
+                (meta.touched ? <span>{meta.error}</span> : <div></div>)}
+            </div>
+          ) : (
+            <div className={styles.labelText} data-label-text="labelBlock">
+              <br />
+              <span className={styles.imagePlaceholder}>
+                {placeholder || ""}
+              </span>
+
+              <br />
+              <img src={plus} width={15} style={{ marginTop: 15 }} />
+              <span>{props.message || ""}</span>
+              {!props.message &&
+                (meta.touched ? <span>{meta.error}</span> : <div></div>)}
+            </div>
+          )}
+        </>
       )}
       <input type="file" accept="image/*" onChange={attachImage} />
     </label>

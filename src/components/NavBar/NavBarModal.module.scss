@@ -1,0 +1,117 @@
+.ModalWrap {
+  position: absolute;
+  top: 0;
+  bottom: -200px;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  overflow: auto;
+  top: 0px;
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0.9;
+  }
+}
+
+
+
+.MenuModal {
+  position: absolute;
+  z-index: 1;
+  background-color: #d8dbde;
+  display: flex;
+  flex-wrap: wrap;
+  top: 50px;
+  flex-direction: column;
+  color: var(--black);
+  font-family: var(--abcdiatypesemi-mono-regular);
+  width: 290px;
+  left: 0px;
+  margin-left: 130px;
+  height: 100%;
+
+  transform: translateX(-50%);
+
+  a {
+    text-decoration: none;
+    color: var(--black);
+  }
+  h1 {
+    font-size: inherit;
+    text-align: center;
+    font-weight: normal;
+  }
+  .cancelButton {
+    margin-top: auto;
+  }
+}
+
+.MenuModal > :first-child {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  display: flex;
+  color: #000;
+  text-align: center;
+  font-family: var(--italianoldstylemtstd-regular);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  justify-content: center;
+}
+.MenuModal > *:not(:first-child) {
+  display: flex;
+  padding: 10px 30px;
+  align-items: center;
+  gap: 20px;
+  align-self: stretch;
+  border-bottom: 1px black solid;
+}
+.MenuModalItemContainer {
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+.MenuModalItem {
+  color: #000;
+  text-align: center;
+  font-family: var(--italianoldstylemtstd-regular);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  
+}
+.IconWithTitle {
+  .link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    &__imageWrap {
+      width: 84px;
+      height: 84px;
+      background-color: rgb(33, 33, 38);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 4px;
+      img {
+        width: 50%;
+      }
+      img.smallerimage {
+        width: 45%;
+      }
+      img.smallImg {
+        width: 35%;
+      }
+    }
+  }
+  h1.labelUnderIcon {
+    margin: 5px 0 13px 0;
+  }
+}

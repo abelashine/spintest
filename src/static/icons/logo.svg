@@ -1,7 +1,7 @@
 <svg width="127" height="62" xmlns="http://www.w3.org/2000/svg">
         <g fill="var(--white)" fillRule="evenodd">
           <text
-            fontFamily="var(--my-abcdiatypesemi-mono-regular)"
+            fontFamily="var(--abcdiatypesemi-mono-regular)"
             fontSize="60"
             fontWeight="500"
             transform="translate(-41 -17)"

@@ -1,7 +1,7 @@
 .addInfo {
   margin-bottom: 40px;
   padding-right: 25px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   font-size: 1rem;
 
   .addPhoto {
@@ -44,7 +44,7 @@
       height: 100%;
       border: none;
       padding: 0 0 0 13px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-size: 1rem;
 
       &::placeholder {
@@ -66,7 +66,7 @@
       border-radius: 17px;
       color: var(--white);
       background-color: var(--clear-blue);
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-size: 0.75rem;
       cursor: pointer;
     }

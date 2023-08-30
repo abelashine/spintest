@@ -1,38 +1,61 @@
 .Signup {
+  font-family: var(--abcdiatypesemi-mono-regular);
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   color: var(--black);
   border-left: 1px solid var(--black);
   border-right: 1px solid var(--black);
   overflow: hidden;
   .backArrow {
+    font-family: var(--abcdiatypesemi-mono-regular);
     padding: 15px;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    display: flex;
+    position: absolute;
+    top: 2%;
+    
+  }
+  .top_label {
+    font-family: var(--abcdiatypesemi-mono-regular);
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    top: 4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .signupForm {
+    font-family: var(--abcdiatypesemi-mono-regular);
     width: 309px;
 
     .imageUploader {
+      font-family: var(--abcdiatypesemi-mono-regular);
       width: 156px;
       height: 156px;
     }
     .imageUploaderStepOne {
+      font-family: var(--abcdiatypesemi-mono-regular);
       width: 200px;
       height: 200px;
     }
     .imageUploader,
     .imageUploaderStepOne {
+      font-family: var(--abcdiatypesemi-mono-regular);
       margin: 38px auto 0;
       border-radius: 50%;
       overflow: hidden;
 
       & > label {
+        font-family: var(--abcdiatypesemi-mono-regular);
         border-radius: 50%;
         overflow: hidden;
         background-color: transparent;
@@ -40,12 +63,15 @@
         font-size: 0.875rem;
         border: 2px solid var(--black);
         &[invalid] {
+          font-family: var(--abcdiatypesemi-mono-regular);
           border-color: var(--tomato);
           color: var(--tomato);
         }
         div[data-label-text] {
+          font-family: var(--abcdiatypesemi-mono-regular);
           margin-top: 20px;
           span:first-child {
+            font-family: var(--abcdiatypesemi-mono-regular);
             font-size: 1.7rem;
           }
         }
@@ -53,22 +79,28 @@
     }
 
     .formMessage {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--italianoldstylemtstd-italic);
+      font-family: var(--abcdiatypesemi-mono-regular);
+
       font-size: 1.125rem;
       text-align: center;
       margin: 30px 0;
     }
 
     input[placeholder="City"] {
+      font-family: var(--abcdiatypesemi-mono-regular);
       &::placeholder {
+        font-family: var(--abcdiatypesemi-mono-regular);
         color: black;
         opacity: 1;
       }
     }
 
     label {
+      font-family: var(--abcdiatypesemi-mono-regular);
       margin-bottom: 14px;
       div[data-label-text="labelBlock"] {
+        font-family: var(--abcdiatypesemi-mono-regular);
         flex-direction: column-reverse;
         padding: 0 10%;
         margin-top: 30px;
@@ -76,22 +108,28 @@
     }
 
     .selects {
+      font-family: var(--abcdiatypesemi-mono-regular);
       & > div {
+        font-family: var(--abcdiatypesemi-mono-regular);
         margin-bottom: 14px;
       }
       & > div:last-child {
+        font-family: var(--abcdiatypesemi-mono-regular);
         margin-bottom: 0;
       }
     }
 
     .terms {
+      font-family: var(--abcdiatypesemi-mono-regular);
       margin-top: 20px;
       display: flex;
       align-items: center;
       label {
+        font-family: var(--abcdiatypesemi-mono-regular);
         margin-bottom: 0;
       }
       img {
+        font-family: var(--abcdiatypesemi-mono-regular);
         height: 25px;
         width: 25px;
         margin-right: 10px;
@@ -99,16 +137,19 @@
     }
 
     .termsLink {
+      font-family: var(--abcdiatypesemi-mono-regular);
       text-decoration: none;
       color: black;
     }
 
     button {
+      font-family: var(--abcdiatypesemi-mono-regular);
       margin-top: 32px;
     }
   }
 
   .stepsProgressBar {
+    font-family: var(--abcdiatypesemi-mono-regular);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -116,6 +157,7 @@
   }
 
   .stepsProgressBar div {
+    font-family: var(--abcdiatypesemi-mono-regular);
     width: 26px;
     height: 2px;
     background-color: var(--grey);
@@ -123,44 +165,52 @@
   }
 
   .stepsProgressBar div.current {
+    font-family: var(--abcdiatypesemi-mono-regular);
     background-color: black;
   }
   .stepsProgressBar div.filled {
+    font-family: var(--abcdiatypesemi-mono-regular);
     background-color: black;
   }
   .stepsProgressBar div.notfilled {
-    background-color: #ACB4BC;
-  } .stepsProgressBar div.what {
+    font-family: var(--abcdiatypesemi-mono-regular);
+    background-color: #acb4bc;
+  }
+  .stepsProgressBar div.what {
+    font-family: var(--abcdiatypesemi-mono-regular);
     background-color: red;
   }
-
- 
 }
 
 .Header {
+  font-family: var(--abcdiatypesemi-mono-regular);
   align-self: stretch;
   align-items: flex-start;
-  margin-top: 10px;
+  // margin-top: 10px;
   height: 70px;
   padding-top: 10px;
   .logoTopImg {
+    font-family: var(--abcdiatypesemi-mono-regular);
     width: 55px;
   }
 }
 
 .errorText {
+  font-family: var(--abcdiatypesemi-mono-regular);
   color: var(--tomato);
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   font-size: 0.8rem;
 }
 .firstStepText {
-  font-family: var(--my-abcdiatypesemi-mono-regular);
-  font-size: 1.125rem;
+  font-family: var(--abcdiatypesemi-mono-regular);
+  font-size: 18px;
   text-align: center;
   margin-top: 40px;
   p {
+    font-family: var(--abcdiatypesemi-mono-regular);
     margin: 0;
     span {
+      font-family: var(--abcdiatypesemi-mono-regular);
       color: #239eff;
       word-break: break-all;
     }
@@ -168,17 +218,19 @@
 }
 
 .inputContainerDiv {
+  font-family: var(--abcdiatypesemi-mono-regular);
   position: relative;
 }
 
-.top_label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .connect_logo {
   width: 100px;
 }
 .emailMessage {
+  font-family: var(--abcdiatypesemi-mono-regular);
   color: #5858ed !important;
+  font-size: 14px;
+}
+.emailMessage1 {
+  font-family: var(--abcdiatypesemi-mono-regular);
+  font-size: 14px;
 }

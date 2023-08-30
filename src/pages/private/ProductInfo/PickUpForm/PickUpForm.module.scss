@@ -32,20 +32,24 @@
         width: 100%;
       }
     }
-    #pay-with-crypto{
+    #pay-with-crypto {
       width: 357px !important;
-    height: 55px !important;
-    cursor: pointer;
+      height: 55px !important;
+      cursor: pointer;
     }
   }
 
-  #pay-with-crypto{
+  #pay-with-crypto {
     width: 357px !important;
     height: 55px !important;
     cursor: pointer;
   }
-  .crypto-pay-bannerr{
+  .crypto-pay-bannerr {
     background-color: red;
   }
-
+  .payButton {
+    border-radius: 8px !important;
+    background: #5858ed;
+    color: white !important;
+  }
 }

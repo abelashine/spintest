@@ -80,9 +80,14 @@ const Vault = ({ slug }) => {
   return (
     <section className={styles.Vault}>
       <header className={styles.header}>
-        <h3 className={styles.mainTitle}>VAULT</h3>
         {wardrobeProducts && (
-          <span className={styles.piecesAmount}>
+          <span
+            className={
+              wardrobeProducts.length == 0
+                ? styles.piecesAmountEmpty
+                : styles.piecesAmount
+            }
+          >
             ({wardrobeProducts.length}
             {wardrobeProducts.length > 1 ? "NFTs" : "NFT"})
           </span>

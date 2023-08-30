@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useRouteMatch, Link, useHistory } from "react-router-dom";
 import { Mixpanel } from "../../../services/Mixpanel";
@@ -28,17 +28,19 @@ import { profileActions } from "../../../actions/profile";
 import { authActions } from "../../../actions/auth";
 import { errorsActions } from "../../../actions/errors";
 import routes from "../../../routes";
-import SpinLogo from "../../../static/images/logo/spinByLablacoLogoWhite.svg";
-import lablacoLogo from "../../../static/images/logo/lablacoLogo.svg";
+import SpinLogo from "../../../static/images/logo/spin-connect-icon.png";
 import { ReactComponent as ShareButton } from "../../../static/icons/shareButton.svg";
-import qrCodeIcon3 from "../../../static/icons/qrCodeIcon3.svg";
-import ARIcon from "../../../static/icons/ARIcon.svg";
-import backArrow from "../../../static/icons/back-arrow.svg";
+import qrCodeIcon3 from "../../../static/icons/QR.png";
+import ARIcon from "../../../static/icons/AR2.png";
+import backArrow from "../../../static/icons/back-long.png";
 import backArrowV2 from "../../../static/icons/back-arrowV2.svg";
 import nextArrowV2 from "../../../static/icons/next-arrowV2.svg";
+import hash from "../../../static/icons/hash.png";
 import yellowMarkCircle from "../../../static/icons/yellowMarkCircle.svg";
 import followiconV1 from "../../../static/icons/followiconV1.svg";
+import memory from "../../../static/icons/memories.png";
 import chaticonV1 from "../../../static/icons/chaticonV1.svg";
+import increaseDecrease from "../../../static/icons/increase-decrease.png";
 import { ReactComponent as MoodboardIcon } from "../../../static/icons/moodboardicon.svg";
 
 import MyWalletModal from "../../../components/Modal/MyWalletModal";
@@ -46,6 +48,7 @@ import NewCardModal from "../../../components/Modal/NewCardModal";
 import ShippingAddressModal from "../../../components/Modal/ShippingAddressesModal";
 import NewShippingAddressModal from "../../../components/Modal/NewShippingAddressModal";
 import TabsGroup from "../../../components/TabsGroup";
+import TabsGroupTwo from "../../../components/TabsGroupTwo";
 import TabBody from "./TabBody";
 import Map from "../../../components/Map";
 import Avatar from "../../../components/Avatar";
@@ -58,6 +61,7 @@ import SellSwapItem from "../../../components/Modal/SellSwapItem";
 import PickUpForm from "./PickUpForm";
 import HomeDeliveryForm from "./HomeDeliveryForm";
 import QrModal from "./QrModal";
+
 import ProductTypeModal from "./ProductTypeModal";
 import ClipBoardCopied from "../../../components/ClipBoardCopied";
 import ButtonContainer from "./ButtonContainer";
@@ -65,18 +69,9 @@ import { useStripe } from "@stripe/react-stripe-js";
 import { checkTkBckR } from "./helpers";
 import PhygitalNFTsExplanation from "./PhygitalNFTsExplanation";
 import { getMemoriesToRender } from "../../../components/Modal/ModalMemories/helpers";
-import { Helmet } from 'react-helmet';
-
-const CheckMark = () =>
-  <svg style={{ width: "100%", maxWidth: 16, marginRight: 5, marginLeft: 5 }} viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-    <g transform="translate(.4 .5)" fill="none" fillRule="evenodd">
-      <ellipse fill="#239EFE" cx="7.1" cy="6.9" rx="7.1" ry="6.9" />
-      <path
-        d="M9.3 5l.5.5a.6.6 0 010 .8L7.2 8.8l-.4.4-.2.1h-.2L6 9.2 4.3 7.6a.6.6 0 010-.9l.4-.4c.3-.2.6-.2.9 0l.8.8 2.1-2c.2-.2.6-.2.8 0z"
-        fill="#FFF"
-      />
-    </g>
-  </svg>
+import { Helmet } from "react-helmet";
+import arrowIcon from "../../../static/icons/ARROW ICON.svg";
+import blueIcon from "../../../static/icons/blue-3.png";
 
 export default ({ isPublic, location: { state, pathname } }) => {
   // FIXME: REMOVE THIS SHIT
@@ -156,12 +151,12 @@ export default ({ isPublic, location: { state, pathname } }) => {
 
   //Carousel Custom Arrows
   const arrowStyles = {
-    position: 'absolute',
+    position: "absolute",
     zIndex: 1,
-    top: 'calc(50% - 15px)',
+    top: "calc(50% - 15px)",
     width: 30,
     height: 30,
-    cursor: 'pointer',
+    cursor: "pointer",
     border: "none",
     background: "none",
     padding: 0,
@@ -170,18 +165,21 @@ export default ({ isPublic, location: { state, pathname } }) => {
   const arrowImgStyles = {
     width: 8,
     height: 14,
-  }
+  };
 
   const arrowParent = {
-    position: 'relative',
-  }
+    position: "relative",
+  };
   const [isProductTypeModal, setIsProductTypeModal] = useState(false);
 
   //[Leo - 2210191101] to get access selected checkout product type from ProductTypeModel component
-  const [selectedProductCheckOutType, setSelectedProductCheckOutType] = useState("");
+  const [
+    selectedProductCheckOutType,
+    setSelectedProductCheckOutType,
+  ] = useState("");
   const setChosenCheckOutType = (messageType) => {
     setSelectedProductCheckOutType(messageType);
-  }
+  };
 
   const pageDescription = `@${productInfo?.slug} • Join SPIN and experience curated Web3 marketplace for phygital Fashion, Art and Architecture.`;
   // useEffect hooks start
@@ -235,8 +233,7 @@ export default ({ isPublic, location: { state, pathname } }) => {
   useEffect(() => {
     if (match.path === routes.checkoutProduct) {
       setIsOrderDetailsOpened(true);
-    }
-    else {
+    } else {
       setIsOrderDetailsOpened(false);
     }
   }, [match]);
@@ -284,10 +281,9 @@ export default ({ isPublic, location: { state, pathname } }) => {
     if (productInfo && productInfo.digital_items.length > 0) {
       let genderTemp = "male";
       if (productInfo.gender === "N") {
-        genderTemp = "non-binary"
-      }
-      else if (productInfo.gender === "F") {
-        genderTemp = "female"
+        genderTemp = "non-binary";
+      } else if (productInfo.gender === "F") {
+        genderTemp = "female";
       }
       let index = 0;
       for (let i = 0; i < productInfo.digital_items.length; i++) {
@@ -303,14 +299,13 @@ export default ({ isPublic, location: { state, pathname } }) => {
       //setIosModelLink(`${productInfo.digital_items[index].fbx_model}#callToAction=Go&checkoutTitle=${productInfo.slug}&checkoutSubtitle=Click%20here%20to%20view%20the%20NFT%20details%20on%20SPIN&price=${priceText}}`);
       setIosModelLink(`${productInfo.digital_items[index].fbx_model}`);
     }
-
   }, [productInfo, androidModelLink, iosModelLink]);
 
   useEffect(() => {
     // Kill me
     if (productInfo) {
-      if (selectedProductCheckOutType === 'phygital') {
-        const phygitalStock = productInfo.stocks.find((x) => x.type === '1')
+      if (selectedProductCheckOutType === "phygital") {
+        const phygitalStock = productInfo.stocks.find((x) => x.type === "1");
         if (phygitalStock?.size) {
           setCurrentSize(phygitalStock.size.name);
           setCurrentSizeId(phygitalStock.size.id);
@@ -318,9 +313,9 @@ export default ({ isPublic, location: { state, pathname } }) => {
         } else {
           setAvailableQuantity(phygitalStock?.quantity || 1);
         }
-      } else if (selectedProductCheckOutType === 'digital') {
-        const digitalStock = productInfo.stocks.find((x) => x.type === '2')
-        setAvailableQuantity(digitalStock?.quantity || 1)
+      } else if (selectedProductCheckOutType === "digital") {
+        const digitalStock = productInfo.stocks.find((x) => x.type === "2");
+        setAvailableQuantity(digitalStock?.quantity || 1);
       }
       getProdV2(productInfo, setTotalPrice, setWardrobeItem);
       foreignProfilebrandInfo(productInfo.poster.slug)
@@ -355,23 +350,23 @@ export default ({ isPublic, location: { state, pathname } }) => {
   const [memoriesNumber, setMemoriesNumber] = useState(0);
   useEffect(() => {
     if (productInfo) {
-      getMemoriesToRender(
-        productInfo.slug,
-        setMemories,
-        setMemoriesNumber
-      );
+      getMemoriesToRender(productInfo.slug, setMemories, setMemoriesNumber);
     }
   }, [transactionHistory, productInfo]);
 
   //[Leo - 2210191149] To Persist selected product model type in /checkout/slug state when page reload
   useEffect(() => {
-    setSelectedProductCheckOutType(window.localStorage.getItem('selectedProductCheckOutType'));
+    setSelectedProductCheckOutType(
+      window.localStorage.getItem("selectedProductCheckOutType")
+    );
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem('selectedProductCheckOutType', selectedProductCheckOutType)
+    window.localStorage.setItem(
+      "selectedProductCheckOutType",
+      selectedProductCheckOutType
+    );
   }, [selectedProductCheckOutType]);
-
 
   const fetchCards = () => {
     getProfileCards().then(({ response }) => setCards(response.cards));
@@ -399,7 +394,11 @@ export default ({ isPublic, location: { state, pathname } }) => {
   };
 
   const onSubmit = async (values) => {
-    if (selectedProductCheckOutType === 'phygital' && !productInfo.for_art && !sizeRef.current) {
+    if (
+      selectedProductCheckOutType === "phygital" &&
+      !productInfo.for_art &&
+      !sizeRef.current
+    ) {
       setCurrentSize(null);
       return;
     }
@@ -431,7 +430,7 @@ export default ({ isPublic, location: { state, pathname } }) => {
           product_id: productInfo.id,
           size_id: sizeIdRef.current,
           quantity: quantityRef.current,
-          product_type: selectedProductCheckOutType === 'phygital' ? '1' : '2'
+          product_type: selectedProductCheckOutType === "phygital" ? "1" : "2",
         },
       ];
       resultData.shippingCost = 0.0;
@@ -529,10 +528,10 @@ export default ({ isPublic, location: { state, pathname } }) => {
       follow(productInfo.poster.slug).then(() => setIsFollowing(true));
   };
 
-  const calculateQuantityByType = (stocks, initial=false) => {
+  const calculateQuantityByType = (stocks, initial = false) => {
     let quantities = {
       phygital: 0,
-      digital: 0
+      digital: 0,
     };
     for (let item of stocks) {
       if (item.type === "1") {
@@ -550,7 +549,7 @@ export default ({ isPublic, location: { state, pathname } }) => {
       }
     }
     return quantities;
-}
+  };
 
   const onFollowHandler = () => {
     if (!isAuthenticated) {
@@ -562,15 +561,17 @@ export default ({ isPublic, location: { state, pathname } }) => {
       setDialogConnectionHandler(history, userInfo, profileInfo);
     }
   };
-  const followBtnText = isFollowing ? "Chat" : "Follow";
+  const followBtnText = isFollowing ? "MESSAGE" : "FOLLOW";
   const followBtnImg = isFollowing ? chaticonV1 : followiconV1;
 
-  const priceText = `${productInfo?.currency?.symbol || "€"}${productInfo?.for_rent
-    ? productInfo?.price_per_day.toFixed(2)
-    : productInfo?.price.toFixed(2)
-    }`;
-  const digitalPriceText = `${productInfo?.currency?.symbol || "€"}${productInfo?.digital_price?.toFixed(2)
-    }`;
+  const priceText = `${productInfo?.currency?.symbol || "€"}${
+    productInfo?.for_rent
+      ? productInfo?.price_per_day.toFixed(2)
+      : productInfo?.price.toFixed(2)
+  }`;
+  const digitalPriceText = `${
+    productInfo?.currency?.symbol || "€"
+  }${productInfo?.digital_price?.toFixed(2)}`;
   const priceTitleText = productInfo?.for_rent
     ? "NFT prices per day"
     : "NFT prices and quantities";
@@ -601,13 +602,8 @@ export default ({ isPublic, location: { state, pathname } }) => {
           content="width=device-width, initial-scale=1, maximum-scale=1"
         />
         <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="description"
-          content={pageDescription}
-        />
-        <meta 
-          property="og:image" content={productInfo?.image?.url} 
-        />
+        <meta name="description" content={pageDescription} />
+        <meta property="og:image" content={productInfo?.image?.url} />
         <meta
           name="keywords"
           content="circularfashionspin, fashiontech, sustainablefashion, sustainablefashion, circulareconomy,
@@ -616,7 +612,7 @@ export default ({ isPublic, location: { state, pathname } }) => {
         />
       </Helmet>
       {/*MODALS start*/}
-      {log("Product Info : " + JSON.stringify(productInfo))};
+      {log("Product Info : " + JSON.stringify(productInfo))}
       <GiveBackQRModal
         isOpened={isGiveBackModalOpened}
         productInfo={{
@@ -789,27 +785,87 @@ export default ({ isPublic, location: { state, pathname } }) => {
             className={styles.backBtn}
             type="button"
           >
-            <img src={backArrow} alt="Back arrow" />
+            <img
+              src={backArrow}
+              className={styles.backArrowImage}
+              alt="Back arrow"
+            />
           </button>
         )}
 
         <img src={SpinLogo} alt="SpinLogo" className={styles.logoImg} />
-        <div className={`${styles.profileCoins}`}>
+        <div></div>
+        {/*  share button here <div className={`${styles.profileCoins}`}>
           <ShareButton
-            onClick={onShareHandler}
             className={styles.shareButton}
           />
+        </div> */}
+      </div>
+      <div className={styles.CompanyContainer}>
+        <div className={styles.CompanyInfo}>
+          <div className={styles.CompanyLogo}>
+            <Link to={`/${productInfo.poster.slug}/profile`}>
+              <Avatar
+                url={productInfo.poster.image.url}
+                isBrand={
+                  false
+                  //productInfo.poster.business_role
+                }
+                isSmall
+              />
+            </Link>
+          </div>
+          <div className={styles.CompanyText}>
+            <div className={styles.CompanyName}>{productInfo.name}</div>
+            <div className={styles.CompanyTag}>
+              <Link
+                style={{ display: "flex" }}
+                to={`/${productInfo.poster.slug}/profile`}
+              >
+                {`@${productInfo.poster.slug}`}
+                {productInfo.poster.business_role && (
+                  <img
+                    src={blueIcon}
+                    width={14}
+                    height={14}
+                    style={{ marginLeft: 10 }}
+                  />
+                )}
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.ViewContainer}>
+          {(!userInfo || userInfo.slug !== productInfo.poster.slug) && (
+            <button
+              className={`${styles.ActionButtons__followingBtn} ${
+                isFollowing && styles.ActionButtons__chatBtn
+              }`}
+              onClick={onFollowHandler}
+            >
+              <span>{followBtnText}</span>
+              {/* <img src={followBtnImg} alt={`${followBtnText} icon`} /> */}
+            </button>
+          )}
+          <button
+            onClick={()=>{
+              setIsQROpened(true);
+            }}
+            className={styles.ActionButtons__shareBtn}
+          >
+            <span>SHARE</span>
+          </button>
         </div>
       </div>
 
       {/* ----------Component to Work on Model Viewer start------------------- */}
 
-
       <div className={styles.Carausel}>
         <Carousel
           useKeyboardArrows
           swipeable={false}
-          //emulateTouch
+          // emulateTouch
           showStatus={false}
           showArrows={true}
           showThumbs={false}
@@ -820,10 +876,9 @@ export default ({ isPublic, location: { state, pathname } }) => {
                 type="button"
                 onClick={onClickHandler}
                 title={label}
-                style={{ ...arrowStyles, left: 'calc(50% - 165px)' }}
+                style={{ ...arrowStyles, left: "calc(50% - 165px)" }}
               >
-                <img src={backArrowV2}
-                  style={arrowImgStyles} />
+                <img src={backArrowV2} style={arrowImgStyles} />
               </button>
             )
           }
@@ -833,15 +888,12 @@ export default ({ isPublic, location: { state, pathname } }) => {
                 type="button"
                 onClick={onClickHandler}
                 title={label}
-                style={{ ...arrowStyles, right: 'calc(50% - 165px)' }}
+                style={{ ...arrowStyles, right: "calc(50% - 165px)" }}
               >
-                <img
-                  src={nextArrowV2}
-                  style={arrowImgStyles} />
+                <img src={nextArrowV2} style={arrowImgStyles} />
               </button>
             )
           }
-
           renderIndicator={(e, isSelected) => (
             <div
               className={`${styles.dot} ${isSelected ? styles.active : ""}`}
@@ -864,8 +916,7 @@ export default ({ isPublic, location: { state, pathname } }) => {
               camera-controls
               auto-rotate
             >
-              <button slot="ar-button" className={styles.CustomARBtn}>
-              </button>
+              <button slot="ar-button" className={styles.CustomARBtn}></button>
             </model-viewer>
           </div>
 
@@ -880,95 +931,113 @@ export default ({ isPublic, location: { state, pathname } }) => {
         </Carousel>
       </div>
 
-      <ProductTypeModal
+      {/* <ProductTypeModal
         productInfo={productInfo}
         isProductTypeModal={isProductTypeModal}
         setIsProductTypeModal={setIsProductTypeModal}
         isPublic={isPublic}
         pathname={pathname}
         setSelectedProductType={setChosenCheckOutType}
-      />
+      /> */}
       {/* ----------Component to Work on Model Viewer end------------------- */}
       {isOrderDetailsOpened ? (
         <div className={styles.orderDetails}>
           <div className={styles.mainTitle}>ORDER DETAILS</div>
-          {productInfo.for_art ? null : 
-            (selectedProductCheckOutType === "phygital" ? (
-              <>
-                <div className={styles.label}>Size</div>
-                <ul className={styles.sizesList}>
-                  {productInfo.out_of_stock
-                    ? "Out of stock"
-                    : productInfo.stocks.filter(item => item.size).map(
-                      ({ size: { name, id }, quantity }, index) =>
-                        quantity > 0 && (
-                          <li
-                            key={index}
-                            className={currentSize === name ? styles.active : ""}
-                            onClick={() => {
-                              setCurrentSize(name);
-                              setCurrentSizeId(id);
-                              setAvailableQuantity(quantity);
-                            }}
-                          >
-                            {name}
-                          </li>
-                        )
-                    )}
-                </ul>
-                {currentSize === null && (
-                  <span className={styles.errorText}>Please, choose one size</span>
-                )}
-              </>
-            ) : (
-              selectedProductCheckOutType === "digital" ? (
-                //[Leo - 2210191344] For the future if we need to add different UI when chosen type is digital
-                <></>
-              ) : (
-                //[Leo - 2210191345] For the future to know when the chosen type is neither phygital or digital, bug maybe?
-                <></>
-              )))
-          }
+          {productInfo.for_art ? null : selectedProductCheckOutType ===
+            "phygital" ? (
+            <>
+              <div className={styles.label}>Size</div>
+              <ul className={styles.sizesList}>
+                {productInfo.out_of_stock
+                  ? "Out of stock"
+                  : productInfo.stocks
+                      .filter((item) => item.size)
+                      .map(
+                        ({ size: { name, id }, quantity }, index) =>
+                          quantity > 0 && (
+                            <li
+                              key={index}
+                              className={
+                                currentSize === name ? styles.active : ""
+                              }
+                              onClick={() => {
+                                setCurrentSize(name);
+                                setCurrentSizeId(id);
+                                setAvailableQuantity(quantity);
+                              }}
+                            >
+                              {name}
+                              <img
+                                className={styles.increaseDecrease}
+                                src={increaseDecrease}
+                              />
+                            </li>
+                          )
+                      )}
+              </ul>
+              {currentSize === null && (
+                <span className={styles.errorText}>
+                  Please, choose one size
+                </span>
+              )}
+            </>
+          ) : selectedProductCheckOutType === "digital" ? (
+            //[Leo - 2210191344] For the future if we need to add different UI when chosen type is digital
+            <></>
+          ) : (
+            //[Leo - 2210191345] For the future to know when the chosen type is neither phygital or digital, bug maybe?
+            <></>
+          )}
           <div className={styles.label}>Quantity</div>
           <ul className={styles.quantityList}>
             {productInfo.out_of_stock
               ? "Out of stock"
               : availableQuantity &&
-              [
-                ...Array(
-                  availableQuantity > 5 ? 6 : availableQuantity
-                ).keys(),
-              ].map((number) => (
-                <li
-                  key={number}
-                  className={
-                    number + 1 === currentQuantity ? styles.active : ""
-                  }
-                  onClick={() => {
-                    setCurrentQuantity(number + 1);
-                    setTotalPrice((number + 1) * productInfo.price + 9);
-                  }}
-                >
-                  {number > 4 ? "+" : number + 1}
-                </li>
-              ))}
+                [
+                  ...Array(
+                    availableQuantity > 5 ? 6 : availableQuantity
+                  ).keys(),
+                ].map((number) => (
+                  <li
+                    key={number}
+                    className={
+                      number + 1 === currentQuantity ? styles.active : ""
+                    }
+                    onClick={() => {
+                      setCurrentQuantity(number + 1);
+                      setTotalPrice((number + 1) * productInfo.price + 9);
+                    }}
+                  >
+                    {number > 4 ? "+" : number + 1}
+
+                    <span>
+                      <img
+                        className={styles.increaseDecrease}
+                        src={arrowIcon}
+                      />
+                    </span>
+                  </li>
+                ))}
           </ul>
           {selectedProductCheckOutType === "phygital" ? (
             <>
               <div className={styles.itemLocation}>
-                <div className={styles.label}>Item location</div>
+                <div className={styles.label}>SHIPPING</div>
+                <div className={styles.label2}>Physical Item Location</div>
                 {log("City" + productInfo.city)}
-                <Map
-                  coordinates={productInfo.city}
-                  photo={productInfo.images[0].url}
-                />
+                <span className={styles.map}>
+                  <Map
+                    coordinates={productInfo.city}
+                    photo={productInfo.images[0].url}
+                  />
+                </span>
               </div>
               <div className={styles.checkoutTabs}>
-                <TabsGroup
+                <TabsGroupTwo
                   tabs={[
                     {
                       name: "pickup_store",
-                      label: "Pick up in store",
+                      label: "PICK UP IN-STORE",
                     },
                   ]}
                   activeTab={activeCheckoutTab}
@@ -980,7 +1049,8 @@ export default ({ isPublic, location: { state, pathname } }) => {
               </div>
             </>
           ) : (
-            <></>)}
+            <></>
+          )}
 
           <div className={styles.currentCheckoutTab}>
             {activeCheckoutTab === "home_delivery" ? (
@@ -1027,50 +1097,6 @@ export default ({ isPublic, location: { state, pathname } }) => {
         </div>
       ) : (
         <>
-          <div className={styles.CompanyContainer}>
-            <div className={styles.CompanyInfo}>
-              <div className={styles.CompanyLogo}>
-                <Link to={`/${productInfo.poster.slug}/profile`}>
-                  <Avatar
-                    url={productInfo.poster.image.url}
-                    isBrand={
-                      false
-                      //productInfo.poster.business_role
-                    }
-                    isSmall
-                  />
-                </Link>
-              </div>
-              <div className={styles.CompanyText}>
-                <div className={styles.CompanyName}>{productInfo.name}</div>
-                <div className={styles.CompanyTag}>
-                  <Link
-                    style={{ display: "flex" }}
-                    to={`/${productInfo.poster.slug}/profile`}
-                  >
-                    {`@${productInfo.poster.slug}`}
-                    {
-                      productInfo.poster.business_role &&
-                      <CheckMark />
-                    }
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.ViewContainer}>
-              {(!userInfo || userInfo.slug !== productInfo.poster.slug) && (
-                <button
-                  className={`${styles.ActionButtons__followingBtn} ${isFollowing && styles.ActionButtons__chatBtn
-                    }`}
-                  onClick={onFollowHandler}
-                >
-                  <span>{followBtnText}</span>
-                  <img src={followBtnImg} alt={`${followBtnText} icon`} />
-                </button>
-              )}
-            </div>
-          </div>
           <div className={styles.ActionButtons}>
             <div className={styles.iconContainer}>
               <img
@@ -1079,7 +1105,7 @@ export default ({ isPublic, location: { state, pathname } }) => {
                 alt="QR Code Icon"
                 onClick={() => setIsQROpened(true)}
               />
-              <span>{" QR"}</span>
+              <span className={styles.iconText}>{" Views"}</span>
             </div>
             <div className={styles.iconContainer}>
               <img
@@ -1087,40 +1113,52 @@ export default ({ isPublic, location: { state, pathname } }) => {
                 src={ARIcon}
                 alt="QR Code Icon"
                 onClick={() => {
-                  const mv = document.getElementById('id-model-viewer');
+                  const mv = document.getElementById("id-model-viewer");
                   //console.log(productInfo.digital_items);
-                  mv.activateAR()
-                }
-                }
+                  mv.activateAR();
+                }}
               />
-              <span>{" AR"}</span>
+              <span className={styles.iconText}>{" XR"}</span>
             </div>
             <div className={styles.iconContainer}>
-              <MoodboardIcon
+              <img
                 className={styles.icon}
+                src={memory}
+                alt="Memories"
                 onClick={() => setIsMemoryModal(true)}
               />
-              <span>
+              <span className={styles.iconText}>
                 {addMagnitude(memoriesNumber)}
                 {" Memories"}
               </span>
             </div>
-            <div className={styles.iconContainer}>
+            {/* <div className={styles.iconContainer}>
               <img className={styles.EyeIcon} src={View} alt="view" />
               <span>
                 {addMagnitude(productInfo.view_count)}
                 {productInfo.view_count === 1 ? " View" : " Views"}
               </span>
-            </div>
+            </div> */}
           </div>
           <div className={styles.MainBody}>
-            <div className={styles.MainText}>PRODUCT DETAILS</div>
+            <div className={styles.titleContainer}>
+              <div className={styles.MainText}>NFT DETAILS</div>
+              <div className={styles.hash}>
+                <img src={hash} />
+              </div>
+            </div>
             <div className={styles.MainTabs}>
-              <TabsGroup
-                activeTab={activeTab}
-                tabs={temporalTabsArray}
-                onTabChange={setTab}
-              />
+              {!isMemoryModal && (
+                <TabsGroup
+                  activeTab={activeTab}
+                  tabs={temporalTabsArray}
+                  onTabChange={setTab}
+                  /* Passes this prop to make a change in the tab if this propery is in tab group
+                     it doesn't render an empty circle
+                  */
+                  productInfo={true}
+                />
+              )}
               <TabBody
                 tab={activeTab}
                 tokenizedBrandInfo={tokenizedBrandInfo}
@@ -1128,48 +1166,77 @@ export default ({ isPublic, location: { state, pathname } }) => {
               />
             </div>
           </div>
-          <PhygitalNFTsExplanation />
           {match.path === routes.product && !productInfo.giveaway && (
             <div className={styles.Price}>
-              <span className={styles.PriceHeader}>{priceTitleText}</span>
               {productInfo?.product_type == 1 ? (
                 <span>
-                  {"Phygital: "}
-                  {priceText}
-                  {` (${productInfo?.currency?.currency})`} <br/>
-                  {
-                    `Phygital available quantity: ${calculateQuantityByType(productInfo?.stocks).phygital}/` +
-                    `${calculateQuantityByType(productInfo?.stocks, true).phygital}\n`
-                  }
+                  <span className={styles.phygital}>
+                    <span className={styles.phygitalTitle}>
+                      {"Phygital [Physical + Digital] "}
+                    </span>
+                    <span className={styles.priceText}>
+                      {priceText} {` (${productInfo?.currency?.currency})`}{" "}
+                      <br />
+                    </span>
+                  </span>
+                  <span className={styles.buyContainer}>
+                    <span className={styles.buyBtn}>
+                      <span className={styles.buyText}>
+                        {`Available Quantity: ${
+                          calculateQuantityByType(productInfo?.stocks).phygital
+                        }/` +
+                          `${
+                            calculateQuantityByType(productInfo?.stocks, true)
+                              .phygital
+                          }\n`}
+                      </span>
+                    </span>
+
+                    <span>
+                      <ButtonContainer
+                        isPublic={isPublic}
+                        setIsProductTypeModal={setIsProductTypeModal}
+                        setIsOrderDetailsOpened={setIsOrderDetailsOpened}
+                        setIsGiveBackModalOpened={setIsGiveBackModalOpened}
+                        openUploadPopup={openUploadPopup}
+                        setIsConfirmDeleteModalOpened={
+                          setIsConfirmDeleteModalOpened
+                        }
+                        isStockFull={isStockFull}
+                        pathname={pathname}
+                      />
+                    </span>
+                  </span>
                 </span>
               ) : null}
+
               {productInfo?.digital_price ? (
                 <span>
-                  {"Digital: "}
-                  {digitalPriceText}
-                  {` (${productInfo?.currency?.currency})`} <br/>
-                  {
-                    `Digital available quantity: ${calculateQuantityByType(productInfo?.stocks).digital}/` +
-                    `${calculateQuantityByType(productInfo?.stocks, true).digital}\n`
-                  }
+                  <span className={styles.digital}>
+                    <span className={styles.phygitalTitle}>{"Digital: "}</span>
+                    <span className={styles.priceText}>
+                      {digitalPriceText}
+                      {` (${productInfo?.currency?.currency})`} <br />
+                    </span>
+                  </span>
+
+                  <span className={styles.buyContainer}>
+                    <span className={styles.buyBtn}>
+                      <span className={styles.buyText}>
+                        {`Digital available quantity: ${
+                          calculateQuantityByType(productInfo?.stocks).digital
+                        }/` +
+                          `${
+                            calculateQuantityByType(productInfo?.stocks, true)
+                              .digital
+                          }\n`}
+                      </span>
+                    </span>
+                  </span>
                 </span>
               ) : null}
             </div>
           )}
-
-          <ButtonContainer
-            isPublic={isPublic}
-            setIsProductTypeModal={setIsProductTypeModal}
-            setIsOrderDetailsOpened={setIsOrderDetailsOpened}
-            setIsGiveBackModalOpened={setIsGiveBackModalOpened}
-            openUploadPopup={openUploadPopup}
-            setIsConfirmDeleteModalOpened={setIsConfirmDeleteModalOpened}
-            isStockFull={isStockFull}
-            pathname={pathname}
-          />
-          <div className={styles.lablacoLogo}>
-            <img src={lablacoLogo} alt="Lablaco Logo" />
-          </div>
         </>
       )}
     </div>
@@ -1177,20 +1244,18 @@ export default ({ isPublic, location: { state, pathname } }) => {
 };
 const log = (variable) => {
   //console.log(variable);
-}
+};
 
 const addMagnitude = (number) => {
   /*
     Adds a Magnitute sign to the number
    */
 
-  const POWERS = [
-    "", "K", "M", "B", "T"
-  ]
+  const POWERS = ["", "K", "M", "B", "T"];
   const STEP = 3;
 
   const powerOfK = Math.floor(Math.ceil(Math.log10(number + 1) - 1) / STEP);
   number = Math.floor(number / Math.pow(10, powerOfK * STEP));
   const result = `${number}${POWERS[powerOfK] || ""}`;
   return result;
-}
+};

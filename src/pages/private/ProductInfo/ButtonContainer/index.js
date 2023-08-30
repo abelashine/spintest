@@ -41,28 +41,32 @@ const ButtonContainer = ({
         (userInfo &&
           !productInfo.in_wardrobe &&
           productInfo.poster.slug !== userInfo.slug)) && (
-            
         <Link
-          to={`${
-            //[Leo - 2210151349] : if the link is /checkoutProduct/${productInfo.slug}, in ProductInfo -> the isOrderDetails set to auto true. useEffect - line 186
-            //[Leo - 2210170158] : changed to /product/${productInfo.slug} as chaging directly into checkout at the click of "Buy" button makes no sense.
-            !userInfo || isPublic ? routes.prelogin : `/product/${productInfo.slug}`
-          }`}
+          // to={`${
+          //   //[Leo - 2210151349] : if the link is /checkoutProduct/${productInfo.slug}, in ProductInfo -> the isOrderDetails set to auto true. useEffect - line 186
+          //   //[Leo - 2210170158] : changed to /product/${productInfo.slug} as chaging directly into checkout at the click of "Buy" button makes no sense.
+          //   !userInfo || isPublic
+          //     ? routes.prelogin
+          //     : `/product/${productInfo.slug}`
+          // }`}
           onClick={() => {
             sessionStorage.setItem("lastUrl", pathname);
-           // [Leo - 2210151343 : to prevent orderdetails appear before user chose phygital/digital product type] *
+            // [Leo - 2210151343 : to prevent orderdetails appear before user chose phygital/digital product type] *
             setIsOrderDetailsOpened(false);
             window.scrollTo(0, 0);
             setIsProductTypeModal(true);
           }}
+          to={`${
+            isPublic ? routes.prelogin : `/checkoutProduct/${productInfo.slug}`
+          }`}
         >
-          <Button color="white" size="large">
+          <button className={styles.buyButton}>
             {productInfo.for_rent
               ? "RENT"
               : productInfo.giveaway
               ? "GET"
               : "BUY"}
-          </Button>
+          </button>
         </Link>
       )}
 

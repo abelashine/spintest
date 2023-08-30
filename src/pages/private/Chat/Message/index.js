@@ -9,6 +9,7 @@ import RentalBlock from "../RentalBlock";
 import ProductSuccess from "../ProductSuccess";
 import Options from "../Options";
 import MessageText from "./MessageText";
+import AvatarDialog from "../../../../components/AvatarDialog";
 
 export const Message = ({
   messageId,
@@ -24,6 +25,7 @@ export const Message = ({
   messageType,
   setWasItPushed,
 }) => {
+  console.log(content);
   const userInfo = useSelector((state) => state.authReducer.userInfo);
   const dispatch = useDispatch();
   const optionsHandler = (status) => {
@@ -58,9 +60,9 @@ export const Message = ({
     <div className={styles.Message}>
       <div className={me ? styles.user_message : styles.interloc_message}>
         {!me && (
-          <figure className={styles.image}>
+          <figure className={isTermSoon ? styles.imageRental :styles.image }>
             <Link to={`/${slug}/profile/`}>
-              <Avatar url={avatar_url} />
+              <AvatarDialog url={avatar_url} />
             </Link>
           </figure>
         )}
@@ -69,11 +71,6 @@ export const Message = ({
           <span className={uvulaClass}></span>
           <div className={styles.content}>
             <MessageText content={content} />
-
-            <div className={styles.slugContainer}>
-              <span className={styles.messageSlug}>@{slug}</span>
-              <span className={me?styles.messageTime:styles.messageTimeUser}>{dateFormatted(date)}</span>
-            </div>
 
             {isProductImg && (
               <ProductSuccess
@@ -91,6 +88,14 @@ export const Message = ({
                 setWasItPushed={setWasItPushed}
               />
             )}
+            <div className={styles.slugContainer}>
+              <span className={styles.messageSlug}>@{slug}</span>
+              <span
+                className={me ? styles.messageTime : styles.messageTimeUser}
+              >
+                {dateFormatted(date)}
+              </span>
+            </div>
 
             {isOptions && requestStatusCode === "0" && (
               <Options optionsHandler={optionsHandler} />

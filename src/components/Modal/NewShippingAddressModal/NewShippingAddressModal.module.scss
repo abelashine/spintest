@@ -67,12 +67,12 @@
     form {
       & > div,
       & > div:first-child {
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
 
         span,
         input[type="text"] {
           width: 100%;
-          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-family: var(--abcdiatypesemi-mono-regular);
           font-size: 1rem;
         }
       }
@@ -83,7 +83,7 @@
 
       span,
       input {
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         font-size: 1rem;
         color: var(--black);
       }
@@ -113,10 +113,10 @@
         width: 140px;
         margin-right: 10px;
         & div {
-          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-family: var(--abcdiatypesemi-mono-regular);
         }
         span {
-          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-family: var(--abcdiatypesemi-mono-regular);
         }
         & > div {
           display: flex;

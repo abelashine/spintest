@@ -106,6 +106,7 @@ const ListItem = ({
         <div className={styles.wardrobeProductInfo}>
           <div className={styles.photoWrap}>
             <div className={styles.wardrobeProductPhoto}>
+            
               <ProductPhotoCard photo={preview_photo} />
             </div>
           </div>
@@ -127,15 +128,15 @@ const ListItem = ({
         (wardrobeProducts[index].for_rent &&
         wardrobeProducts[index].product_poster !== params.slug ? (
           <div className={styles.buttons}>
-            <Button color="blue" size="middle" onClick={giveBackHandler}>
+            <button className={styles.buttonGiveBack} color="black" size="middle" onClick={giveBackHandler}>
               GIVE BACK
-            </Button>
+            </button>
           </div>
         ) : (
           <div className={styles.buttons}>
-            <Button color="white" size="middle" onClick={passonHandler}>
+            <button className={styles.buttonPassOn} color="black" size="middle" onClick={passonHandler}>
               PASS ON
-            </Button>
+            </button>
           </div>
         ))}
 

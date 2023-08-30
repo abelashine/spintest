@@ -1,0 +1,208 @@
+.TabsGroup {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 0.1px solid var(--black);
+  overflow: hidden;
+  color: black;
+  margin-top: 10px;
+  gap: 30px;
+  @media (min-width: 601px) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  & > button {
+    color: var(--black);
+    font-family: var(--italianoldstylemtstd-regular);
+    appearance: none;
+    outline: none;
+    img {
+      opacity: 0.5;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 134px;
+    }
+
+    svg {
+      path {
+        stroke: var(--grey);
+      }
+    }
+
+    &.fill {
+      svg {
+        path {
+          fill: var(--grey);
+        }
+      }
+    }
+
+    &.activeTab {
+      color: white;
+      // background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem;
+      width: 86px;
+      height: 30px;
+
+      &::before {
+        display: block;
+      }
+
+      svg {
+        path {
+          stroke: var(--white);
+        }
+      }
+
+      img {
+        opacity: 1;
+      }
+
+      &.activeTab .innerContainer {
+        @media (min-width: 601px) {
+        }
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+
+      &.activeTab .myLabel {
+        background-color: black;
+        left: 36px;
+        width: 108px;
+        position: relative;
+        z-index: 2;
+        border-radius: 8px !important;
+
+      }
+      &.activeTab .myLabel .icon {
+        position: relative;
+        top: -5px;
+        margin-right: 10px;
+      }
+      &.activeTab .myLabel .labelText {
+        color: var(--white, #e8ebee);
+        text-align: center;
+        font-family: var(--italianoldstylemtstd-regular);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 10px;
+        text-transform: uppercase;
+        position: relative;
+        top: -5px;
+      }
+
+      &.activeTab .circle {
+        background-color: red !important;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        position: absolute;
+        top: 40%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+      }
+
+      &.fill {
+        svg {
+          path {
+            fill: var(--white);
+          }
+        }
+      }
+    }
+
+
+    &.notactiveTab {
+      color: white;
+      // background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.625rem;
+      width: 86px;
+      height: 30px;
+
+      &::before {
+        display: block;
+      }
+
+      svg {
+        path {
+          stroke: var(--white);
+        }
+      }
+
+      img {
+        opacity: 1;
+      }
+
+      &.activeTab .innerContainer {
+        @media (min-width: 601px) {
+        }
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+
+      &.notactiveTab .myLabel {
+        background-color: transparent;
+        left: 36px;
+        width: 108px;
+        position: relative;
+        z-index: 2;
+        border-radius: 8px !important;
+
+      }
+      &.notactiveTab .myLabel .icon {
+        position: relative;
+        top: -5px;
+        margin-right: 10px;
+      }
+      &.notactiveTab .myLabel .labelText {
+        color: var(--black);
+        text-align: center;
+        font-family: var(--italianoldstylemtstd-regular);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 10px;
+        text-transform: uppercase;
+        position: relative;
+        top: -5px;
+      }
+
+      &.notactiveTab .circle {
+        background-color: red !important;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        position: absolute;
+        top: 40%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+      }
+
+      &.fill {
+        svg {
+          path {
+            fill: var(--white);
+          }
+        }
+      }
+    }
+    
+  }
+}
+

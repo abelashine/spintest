@@ -10,18 +10,18 @@ import TopPart from "./TopPart";
 const StepOne = () => {
   const { values, errors, touched } = useFormikContext();
   const email = localStorage.getItem("new_user_email");
+  const modifiedEmail = email.substring(1, email.length - 1);
+
   return (
     <WizardForm.Page>
-    <TopPart />
+      <TopPart />
 
       <div className={styles.firstStepText}>
-        <p>Let's get started!</p>
-        <p>
-          Please choose your profile picture <br />
-          and confirm your email:
-          <br />
-          <span className={styles.emailMessage}>{email}</span>
-        </p>
+        Let's get started! <br />
+        Please choose your profile picture <br />
+        and confirm your email:
+        <br />
+        <span className={styles.emailMessage}>{modifiedEmail}</span>
       </div>
 
       <div className={styles.imageUploaderStepOne}>
@@ -29,7 +29,7 @@ const StepOne = () => {
       </div>
       <div className={styles.terms}>
         <CheckboxBlack name="policy" value={values.policy} />
-        <span>
+        <span className={styles.emailMessage1}>
           I accept the&nbsp;
           <a
             href="https://www.lablaco.com/user-terms"

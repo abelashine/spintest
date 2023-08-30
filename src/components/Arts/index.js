@@ -89,12 +89,6 @@ const Arts = ({ match }) => {
     <section className={styles.Arts} ref={storeRef}>
       <header className={styles.header}>
         <section className={styles.Arts__titleBlock}>
-          <h3 className={styles.mainTitle}>{
-            userInfo?.business_role === "brand" ?
-              "ART"
-              :
-              "ART"
-          }</h3>
           {artsCount > 0 ?
             <span className={styles.Arts__titleBlock_nft}>
               ({artsCount} {artsCount > 1 ?

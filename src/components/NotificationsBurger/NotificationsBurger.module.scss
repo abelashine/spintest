@@ -25,7 +25,7 @@
     font-family: var(--avenir-next-bold);
     font-size: 0.625rem;
     background-color: var(--water-lemon);
-    color: var(--white);
+    color: var(--black);
     border-radius: 50%;
   }
 
@@ -37,11 +37,11 @@
     transform: translate3d(-50%, -50%, 0px);
     height: 6px;
     width: 6px;
-    background-color: var(--white);
+    background-color: var(--black);
     border-radius: 50%;
-    box-shadow: -8px -8px 0 0 var(--white), 0px -8px 0 0 var(--white),
-      8px -8px 0 0 var(--white), -8px 0px 0 0 var(--white),
-      8px 0px 0 0 var(--white), -8px 8px 0 0 var(--white),
-      0px 8px 0 0 var(--white), 8px 8px 0 0 var(--white);
+    box-shadow: -8px -8px 0 0 var(--black), 0px -8px 0 0 var(--black),
+      8px -8px 0 0 var(--black), -8px 0px 0 0 var(--black),
+      8px 0px 0 0 var(--black), -8px 8px 0 0 var(--black),
+      0px 8px 0 0 var(--black), 8px 8px 0 0 var(--black);
   }
 }

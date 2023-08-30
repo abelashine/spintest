@@ -1,5 +1,9 @@
 .TabContent {
   margin-top: 1rem;
+  position: relative;
+  height: 100%; 
+  overflow-y: auto;
+
   a {
     display: block;
     text-decoration: unset;
@@ -9,4 +13,15 @@
     margin-left: 10px;
     margin-right: 70px;
   }
+}
+.TabContent::-webkit-scrollbar {
+  width: 0.5em; 
+}
+
+.TabContent::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.TabContent::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }

@@ -48,43 +48,11 @@ const EmptyBrandTab = ({ tabname }) => {
   }, [userInfo]);
   return (
     <>
-      <div className={styles.EmptyBrandTab}>
-        <img
-          className={styles.EmptyBrandTab__plusIcon}
-          src={plusIcon}
-          alt="Plus icon"
-          onClick={() => {
-            if (userSubscription) {
-              openUploadSelection();
-            } else {
-              dispatch(unsubscribedActions.showUnsubscribedUserModal());
-            }
-          }}
-        />
-        <p className={styles.EmptyBrandTab__inscription}>
-          {placeholderTexts[tabname].one}
-          <br /> {placeholderTexts[tabname].two}
-        </p>
-        <Button
-          color="white"
-          size="extraLarge"
-          onClick={() => {
-            if (userSubscription) {
-              openUploadSelection();
-            } else {
-              dispatch(unsubscribedActions.showUnsubscribedUserModal());
-            }
-          }}
-        >
-          Get started
-        </Button>
+      <div>
+        <div className={styles.EmptyBrandTab}>
+          <div className={styles.EmptyBrandTabTitle}>No items yet. </div>
+        </div>
       </div>
-      {isUploadSelectionOpened && (
-        <UploadSelection
-          role={userInfo?.business_role}
-          onClose={closeUploadSelection}
-        />
-      )}
     </>
   );
 };

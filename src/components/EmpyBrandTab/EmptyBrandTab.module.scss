@@ -1,16 +1,30 @@
 .EmptyBrandTab {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__plusIcon {
-        cursor: pointer;
-    }
-    &__inscription {
-        margin: 40px 0;
-        font-size: 1.125rem;
-    }
-    button{
-        max-width: 420px;
-    }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--black);
+  position: relative;
+  top: 102px;
+  &__plusIcon {
+    cursor: pointer;
+  }
+  &__inscription {
+    margin: 40px 0;
+    font-size: 1.125rem;
+  }
+  button {
+    max-width: 420px;
+  }
+}
+.EmptyBrandTabTitle {
+  color: #9a9d9f;
+  text-align: center;
+
+  /* ABC Diatype Semi-Mono/Body-18 */
+  font-family: var(--abcdiatypesemi-mono-regular);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

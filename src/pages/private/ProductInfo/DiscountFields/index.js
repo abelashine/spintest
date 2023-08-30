@@ -64,9 +64,9 @@ const DiscountFields = () => {
 
   return (
     <section className={styles.DiscountFields}>
-      <h3>Discount</h3>
+      <span className={styles.title}>Discount</span>
       <UploadSelectionInputV2
-        name="discountType"
+        name="Personal Voucher 10%"
         onItemClick={(data) => {
           dispatch(profileActions.setCertainDiscount(data));
         }}
@@ -78,6 +78,7 @@ const DiscountFields = () => {
             name="voucherCode"
             placeholder="Type in voucher code..."
             onChange={onVouchercodeChange}
+            autoComplete="off"
           />
           {isSpinner ? (
             <span className={styles.spinner}>

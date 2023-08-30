@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import styles from "./MenuModal.module.scss";
-import { cross } from "../icons";
-
+import termsIcon from "../../../static/icons/termsIcon.png";
 import SettingsModal from "../SettingsModal";
-import TopIcons from "./TopIcons";
-import MiddleIcons from "./MiddleIcons";
-import BottomIcons from "./BottomIcons";
-import Notifications from "./Notifications";
-import PostMiddleIcons from "./PostMiddleIcons";
+import BussinessBar from "./BusinessBar";
+import logoutIcon from "../../../static/icons/logoutIcon.png";
+import { authActions } from "../../../actions/auth";
+import IndividualBar from "./IndividualBar";
+import settingsIcon from "../../../static/icons/settings.png";
 
 const MenuModal = ({ isOpen, onClose }) => {
   const [isSettingsVisible, setIsSettingsVisible] = useState(false);
@@ -24,7 +24,22 @@ const MenuModal = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const logoutFromProfile = () => {
+    const lastUsersData = JSON.parse(
+      localStorage.getItem("lastUsersDataToRememberLastAccounts")
+    );
+    // deleteUserInfo();
+    localStorage.setItem(
+      "lastUsersDataToRememberLastAccounts",
+      JSON.stringify(lastUsersData)
+    );
+    history.push("/login");
+    dispatch(authActions.logout());
+  };
   const menuModalRef = useRef(null);
+
   useEffect(() => {
     if (!userInfo.business_role) {
       menuModalRef.current.style.maxWidth = "280px";
@@ -45,16 +60,39 @@ const MenuModal = ({ isOpen, onClose }) => {
   return (
     <div className={styles.ModalWrap}>
       <div className={styles.MenuModal} ref={menuModalRef}>
-        <button className={styles.closeButton} type="button" onClick={onClose}>
-          {cross}
-        </button>
-        <TopIcons onClose={onClose} />
-        <MiddleIcons />
-        <PostMiddleIcons />
-        <BottomIcons setIsSettingsVisible={setIsSettingsVisible} />
+        <div>MENU</div>
+
+        {!!userInfo?.business_role ? <BussinessBar /> : <IndividualBar />}
+        <div className={styles.MenuModalItemContainer}>
+          <img src={termsIcon} />
+          <a
+            href="https://spin.fashion/connect"
+            className={styles.MenuModalItem}
+          >
+            TERMS
+          </a>{" "}
+        </div>
+        <div
+          className={styles.MenuModalItemContainer}
+          onClick={() => {
+            setIsSettingsVisible(true);
+          }}
+        >
+          <img src={settingsIcon} />
+          <span className={styles.MenuModalItem}>SETTINGS</span>
+        </div>
+
+        <div className={styles.MenuModalItemContainer2}>
+          <img src={logoutIcon} />
+          <span
+            className={styles.MenuModalItem}
+            onClick={logoutFromProfile}
+         
+          >
+            LOGOUT
+          </span>
+        </div>
       </div>
-      {/* TODO: the string futher is commented, because there isn't respective logic anywhere - this is in future plans */}
-      {/* <Notifications /> */}
       <div className={styles.ModalWrap__overlay}></div>
     </div>
   );

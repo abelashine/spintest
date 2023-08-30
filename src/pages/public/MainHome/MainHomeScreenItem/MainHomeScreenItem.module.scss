@@ -1,10 +1,9 @@
 .HomeScreenItem {
-
   .container {
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     border-radius: 20px;
-    background: white;
+    background: #e8ebee;
     margin-right: 20px;
     display: flex;
     justify-content: center;
@@ -17,14 +16,14 @@
   }
 
   .title {
+    color: var(--black, #0a0b0c);
     text-align: center;
-    color: white;
-    padding-right: 20px;
-    margin-top: 11px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
-    font-size: 14px;
+    font-family: var(--abcdiatypesemi-mono-regular);
+    font-size: 10px;
+    font-style: normal;
     font-weight: 400;
-    line-height: 18px;
+    line-height: normal;
+    margin-top: 10px;
   }
 
   .image {

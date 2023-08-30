@@ -1,0 +1,150 @@
+.ProfileHeader {
+  @media (min-width: 602px) {
+    position: relative;
+    top: 20px;
+
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--abcdiatypesemi-mono-regular);
+  color: #0a0b0c;
+
+  .profileBorder{
+    width: 398px;
+    height: 1px;
+    position: absolute;
+    top: 26px;
+    border-bottom:1px solid black ;
+  }
+
+  .chatIcon {
+    margin-left: 1.2rem;
+    position: relative;
+    .underChatRedDot {
+      width: 5px;
+      height: 5px;
+      background-color: red;
+      position: absolute;
+      left: 12px;
+      top: 22px;
+      border-radius: 50%;
+    }
+  }
+  .profileSwitcher {
+    display: flex;
+    align-items: right;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+
+    left: 110px;
+    top: 1%;
+    transform: translateX(-50%);
+
+    .profileContainer {
+    }
+    .profileName {
+      position: relative;
+      font-size: 18px;
+      font-family: var(--abcdiatypesemi-mono-medium);
+      word-break: initial;
+      width: 130px;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+  }
+
+  .navBar {
+    display: none;
+    margin-right: 19px;
+
+    & > button,
+    & > a button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      background: var(--white);
+      border-radius: 50%;
+      border: 0.5px solid var(--white);
+      cursor: pointer;
+
+      &.uploadButton {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        margin-right: 20px;
+      }
+
+      &.avatarButton {
+        overflow: hidden;
+        img {
+          width: 100%;
+          border-radius: 50%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    & > div {
+      right: 92px;
+      z-index: 1;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding-top: 74px;
+
+      &[class^="UploadProduct"],
+      &[class^="UploadPhoto"] {
+        z-index: 2;
+        padding-top: 19px;
+      }
+
+      & > button {
+        width: 368px;
+        margin-right: 68px;
+      }
+    }
+  }
+
+  .profileCoins {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &.hidden {
+      visibility: hidden;
+    }
+
+    @media (min-width: 1280px) {
+      display: none;
+    }
+
+    .coinsAmount {
+      margin-right: 7px;
+      font-size: 0.8125rem;
+    }
+  }
+}
+.backArrow {
+  position: relative;
+  margin-top: -8px;
+  
+  
+}
+@media (min-width: 601px) {
+  .backArrow {
+    display: none;
+    
+    
+  }
+}

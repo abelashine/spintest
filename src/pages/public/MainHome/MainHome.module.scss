@@ -1,22 +1,32 @@
 .HomeRedesign {
-
   .main {
-    margin: 0 auto 50px;
-    max-width: 550px;
-
+    margin: 0 auto 550px;
   }
 
   .title {
-    color: white;
-    font-weight: 200;
-    margin: 5px 10px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
-    @media (max-width: 768px) {
-      margin: 3px 20px;
-      transition: ease 0.5s;
-    }
+    color: black;
+    font-family: var(--italianoldstylemtstd-regular);
+    color: var(--black, #0a0b0c);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
   }
-
+  .titleDescribtion {
+    color: var(--black, #0a0b0c);
+    font-family: var(--abcdiatypesemi-mono-regular);
+    margin-left: 20px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
   .row {
     display: flex;
     width: 200px;
@@ -61,10 +71,9 @@
     color: white;
     padding-right: 20px;
     margin-top: 11px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 18px;
     font-weight: 400;
     line-height: 18px;
   }
-
 }

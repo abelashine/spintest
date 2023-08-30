@@ -3,16 +3,27 @@
   width: 100%;
   flex-direction: column;
   line-height: 16.6px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
-  color: #ffffff;
-
+  font-family: var(--abcdiatypesemi-mono-regular);
+  color: black;
+  position: relative;
+  bottom: -49px;
   @media (min-width: 1280px) {
     padding: 0 35.6%;
   }
-
+  .CompositionTitle {
+    color: var(--black, #0a0b0c);
+    font-family: var(--abcdiatypesemi-mono-medium);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    padding-left: 16px;
+  }
   .CompositionText {
     padding: 16px;
-    font-size: 15.5px;
+    font-size: 14px;
+    font-family: var(--abcdiatypesemi-mono-regular);
 
     @media (min-width: 1280px) {
       padding: 16px 0;
@@ -35,7 +46,7 @@
       height: 43px;
       display: flex;
       align-items: center;
-      margin-bottom: 13px;
+      // margin-bottom: 13px;
       font-size: 1.125rem;
 
       span {

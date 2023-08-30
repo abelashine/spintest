@@ -58,7 +58,7 @@ const StepTwo = () => {
           placeholder="Min 7 characters with a special symbol"
         />
         {passwordVisible ? (
-          <EyeOffIcon fillColor={errors?.password ? "tomato" : "black"} />
+          <></>
         ) : (
           <EyeIcon fillColor={errors?.password ? "tomato" : "black"} />
         )}

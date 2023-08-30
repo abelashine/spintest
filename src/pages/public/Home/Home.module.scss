@@ -12,7 +12,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     flex-grow: 1;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 36px;
     // overflow: none;
 
@@ -213,7 +213,7 @@
         position: relative;
         top: 100%;
         opacity: 0;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         font-size: 21px;
         transition: all ease 0.3s;
         text-align: left !important;

@@ -1,5 +1,5 @@
-import React, { useState, useEffect }  from "react";
-import {useParams} from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styles from "./Composition.module.scss";
 import sustainable_materials from "../../../../../static/icons/sustainable_materials.svg";
@@ -8,6 +8,7 @@ import fair_working_conditions from "../../../../../static/icons/fair_working_co
 import innovative_processing from "../../../../../static/icons/innovative_processing.svg";
 import markiconV1 from "../../../../../static/icons/markiconV1.svg";
 import { getSizesString } from "../../helpers";
+import PhygitalNFTsExplanation from "../../PhygitalNFTsExplanation";
 
 const icons = {
   sustainable_materials: (
@@ -27,79 +28,70 @@ const icons = {
 const Composition = () => {
   const { productInfo } = useSelector((state) => state.profileReducer);
   const params = useParams();
-  const {
-    composition,
-    description,
-    product_benefits,
-    stocks
-  } = productInfo;
+  const { composition, description, product_benefits, stocks } = productInfo;
   const sizes = getSizesString(stocks, params);
 
-  const [productType, setProductType] = useState("phygital");   
+  const [productType, setProductType] = useState("phygital");
 
   useEffect(() => {
-    if (productInfo?.product_type == 1)
-    {
+    if (productInfo?.product_type == 1) {
       setProductType("phygital");
-    }
-    else if (productInfo?.product_type == 2)
-    {
+    } else if (productInfo?.product_type == 2) {
       setProductType("digital");
     }
   }, [productInfo, productType]);
 
   return (
     <div className={styles.Composition}>
-      {(!productInfo?.for_art && productInfo?.product_type == 1) && 
-      (
-        <div className={styles.CompositionText}>
-        This item fits true to size, we suggest ordering your regular size.
-        If you are in between two sizes, we recommend choosing the next size up.
+      <div className={styles.CompositionTitle}>DESCRIPTION</div>
+
+      {!productInfo?.for_art && productInfo?.product_type == 1 && (
+        <div>
+          <div className={styles.CompositionText}>
+            This item fits true to size, we suggest ordering your regular size.
+            If you are in between two sizes, we recommend choosing the next size
+            up.
+          </div>
         </div>
       )}
 
-    {(productInfo?.for_art) && 
-      (
-        <div className={styles.CompositionText}>
-        Type : {productType}
-        </div>
+      {productInfo?.for_art && (
+        <div className={styles.CompositionText}>Type : {productType}</div>
       )}
-      <br/>
+      <br />
       <div className={styles.CompositionComponents}>
         {sizes}
         <br />
         <br />
-        Description: 
+        Description:
         <br />
         {description}
         <br />
-
-        {(!productInfo?.for_art) && 
-        <div>
-          <br />
-          Composition: 
-          <br />
-          {composition}
-        </div>
-        }
-
-         {(productInfo?.for_art) && 
-        <div>
-          <br />
-          Height : {productInfo?.height} cm
-          <br />
-          <br />
-          Width : {productInfo?.width} cm
-          <br />
-          <br />
-          Depth : {productInfo?.depth} cm
-          <br />
-          <br />
-          Weight : {productInfo?.weight} kg
-          <br />
-          <br />
-        </div>
-        }        
+        {!productInfo?.for_art && (
+          <div>
+            <br />
+            Composition:
+            <br />
+            {composition}
+          </div>
+        )}
+        {productInfo?.for_art && (
+          <div>
+            <br />
+            Height : {productInfo?.height} cm
+            <br />
+            <br />
+            Width : {productInfo?.width} cm
+            <br />
+            <br />
+            Depth : {productInfo?.depth} cm
+            <br />
+            <br />
+            Weight : {productInfo?.weight} kg
+            <br />
+            <br />
+          </div>
+        )}
       </div>
       <ul className={styles.productBenefits}>
         {product_benefits &&
@@ -119,6 +111,7 @@ const Composition = () => {
               )
           )}
       </ul>
+      <PhygitalNFTsExplanation />
     </div>
   );
 };

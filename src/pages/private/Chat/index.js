@@ -5,6 +5,7 @@ import styles from "./Chat.module.scss";
 import ProfileHeader from "../../../components/ProfileHeader";
 import Avatar from "../../../components/Avatar";
 import TabsGroup from "../../../components/TabsGroup";
+import ChatTabsGroup from "../../../components/ChatTabsGroup";
 import TabContent from "./TabContent";
 
 const Chat = ({ match, isUnreadMessage }) => {
@@ -31,15 +32,17 @@ const Chat = ({ match, isUnreadMessage }) => {
           
         </div>
       </div>
-      <TabsGroup
+
+      <ChatTabsGroup
         activeTab={activeTab}
         tabs={
           [
             // TODO: in here we temporarly commet until getting messages separately will work
-            { name: "All", label: "All", fill: true },
+            { name: "All", label: "ALL", fill: true },
             { name: "DMS", label: "DMS" ,fill:true},
           ]
         }
+        isUnreadMessage={isUnreadMessage}
         onTabChange={setTab}
       />
       <TabContent

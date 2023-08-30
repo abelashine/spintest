@@ -1,32 +1,41 @@
 .summaryInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 51px;
+  margin-bottom: 73px;
+  color: var(--neutrals-spin-black, #0a0b0c);
+
+  /* ABC Diatype Semi-Mono/Body-14 */
+  font-family: var(--abcdiatypesemi-mono-regular);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  div {
     display: flex;
-    justify-content: space-between;
-    margin-top: 51px;
-    margin-bottom: 73px;
+    flex-direction: column;
 
-    div {
-        display: flex;
-        flex-direction: column;
-
-        &:last-child {
-            text-align: right;
-        }
-
-        span {
-            margin-bottom: 4px;
-            font-size: 1rem;
-        }
+    &:last-child {
+      text-align: right;
     }
 
-    .total {
-        margin-top: 8px;
-        margin-right: 8px;
+    span {
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+  }
 
-        span:last-child {
-            font-size: 30px;
-        }
+  .total {
+    margin-top: 8px;
+    margin-right: 8px;
+    position: relative;
+    top:-8px;
+
+    span:last-child {
+      font-size: 22px;
     }
-    .crossedthrough{
-        text-decoration: line-through;
-    }
+  }
+  .crossedthrough {
+    text-decoration: line-through;
+  }
 }

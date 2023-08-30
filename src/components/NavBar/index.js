@@ -3,16 +3,21 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import styles from "./NavBar.module.scss";
 import routes from "../../routes";
-import chaticonV2 from "../../static/icons/Inbox.png";
-import plusBtnV1 from "../../static/icons/plusBtnV1.svg";
+import chaticonV2 from "../../static/icons/inbox.png";
+import upload from "../../static/icons/upload.png";
 import { profileActions } from "../../actions/profile";
 import { foreignProfilebrandInfo } from "../../api";
 import { unsubscribedActions } from "../../actions/errors/unsubscribed";
 import solid_black from "../../static/icons/solid_black.svg";
 import home_logo from "../../static/icons/Home.png";
+import ar_logo from "../../static/icons/AR.png";
 import ModalBackground from "../../static/images/my_world.png";
 import GetWorld from "../Modal/GetWorld";
 import spin from "../../static/icons/spin-v2.png";
+import menu from "../../static/icons/menu.png";
+import NavBarModal from "./NavBarModal";
+import MenuModal from "../Modal/MenuModal";
+import closeImage from "../../static/icons/close.png";
 
 const Navbar = ({ isPublic, setIsUploadSelectionOpened, isUnreadMessage }) => {
   const history = useHistory();
@@ -20,6 +25,7 @@ const Navbar = ({ isPublic, setIsUploadSelectionOpened, isUnreadMessage }) => {
   const { userInfo } = useSelector((state) => state.authReducer);
   const [userSubscription, setUserSubscription] = useState(false);
   const [isOpenInfoModal, setIsOpenInfoModal] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const onToggleModal = () => setIsOpenInfoModal((prev) => !prev);
 
@@ -67,7 +73,23 @@ const Navbar = ({ isPublic, setIsUploadSelectionOpened, isUnreadMessage }) => {
 
   return (
     (isPublic || userInfo) &&
-    history.location.pathname !== "/subscription" && (
+    history.location.pathname !== "/subscription" &&
+    (isMenuVisible ? (
+      <div>
+        <div className={styles.MenuBar}>
+          <img
+            src={closeImage}
+            onClick={() => {
+              setIsMenuVisible(false);
+            }}
+            alt="Close"
+          />
+          <img className={styles.profileImage} src={spin} alt={"spin"} />
+          <div></div>
+        </div>
+        <NavBarModal onClose={() => setIsMenuVisible(false)} />
+      </div>
+    ) : (
       <div className={styles.NavBar}>
         {isOpenInfoModal ? (
           <GetWorld
@@ -81,7 +103,9 @@ const Navbar = ({ isPublic, setIsUploadSelectionOpened, isUnreadMessage }) => {
         )}
         {
           <div className={styles.brand}>
-            <img src={spin} />
+            <Link to={"/"}>
+              <img src={spin} />
+            </Link>{" "}
           </div>
         }
         {
@@ -93,6 +117,28 @@ const Navbar = ({ isPublic, setIsUploadSelectionOpened, isUnreadMessage }) => {
             </Link>{" "}
           </div>
         }
+        {
+          <div className={styles.menu_logo}>
+            <div
+              onClick={() => {
+                setIsMenuVisible(true);
+              }}
+            >
+              <button style={{ borderRadius: "0" }}>
+                <img src={menu} alt={"Menu icon"} />
+              </button>
+            </div>
+          </div>
+        }
+        {!isPublic && userInfo && (
+          <div className={styles.ar_logo}>
+            <Link>
+              <button style={{ borderRadius: "0" }}>
+                <img src={ar_logo} alt="ARicon" />
+              </button>
+            </Link>
+          </div>
+        )}{" "}
         {!isPublic && userInfo && (
           <div className={styles.chat_logo}>
             <Link to={`/${userInfo.slug}/profile/chat`}>
@@ -116,7 +162,7 @@ const Navbar = ({ isPublic, setIsUploadSelectionOpened, isUnreadMessage }) => {
               }
             }}
           >
-            <img src={plusBtnV1} alt="Plus button" />
+            <img src={upload} alt="Plus button" />
           </button>
         )}
         <button className={styles.avatarButton} onClick={avatarHandler}>
@@ -136,7 +182,7 @@ const Navbar = ({ isPublic, setIsUploadSelectionOpened, isUnreadMessage }) => {
           )}
         </button>
       </div>
-    )
+    ))
   );
 };
 export default Navbar;

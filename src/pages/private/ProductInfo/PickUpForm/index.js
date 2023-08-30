@@ -10,7 +10,6 @@ import RentSummarize from "../RentSummarize";
 import { CardSelect } from "../../../../components/Inputs/ProductRequest/CardSelect";
 import DiscountFields from "../DiscountFields";
 import BottomButton from "./BottomButton";
-import lablacoLogo from "../../../../static/images/logo/lablacoLogo.svg";
 
 const PickUpForm = ({
   productInfo,
@@ -87,9 +86,7 @@ const PickUpForm = ({
               currentSize={currentSize}
               onSubmit={onSubmit}
             />
-            <div className={styles.lablacoLogo}>
-              <img src={lablacoLogo} alt="Lablaco Logo" />
-            </div>
+            
           </form>
         )}
       </Formik>

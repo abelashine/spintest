@@ -2,22 +2,83 @@
   position: relative;
   display: flex;
   width: 100%;
-  justify-content: center;
   margin-bottom: 20px;
+
+  .header {
+    font-family: var(--abcdiatypesemi-mono-regular);
+    font-size: 24px;
+    img {
+      width: 55px;
+    }
+  }
+}
+.productInformation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: -10px;
+  left: 0;
+  right: 0;
+  margin-top: 16px;
+  .productSlug {
+    margin-bottom: 18.5px !important;
+    .avatar {
+      margin-top: 18.5px !important;
+      position: relative;
+      right: -30px !important;
+    }
+  }
 
   .closeButton {
     position: absolute;
-    left: -20px;
-    top: 50%;
+    left: 0px;
+    top: 16px;
     transform: translateY(-50%);
     padding: 20px;
+    // display: none;
   }
 
-  .logoToImg {
-    width: 55px;
+  .productSlugText {
+    color: #000;
+    text-align: center;
+    font-family: var(--abcdiatypesemi-mono-regular);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-right: 5px;
+    margin-top: 16px;
+  }
+  .blueMarkIcon {
+    position: relative;
+    top: 2px;
   }
 }
+.productSlugText2 {
+  color: #0a0b0c;
+  font-family: var(--abcdiatypesemi-mono-medium);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  margin-left: 16px;
+}
 .qrcode {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+
   svg {
     width: 100% !important;
   }
@@ -25,11 +86,11 @@
   .name {
     margin-top: 25px;
     margin-bottom: 6px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
   }
 
   .slug {
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     color: rgb(35, 158, 255);
   }
 
@@ -43,17 +104,31 @@
     margin-bottom: 45px;
     color: rgb(35, 158, 255);
     text-decoration: none;
-    word-wrap: break-word;
   }
 
   .product_link__container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-
-      & a {
-        margin-bottom: 0;
-      }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & a {
+      margin-bottom: 0;
+    }
   }
+}
+.downloadButtonBackground {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 40%;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  margin-top: 10px;
+  display: flex;
+  width: 54px;
+  height: 54px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 30px;
+  background: #acb4bc;
 }

@@ -23,7 +23,7 @@
       }
     }
     span {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-size: 24px;
     }
   }
@@ -58,13 +58,13 @@
 
   .mainMessage {
     margin-top: 34px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 22px;
     text-align: center;
     color: var(--main-bg-color);
 
     strong {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
     }
   }
 
@@ -72,12 +72,12 @@
     display: flex;
     align-items: center;
     margin: 50px 27px 50px 19px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 1rem;
     color: var(--main-bg-color);
 
     strong {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
     }
 
     span {
@@ -106,7 +106,7 @@
     background-color: var(--main-bg-color);
     border-radius: 27px;
     color: var(--white);
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 18px;
     letter-spacing: 1.13px;
   }

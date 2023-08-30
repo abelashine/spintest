@@ -8,7 +8,8 @@
   border-radius: 20px;
   background-color: var(--main-bg-color);
   size: 6px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  width: 100%;
+  font-family: var(--abcdiatypesemi-mono-regular);
   cursor: pointer;
   .typerow {
     label {
@@ -27,7 +28,7 @@
       &::placeholder {
         color: var(--black);
         opacity: 1;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
       }
       
     }
@@ -62,7 +63,7 @@
 }
 .arrowImage {
   position: absolute;
-  right: 17px;
+  right: 12px;
   top: 14px;
   cursor: pointer;
 }

@@ -2,9 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
-  color: var(--white);
+  font-family: var(--abcdiatypesemi-mono-regular);
+  color: var(--black);
   padding: 13px 12px 7px;
+  padding-bottom: 20px;
+  height: 50px;
+  border-bottom: 1px black solid;
 
   .chatIcon {
     margin-left: 1.2rem;
@@ -49,7 +52,8 @@
       word-break: break-all;
     }
     .profileImage {
-      width: 45px;
+      width: 54px;
+      height: 20px;
     }
     .arrow {
       transform: rotate(-90deg) translateX(-1px);
@@ -71,9 +75,9 @@
       width: 40px;
       height: 40px;
       padding: 0;
-      background: var(--white);
+      background: var(--black);
       border-radius: 50%;
-      border: 0.5px solid var(--white);
+      border: 0.5px solid var(--black);
       cursor: pointer;
 
       &.uploadButton {

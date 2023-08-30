@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CheckboxBlack.module.scss";
-import checkedCheckbox from "../../../static/icons/checked-checkbox.svg";
-import emptyCheckbox from "../../../static/icons/checkbox.svg";
+import checkedCheckbox from "../../../static/icons/checked-black.svg";
+import emptyCheckbox from "../../../static/icons/rectangle.png";
 import { useField } from "formik";
 import IsDisabledFieldHOC from "../../../utils/HOCs/IsDisabledFieldHOC";
 
@@ -21,21 +21,30 @@ const CheckboxBlack = ({ name, value, isDisabled, inlineStyle }) => {
           className={styles.CheckboxBlack__input}
           name={name}
           checked={value}
-          style={{ borderColor: "black" }} // added style prop
+          style={{ borderColor: "black", width: "10%" }} // added style prop
         />
         {value ? (
-          <img className={styles.CheckboxBlack__img} src={checkedCheckbox} />
+          <div
+            style={{
+              width: "25px",
+              height: "25px",
+              border: "1px solid black",
+              borderRadius: "0.46875rem",
+              margin: "10px",
+            }}
+          >
+            <img style={{padding:5}} className={styles.CheckboxBlack__img} src={checkedCheckbox} />
+          </div>
         ) : (
           <div
             style={{
-              width: "1.5625rem",
-              height: "1.5625rem",
+              width: "25px",
+              height: "25px",
               border: "1px solid black",
               borderRadius: "0.46875rem",
-              margin:"10px"
+              margin: "10px",
             }}
-          >
-          </div>
+          ></div>
         )}
       </label>
     </IsDisabledFieldHOC>

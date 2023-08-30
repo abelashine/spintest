@@ -3,7 +3,7 @@
 
   & > button {
     margin-bottom: 14px;
-    font-family: var(--my-abcdiatypesemi-mono-regular) !important;
+    font-family: var(--abcdiatypesemi-mono-regular) !important;
   }
 
   @media (min-width: 1280px) {
@@ -21,4 +21,11 @@
     font-size: 1.125rem;
     border-radius: 28px;
   }
+}
+.buyButton {
+  width: 134px;
+  height: 43px  ;
+  color: white;
+  border-radius: 8px !important;
+  background: var(--neutrals-spin-black, #0a0b0c);
 }

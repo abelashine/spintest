@@ -9,17 +9,27 @@ import { getTransactionTimeStamp, getMemoryTimestamp } from "../helpers";
 import Avatar from "../../../../../../components/Avatar";
 import ConfirmDeleteMemory from "../../../../../../components/Modal/ConfirmDeleteProductModal";
 import MemoryDescription from "./MemoryDescription";
+import AvatarProfile from "../../../../../../components/AvatarProfile";
 
-const CheckMark = () =>
-    <svg style={{ width: "100%", maxWidth: 16, marginRight: 5, marginLeft: 5 }} viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(.4 .5)" fill="none" fillRule="evenodd">
-            <ellipse fill="#239EFE" cx="7.1" cy="6.9" rx="7.1" ry="6.9" />
-            <path
-                d="M9.3 5l.5.5a.6.6 0 010 .8L7.2 8.8l-.4.4-.2.1h-.2L6 9.2 4.3 7.6a.6.6 0 010-.9l.4-.4c.3-.2.6-.2.9 0l.8.8 2.1-2c.2-.2.6-.2.8 0z"
-                fill="#FFF"
-            />
-        </g>
+const CheckMark = () => (
+  <div
+  className={styles.CheckMark}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="8"
+      height="6"
+      viewBox="0 0 8 6"
+      fill="none"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M7.42029 0.622038C7.583 0.784759 7.583 1.04858 7.42029 1.2113L3.25362 5.37797C3.09091 5.54068 2.82708 5.54068 2.66436 5.37797L0.581022 3.29463C0.418305 3.13192 0.418305 2.86809 0.581022 2.70538C0.743743 2.54267 1.00756 2.54267 1.17028 2.70538L2.95899 4.49409L6.83104 0.622038C6.99375 0.459321 7.25758 0.459321 7.42029 0.622038Z"
+        fill="#E8EBEE"
+      />
     </svg>
+  </div>
+);
 
 const TransactionItem = ({ data, length, index }) => {
   const { userInfo } = useSelector((state) => state.authReducer);
@@ -53,26 +63,23 @@ const TransactionItem = ({ data, length, index }) => {
         className={styles.TransactionItem__avatar}
         id="avatarPlace"
       >
-        <Avatar
-            url={data.avatar}
-            isBrand={
-                //data.blue_check
-                false
-            }
-            isSmall
+        <AvatarProfile
+          url={data.avatar}
+          isBrand={
+            //data.blue_check
+            false
+          }
+          isSmall
         />
       </Link>
       <div className={styles.TransactionItem__data}>
         <div className={styles.TransactionItem__data_commondata}>
           <Link
-              style={{ display: "flex" }}
-              to={`/${data.slug}/profile`}
+            className={styles.TransactionItem__slug}
+            to={`/${data.slug}/profile`}
           >
-              @{data.slug}
-              {
-                  data.blue_check &&
-                    <CheckMark />
-              }
+            @{data.slug}
+            {data.blue_check && <CheckMark />}
           </Link>
           <p>
             {data.address} - {getTransactionTimeStamp(data.timestamp)}
@@ -86,7 +93,7 @@ const TransactionItem = ({ data, length, index }) => {
               className={styles.TransactionItem__data_details}
             >
               <div className={styles.imageWrapper}>
-                {memory.image && <img src={memory.image} alt="memoryImage" />}
+                {memory.image && <img className={styles.memoryImage} src={memory.image} alt="memoryImage" />}
               </div>
               <p>{memory.title}</p>
               <MemoryDescription text={memory.description} />
@@ -107,14 +114,14 @@ const TransactionItem = ({ data, length, index }) => {
             </div>
           ))}
       </div>
-      {data.memories.length > 0 && (
+      {/* {data.memories.length > 0 && (
         <img
           className={imagePosition}
           src={backArrow}
           alt="Back arrow"
           onClick={() => setIsOpen(!isOpen)}
         />
-      )}
+      )} */}
     </section>
   );
 };

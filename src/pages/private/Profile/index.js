@@ -7,7 +7,7 @@ import { follow } from "../../../api";
 import tabs from "./tabs";
 import { profileActions } from "../../../actions/profile";
 
-import ProfileHeader from "../../../components/ProfileHeader";
+import ProfileHeaderHome from "../../../components/ProfileHeaderHome";
 import TabsGroup from "../../../components/TabsGroup";
 import ProfileModal from "../../../components/Modal/ProfileModal";
 import GiveBackConfirmationModal from "../../../components/Modal/GiveBackConfirmationModal";
@@ -156,7 +156,7 @@ const Profile = ({
     localStorage.removeItem("firsttime");
     setShouldRenderPage(false);
   };
-
+  
   return (
     <div className={styles.Profile}>
       <Helmet>
@@ -184,20 +184,22 @@ const Profile = ({
         />
 
         <div>
-          <ProfileHeader
-            viewAs={viewAs()}
-            isPublic={isPublic}
-            profileTab={match.params.activeTab}
-            setIsUploadSelectionOpened={setIsUploadSelectionOpened}
-            isUnreadMessage={isUnreadMessage}
-            isBrand={
-              viewAs && foreignBrandInfo
-                ? foreignBrandInfo?.business_role
-                : userInfo
-                ? userInfo?.business_role
-                : null
-            }
-          />
+          <div className={styles.profileHeader}>
+            <ProfileHeaderHome
+              viewAs={viewAs()}
+              isPublic={isPublic}
+              profileTab={match.params.activeTab}
+              setIsUploadSelectionOpened={setIsUploadSelectionOpened}
+              isUnreadMessage={isUnreadMessage}
+              isBrand={
+                viewAs && foreignBrandInfo
+                  ? foreignBrandInfo?.business_role
+                  : userInfo
+                  ? userInfo?.business_role
+                  : null
+              }
+            />
+          </div>
           {showModal && (
             <BusinessProfileModal
               onClose={closeModal}
@@ -251,11 +253,14 @@ const Profile = ({
           setIsQRCodeOpened={setIsQRCodeOpened}
         />
       </div>
+
       <TabsGroup
         tabs={tabs(viewAs(), userInfo, profileInfo)}
         activeTab={profileInfo?.business_role ? tabKind : usualTabKind}
         onTabChange={changeActivetab}
+        profile={true}
       />
+
       <ActiveTabContent viewAs={viewAs()} />
       {isProfileSettingsOpened && (
         <ProfileModal
@@ -269,7 +274,7 @@ const Profile = ({
           profileInfo={profileInfo}
         />
       )}
-    </div>
+    </div>  
   );
 };
 export default Profile;

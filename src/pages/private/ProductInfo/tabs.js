@@ -3,9 +3,9 @@ export const COMPOSITION = "composition";
 export const IMPACT = "impact";
 
 export const tabsArray = [
-  { name: JOURNEY, label: "Journey", fill: true },
-  { name: COMPOSITION, label: "Details" },
-  { name: IMPACT, label: "Impact" },
+  { name: JOURNEY, label: "JOURNEY", fill: true },
+  { name: COMPOSITION, label: "DETAILS" },
+  { name: IMPACT, label: "IMPACT" },
 ];
 
 // export default { JOURNEY, COMPOSITION, IMPACT };

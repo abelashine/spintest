@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { IMKitApi, IMKitSocket } from "imkit-js-api-v3";
@@ -8,11 +8,17 @@ import { getChatRooms } from "../../../../utils";
 import { chatActions } from "../../../../actions/chat";
 
 import { Message } from "../Message/index";
-import Avatar from "../../../../components/Avatar";
 import ToolTipModal from "../../../../components/Modal/ToolTipModal";
 import backArrow from "../../../../static/icons/back-long.png";
 import addtion from "../../../../static/icons/addition.svg";
 import uparrow from "../../../../static/icons/up-arrow.svg";
+import AvatarDialog from "../../../../components/AvatarDialog";
+import ProfileHeader from "../../../../components/ProfileHeader";
+import Avatar from "../../../../components/Avatar";
+import TabsGroup from "../../../../components/TabsGroup";
+import TabContent from "../TabContent";
+import AvatarDesktop from "../../../../components/AvatarDesktop";
+import ProfileHeaderDesktop from "../../../../components/ProfileHeaderDesktop";
 
 const CHAT_SERVER_URL = process.env.REACT_APP_IMKIT_DEV_CHAT_SERVER_URL;
 const IMKIT_API_CLIENT_KEY = process.env.REACT_APP_IMKIT_DEV_CLIENT_KEY;
@@ -20,7 +26,7 @@ const IMKIT_API_CLIENT_KEY = process.env.REACT_APP_IMKIT_DEV_CLIENT_KEY;
 const Dialog = ({ location: { state } }) => {
   const { userInfo } = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
-  const { all, users } = useSelector((state) => state.chatReducer);
+  const { all, requests, users } = useSelector((state) => state.chatReducer);
   const lastUrl = sessionStorage.getItem("lastUrl");
   const history = useHistory();
   const [message, setMessage] = useState("");
@@ -32,6 +38,7 @@ const Dialog = ({ location: { state } }) => {
   const [wasItPushed, setWasItPushed] = useState("");
   const inputRef = useRef(null);
   const messageContainer = useRef(null);
+  const [activeTab, setTab] = useState("All");
 
   // chat settings start
   const apiConfig = {
@@ -143,101 +150,142 @@ const Dialog = ({ location: { state } }) => {
   };
 
   return (
-    <div className={styles.Dialog}>
-      {!!wasItPushed && (
-        <ToolTipModal onClose={() => setWasItPushed("")} text={wasItPushed} />
-      )}
-      <div className={styles.nav}>
-        <button className={styles.backButton} onClick={backArrowHandler}>
-          <img src={backArrow} alt="back-arrow" />
-        </button>
-        <div className={styles.interlocutor_container}>
-          <div className={styles.interlocutor_avatar}>
-            <Link to={`/${state.interlocutor.slug}/profile/`}>
-              <Avatar url={state.interlocutor.image.url} />
-            </Link>
-          </div>
-          <div className={styles.interlocutor_slug}>
-            @{state.interlocutor.slug}
+    <div className={styles.DialogContainer}>
+      <div className={styles.Chat}>
+        <div className={styles.profileInfo}>
+          <ProfileHeaderDesktop />
+          <div className={styles.profileSummaryWrapper}>
+            <div className={styles.profileSummaryInfo}>
+              <span className={styles.profileFullName}>INBOX</span>
+              <ul className={styles.impactInfo}>
+                {/* The bottom comment shows how much chat does a user have */}
+                {/* <li>{all && all.length} Chats</li> */}
+                {/* TODO: in here we temporarly commet until getting messages separately will work*/}
+                {/* <li>{requestCounter} Requests</li> */}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.chatbox}>
-        <div className={styles.message_container} ref={messageContainer}>
-          {messages.map(
-            ({
-              message,
-              messageType,
-              originalUrl,
-              createdAtMS,
-              sender,
-              id,
-              extra,
-            }) => (
-              <Message
-                key={id}
-                content={message}
-                messageType={messageType}
-                productImage={originalUrl}
-                avatar_url={
-                  String(userInfo?.id) === String(sender?.id)
-                    ? userInfo.image.url
-                    : state.interlocutor.image.url
-                }
-                date={createdAtMS}
-                me={String(userInfo.id) === String(sender?.id)}
-                chatRoomId={chatRoomId}
-                messageId={id}
-                clientId={userInfo.id}
-                extra={extra}
-                slug={
-                  String(userInfo.id) === String(sender?.id)
-                    ? userInfo.slug
-                    : state.interlocutor.slug
-                }
-                setWasItPushed={setWasItPushed}
-              />
-            )
-          )}
-        </div>
-      </div>
-      <div className={styles.message_sending}>
-        <div className={styles.message_sending__wrapper}>
-          <div className={styles.fileUpload}>
-            <img src={addtion} />
-          </div>
 
-          <input
-            type="text"
-            value={message}
-            ref={inputRef}
-            onChange={({ target: { value } }) => {
-              setMessage(value);
-            }}
-            className={styles.sendInput}
-            onKeyDown={(event) => {
-              setIsInputClicked(true);
-              event.key === "Enter" && sendMessage();
-            }}
-            onFocus={(event) => {
-              setIsInputClicked(true);
-            }}
-            onBlur={(event) => {
-              setIsInputClicked(false);
-            }}
-          />
+        <TabsGroup
+          activeTab={activeTab}
+          tabs={[
+            // TODO: in here we temporarly commet until getting messages separately will work
+            { name: "All", label: "ALL", fill: true },
+            { name: "DMS", label: "DMS", fill: true },
+          ]}
+          // isUnreadMessage={isUnreadMessage}
+          onTabChange={setTab}
+        />
+        <TabContent
+          className={styles.tabContent}
+          activeTab={activeTab}
+          users={users}
+          all={all}
+          requests={requests}
+        />
+      </div>
 
-          <button
-            className={
-              !isInputClicked ? styles.sendButtonClicked : styles.sendButton
-            }
-            onClick={sendMessage}
-          >
-            <span>SEND</span>
-            <span className={styles.upArrow}>
-              <img src={uparrow} />
-            </span>
+      <div className={styles.Dialog}>
+        {console.log("one")}
+        {!!wasItPushed && (
+          <ToolTipModal onClose={() => setWasItPushed("")} text={wasItPushed} />
+        )}
+
+        <div className={styles.nav}>
+          <button className={styles.backButton} onClick={backArrowHandler}>
+            <img className={styles.imgBack} src={backArrow} alt="back-arrow" />
           </button>
+          <div className={styles.interlocutor_container}>
+            <div className={styles.interlocutor_avatar}>
+              <Link to={`/${state.interlocutor.slug}/profile/`}>
+                
+
+                <AvatarDesktop url={state.interlocutor.image.url} />
+              </Link>
+            </div>
+            <div className={styles.interlocutor_slug}>
+              @{state.interlocutor.slug}
+            </div>
+          </div>
+        </div>
+        <div className={styles.chatbox}>
+          <div className={styles.message_container} ref={messageContainer}>
+            {messages.map(
+              ({
+                message,
+                messageType,
+                originalUrl,
+                createdAtMS,
+                sender,
+                id,
+                extra,
+              }) => (
+                <Message
+                  key={id}
+                  content={message}
+                  messageType={messageType}
+                  productImage={originalUrl}
+                  avatar_url={
+                    String(userInfo?.id) === String(sender?.id)
+                      ? userInfo.image.url
+                      : state.interlocutor.image.url
+                  }
+                  date={createdAtMS}
+                  me={String(userInfo.id) === String(sender?.id)}
+                  chatRoomId={chatRoomId}
+                  messageId={id}
+                  clientId={userInfo.id}
+                  extra={extra}
+                  slug={
+                    String(userInfo.id) === String(sender?.id)
+                      ? userInfo.slug
+                      : state.interlocutor.slug
+                  }
+                  setWasItPushed={setWasItPushed}
+                />
+              )
+            )}
+          </div>
+        </div>
+        <div className={styles.message_sending}>
+          <div className={styles.message_sending__wrapper}>
+            {/* <div className={styles.fileUpload}>
+            <img src={addtion} />
+          </div> */}
+
+            <input
+              type="text"
+              value={message}
+              ref={inputRef}
+              onChange={({ target: { value } }) => {
+                setMessage(value);
+              }}
+              className={styles.sendInput}
+              onKeyDown={(event) => {
+                setIsInputClicked(true);
+                event.key === "Enter" && sendMessage();
+              }}
+              onFocus={(event) => {
+                setIsInputClicked(true);
+              }}
+              onBlur={(event) => {
+                setIsInputClicked(false);
+              }}
+            />
+
+            <button
+              className={
+                !isInputClicked ? styles.sendButtonClicked : styles.sendButton
+              }
+              onClick={sendMessage}
+            >
+              <span>SEND</span>
+              <span className={styles.upArrow}>
+                <img src={uparrow} />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

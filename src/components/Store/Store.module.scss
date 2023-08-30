@@ -1,5 +1,5 @@
 .Store {
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,12 @@
     }
     &_nft {
       font-size: 10px;
-      color: #ffffff;
+      color: black;
+      @media (min-width: 601px) {
+        position: absolute;
+        left: 5.625%;
+        top: 5%;
+      }
       line-height: 14px;
     }
     h3 {
@@ -25,7 +30,7 @@
     }
     span {
       margin-left: 10px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-size: 0.75rem;
     }
   }
@@ -51,7 +56,7 @@
       display: flex;
       align-items: center;
       margin-left: 15px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-size: 0.75rem;
 
       .starIcon,
@@ -72,8 +77,6 @@
     li {
       border-radius: 10.6px;
       overflow: hidden;
-      background-color: #fff;
-
       div {
         width: 100%;
         padding-top: 100%;
@@ -121,8 +124,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .emptyStoreImage {
+    position: absolute;
+
+    top: 42%;
+  }
   .emptyShopDescription {
     margin-top: 34px;
+    color: #929292;
+    @media (min-width: 601px) {
+      position: absolute;
+      top: 329px;
+    }
+
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 1.125rem;
   }
 }

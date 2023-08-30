@@ -1,9 +1,15 @@
 import React from "react";
 import { ReactComponent as MoodboardIcon } from "../../../static/icons/moodBoardIconNew.svg";
-import storeicon from "../../../static/icons/storeicon.svg";
-import vaulticon from "../../../static/icons/vaulticon.svg";
+import storeicon from "../../../static/icons/store.png";
+import storeiconwhite from "../../../static/icons/store-white.png";
+import vaulticon from "../../../static/icons/vault.png";
+import vaulticonwhite from "../../../static/icons/vault-white.png";
 import worldsicon2 from "../../../static/icons/world_tab_icon_active.svg";
-import shopIcon from "../../../static/icons/shopicon.svg"
+import artefcatIconBlack from "../../../static/icons/artefcatsBlack.png";
+import artefcatIconWhite from "../../../static/icons/artefcatsWhite.png";
+import wearableIconBlack from "../../../static/icons/wearableBlack.png";
+import architectureIconBlack from "../../../static/icons/architectureBlack.png";
+import wearableWhite from "../../../static/icons/wearableWhite.png";
 
 const tabs = (viewAs, store, foreignBrandInfo) => {
   if (
@@ -14,20 +20,30 @@ const tabs = (viewAs, store, foreignBrandInfo) => {
     return [
       {
         name: "art",
-        label: "",
-        icon: <MoodboardIcon />,
-        fill: false,
-      },
-      {
-        name: "store",
-        label: "",
-        icon: <img src={storeicon} alt="storeicon" />,
+        label: "Artefacts",
+        icon: [
+          <img src={artefcatIconBlack} alt="articon" />,
+          <img src={artefcatIconWhite} alt="articonwhit" />,
+        ],
         fill: true,
       },
       {
+        name: "store",
+        label: "WEARABLES",
+        icon: [
+          <img src={wearableIconBlack} alt="werableblack" />,
+          <img src={wearableWhite} alt="wearablewhite" />,
+        ],
+        fill: true,
+      },
+      // architecture
+      {
         name: "architecture",
-        label: "",
-        icon: <img src={worldsicon2} alt="worldsicon" />,
+        label: "architecture",
+        icon: [
+          <img src={architectureIconBlack} alt="werableblack" />,
+          <img src={wearableWhite} alt="wearablewhite" />,
+        ],
         fill: true,
       },
     ];
@@ -36,22 +52,28 @@ const tabs = (viewAs, store, foreignBrandInfo) => {
   return [
     {
       name: "vault",
-      label: "",
-      icon: <img src={vaulticon} alt="vaulticon" />,
+      label: "VAULT",
+      icon: [
+        <img src={vaulticon} alt="vaulticon" />,
+        <img src={vaulticonwhite} alt="vaulticon" />,
+      ],
       fill: true,
     },
     {
       name: "store",
-      label: "",
-      icon: <img src={shopIcon} alt="storeicon" />,
+      label: "STORE",
+      icon: [
+        <img src={storeicon} alt="storeicon" />,
+        <img src={storeiconwhite} alt="storeicon" />,
+      ],
       fill: true,
     },
-    {
-      name: "architecture",
-      label: "",
-      icon: <img src={worldsicon2} alt="worldsicon" />,
-      fill: true,
-    },
+    // {
+    //   name: "architecture",
+    //   label: "",
+    //   icon: <img src={worldsicon2} alt="worldsicon" />,
+    //   fill: true,
+    // },
   ];
 };
 

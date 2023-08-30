@@ -46,23 +46,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
 
     .interlocutorSlug {
       font-size: 16px;
       margin-top: -25px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-medium);
       color: #0A0B0C;
       font-style: normal;
-      font-weight: bold;
 
       line-height: normal;
     }
 
     .lastMessage {
-      margin-top: 10px;
+      margin-top: 14px;
       font-size: 1rem;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-light);
       color: #858585;
     }
     

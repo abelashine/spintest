@@ -6,7 +6,7 @@
   color: var(--black);
   border-radius: 17px;
   border: 1px solid var(--black);
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   font-size: 0.75rem;
   overflow: hidden;
   .field {
@@ -20,7 +20,7 @@
     position: relative;
     z-index: 1;
     color: var(--black);
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     &::placeholder {
       opacity: 1;
     }

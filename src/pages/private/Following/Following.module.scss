@@ -10,7 +10,7 @@
     justify-content: space-between;
     margin: 10px 0 35px;
     padding: 0 12px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
 
     .summary {
       h1 {
@@ -22,7 +22,7 @@
       div {
         display: flex;
         align-items: center;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         font-size: 12.4px;
         span {
           display: flex;
@@ -42,7 +42,7 @@
           display: flex;
           align-items: center;
           margin-bottom: 7px;
-          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-family: var(--abcdiatypesemi-mono-regular);
           font-size: 0.75rem;
 
           .circle {

@@ -24,9 +24,9 @@
     justify-content: space-between;
     margin-bottom: 17px;
     padding: 13px 15px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     color: var(--white);
-    border-bottom: 1px solid var(--white);
+    border-bottom: 0.5px solid black;
 
     a {
       position: relative;
@@ -70,7 +70,8 @@
   }
 
   .Carausel {
-    margin: 11px;
+    border-bottom: 1px solid var(--black, #0a0b0c);
+    padding-bottom: 20px;
     position: relative;
 
     ul[class^="slider"] {
@@ -106,21 +107,21 @@
     justify-content: space-between;
     padding: 20px;
     align-items: center;
+    flex-direction: row;
     img,
     svg {
       cursor: pointer;
     }
+
     &__followingBtn {
-      display: flex;
-      align-items: center;
-      width: 74px;
-      height: 30px;
+      width: 90px;
+      height: 26px;
       border: none;
-      border-radius: 14px;
       font-size: 14px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       cursor: pointer;
-      background-color: var(--white);
+      background-color: #5858ed;
+      border-radius: 4px;
       position: relative;
       span {
         position: absolute;
@@ -137,18 +138,37 @@
     }
     &__chatBtn {
       background-color: transparent;
-      border: 1px solid var(--white);
-      color: var(--white);
+      border: 1px solid var(--black);
+      color: var(--black);
       img {
         top: 6px;
         right: 6px;
       }
     }
     &__shareBtn {
-      transform: scale(2.3);
+      width: 90px;
+      height: 26px;
+      border: none;
+      font-size: 14px;
+      font-family: var(--abcdiatypesemi-mono-regular);
+      cursor: pointer;
+      background-color: transparent;
+      border: 1px black solid;
+      border-radius: 4px;
       position: relative;
-      top: 12px;
-      left: 15px;
+
+      span {
+        position: absolute;
+        left: 10px;
+      }
+      img {
+        width: 18px;
+        height: 18px;
+        padding: 0;
+        position: absolute;
+        top: 4px;
+        right: 3px;
+      }
     }
     @media (min-width: 1280px) {
       width: 400px;
@@ -159,24 +179,24 @@
     }
   }
 
-  .ModelViewerStyle{
+  .ModelViewerStyle {
     max-width: 334px;
     height: 334px;
     margin: 0 auto;
-    background-color: var(--white);
     border-radius: 30.3px;
-    background-position:center;
+    background-position: center;
   }
 
-  .ModelViewerInnerStyle{
+  .ModelViewerInnerStyle {
     width: 100%;
     height: 100%;
     margin: 0;
     border-radius: 0px;
-    background-position:center;
+    background-color: black;
+    background-position: center;
   }
-  
-  .CustomARBtn{
+
+  .CustomARBtn {
     visibility: hidden;
   }
 
@@ -190,11 +210,12 @@
   }
 
   .CarauselImage {
-    width: 100%;
-    max-width: 334px;
-    max-height: 334px;
+    width: 350px;
+    height: 350px;
+    // max-width: 334px;
+    // max-height: 334px;
     margin: 0 auto;
-    padding-top: 100%;
+    // padding-top: 100%;
     border-radius: 30.3px;
     background-repeat: no-repeat;
     background-position: center;
@@ -205,8 +226,10 @@
     display: flex;
     align-items: center;
     width: 100%;
+    padding-bottom: 20px;
     justify-content: space-between;
     margin-bottom: 10px;
+    border-bottom: 1px black solid;
 
     @media (min-width: 1280px) {
       justify-content: center;
@@ -250,27 +273,29 @@
     }
 
     .CompanyName {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
-      color: #ffffff;
+      font-family: var(--abcdiatypesemi-mono-regular);
+      color: black;
     }
 
     .CompanyTag {
       margin-top: 5px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
 
       a {
-        color: var(--white);
+        color: var(--black);
         text-decoration: none;
       }
     }
 
     .ViewContainer {
       display: flex;
-      margin-right: 17px;
-      justify-content: space-between;
-      align-items: center;
-      color: #ffffff;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      flex-direction: column;
+      align-items: flex-end;
+      color: black;
+      margin-right: 20px;
+
+      gap: 6px;
+      font-family: var(--abcdiatypesemi-mono-regular);
 
       @media (min-width: 1280px) {
         margin: 0 60px;
@@ -279,6 +304,7 @@
 
     .FollowButton {
       display: none;
+
       @media (min-width: 1280px) {
         margin-right: 35px;
         display: block;
@@ -290,19 +316,18 @@
     }
   }
 
-  .iconContainer{
+  .iconContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--white);
+    color: var(--black);
 
-    span{
+    span {
       text-align: center;
       margin-top: 10px;
       font-size: 10px;
       line-height: 12px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
-      
+      font-family: var(--abcdiatypesemi-mono-regular);
     }
 
     .icon {
@@ -310,20 +335,29 @@
       height: 25px;
     }
 
-    .EyeIcon{
+    .EyeIcon {
       width: 35px;
       height: 25px;
     }
-
   }
 
   .MainBody {
     display: flex;
     flex-direction: column;
+    align-self: center;
     width: 100%;
-    margin-bottom: 10px;
-    border-top: 1px solid var(--white);
-    border-bottom: 1px solid var(--white);
+    background-color: #e8ebee;
+    border-radius: 20px 20px 0px 0px;
+    padding-bottom: 30px;
+  }
+  .titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .hash {
+    padding-top: 20px;
+    margin-right: 20px;
   }
 
   .MainText {
@@ -331,8 +365,8 @@
     padding-left: 18px;
     display: flex;
     width: 100%;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
-    color: #ffffff;
+    font-family: var(--abcdiatypesemi-mono-regular);
+    color: black;
     font-size: 18.8px;
 
     @media (min-width: 1280px) {
@@ -346,23 +380,67 @@
 
   .TabsBody {
     font-size: 15px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     color: rgb(137, 137, 137);
   }
 
   .Price {
     display: flex;
     flex-direction: column;
-    margin-bottom: 29px;
     padding: 0 18px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
-    color: var(--white);
+    font-family: var(--abcdiatypesemi-mono-light);
+    color: var(--black);
+    height: 200px;
+    background-color: transparent;
+    padding-top: 80px;
+    .digital {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .phygital {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .phygitalTitle {
+      font-size: 14px;
+      font-family: var(--abcdiatypesemi-mono-regular);
+      width: 80%;
+    }
+    .priceText {
+      font-family: var(--abcdiatypesemi-mono-medium);
+      width: 117px;
+      position: relative;
+      left: -20px;
+    }
+    .buyContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .buyContainer > * {
+      width: 100%;
+    }
+    .buyContainer > * {
+      height: 43px !important;
+    }
+    .buyBtn {
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.4);
 
-    .PriceHeader{
+      width: 180%;
+    }
+    .buyText {
+      position: relative;
+      left: 10px;
+      top: 13px;
+    }
+    .PriceHeader {
       font-size: 15.5px;
       line-height: 19px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
-      margin-bottom: 15px;
+      font-family: var(--abcdiatypesemi-mono-light);
+      // margin-bottom: 15px;
     }
 
     @media (min-width: 1280px) {
@@ -373,18 +451,26 @@
       margin-bottom: 15px;
       font-size: 15.4px;
       line-height: 17px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
     }
   }
 
   .orderDetails {
     margin: 38px 0;
-    padding: 0 11px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
-    color: var(--white);
+    font-family: var(--abcdiatypesemi-mono-regular);
 
     .mainTitle {
-      font-size: 1.1875rem;
+      color: var(--black, #0a0b0c);
+      font-family: var(--italianoldstylemtstd-regular);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+
+      line-height: normal;
+      text-transform: uppercase;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px black solid;
 
       @media (min-width: 1280px) {
         padding: 0 36.5%;
@@ -392,25 +478,27 @@
     }
 
     .label {
-      margin: 0 0 20px 0;
-      font-size: 1.375rem;
+      color: var(--black, #0a0b0c);
+      font-family: var(--abcdiatypesemi-mono-regular);
+      font-size: 14px;
+      padding-left: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-top: 10px;
 
       @media (min-width: 1280px) {
         padding: 0 36.5%;
       }
     }
 
-    .sizesList,
-    .quantityList {
+    .sizesList {
       display: flex;
       margin-bottom: 0;
       padding-left: 0;
       list-style-type: none;
       flex-wrap: wrap;
-
-      @media (min-width: 1280px) {
-        padding: 0 36.5%;
-      }
+      justify-content: center;
 
       li {
         min-width: 50px;
@@ -422,15 +510,72 @@
         border-radius: 12px;
         background-color: transparent;
         color: var(--white);
-        border: 1px solid var(--white);
         font-size: 0.875rem;
         cursor: pointer;
         margin-right: 15px;
         margin-bottom: 15px;
+        .increaseDecrease {
+          position: absolute;
+          right: 10px;
+        }
 
         &.active {
-          background-color: var(--white);
           color: var(--black);
+          width: 100%;
+          margin-left: 20px;
+          margin-bottom: 20px;
+          background-color: #e8ebee;
+          width: 350px;
+          position: relative;
+          right: 10px;
+          height: 50px;
+          border-radius: 8px !important;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .quantityList {
+      display: flex;
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style-type: none;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      li {
+        min-width: 50px;
+        padding: 0 5px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background-color: transparent;
+        color: var(--white);
+        font-size: 0.875rem;
+        cursor: pointer;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        .increaseDecrease {
+          position: absolute;
+          right: 10px;
+        }
+
+        &.active {
+          color: var(--black);
+          width: 100%;
+          margin-left: 20px;
+          margin-bottom: 20px;
+          background-color: #e8ebee;
+          width: 360px;
+          position: relative;
+          right: 1px;
+          padding-left: 100px !important;
+          height: 50px;
+          border-radius: 8px !important;
         }
 
         &:last-child {
@@ -444,15 +589,31 @@
     }
 
     .itemLocation {
-      margin: 0 -11px;
-      border-top: 1px solid var(--white);
-
       .label {
-        padding: 0 11px;
+        margin-top: 46px;
+        margin-bottom: 20px;
 
         @media (min-width: 1280px) {
           padding: 0 36.5%;
         }
+      }
+      .label2 {
+        color: var(--black, #0a0b0c);
+        font-family: var(--abcdiatypesemi-mono-regular);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-left: 20px;
+        @media (min-width: 1280px) {
+          padding: 0 36.5%;
+        }
+      }
+      .map {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
       }
 
       div[class="mapboxgl-ctrl-attrib-inner"] {
@@ -467,10 +628,11 @@
     }
 
     .checkoutTabs {
-      margin: 16px -11px 0;
+      margin: 16px 0;
+      padding-bottom: 30px;
 
       .tabs {
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         font-size: 15.37px;
         letter-spacing: 1.1px;
       }
@@ -515,7 +677,7 @@
           }
 
           input::placeholder {
-            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-family: var(--abcdiatypesemi-mono-regular);
             font-size: 18px;
           }
         }
@@ -559,5 +721,9 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+  }
+  .backArrowImage {
+    width: 24px;
+    height: 16.81px;
   }
 }

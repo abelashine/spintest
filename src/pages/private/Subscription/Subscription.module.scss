@@ -19,7 +19,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     flex-grow: 1;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 36px;
     overflow: auto;
 
@@ -70,7 +70,7 @@ footer {
             margin-top: 55px;
             transform: none;
             font-size: 36px;
-            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-family: var(--abcdiatypesemi-mono-regular);
             font-weight: 400;
           }
 
@@ -80,7 +80,7 @@ footer {
             padding-bottom: 10px;
             opacity: 1;
             font-size: 21px;
-            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-family: var(--abcdiatypesemi-mono-regular);
             font-weight: 400;
           }
 
@@ -90,7 +90,7 @@ footer {
             padding-bottom: 70px;
             opacity: 1;
             font-size: 16px;
-            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-family: var(--abcdiatypesemi-mono-regular);
           }
 
           button {
@@ -181,7 +181,7 @@ footer {
         position: relative;
         top: 100%;
         opacity: 0;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         font-size: 21px;
         transition: all ease 0.3s;
         text-align: center !important;
@@ -196,7 +196,7 @@ footer {
         position: relative;
         top: 100%;
         opacity: 0;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         font-size: 16px;
         transition: all ease 0.3s;
         text-align: left !important;

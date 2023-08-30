@@ -1,28 +1,26 @@
 .TabsGroup {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-bottom: 0.1px solid var(--black);
   overflow: hidden;
   color: black;
-
-  @media (min-width: 1280px) {
-    justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  .TabsGroup::-webkit-scrollbar {
+    display: none;
+  }
+  @media (min-width: 601px) {
+    display: flex;
+    flex-direction: row;
   }
 
   & > button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 0 0;
-    padding: 0 0 10px;
-    background: transparent;
-    border: none;
     color: var(--black);
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--italianoldstylemtstd-regular);
     appearance: none;
     outline: none;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
     img {
       opacity: 0.5;
     }
@@ -45,33 +43,87 @@
       }
     }
 
-    &.notactiveTab .innerContainer {
-      position: relative;
+    &.notactiveTab {
+      color: white;
+      // background-color: black;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      color: black;
-    }
-    &.notactiveTab .myLabel {
-      width: 80px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      border-radius: 5px;
-      margin-bottom: 5px;
-      position: relative;
-      z-index: 2;
-    }
-    &.notactiveTab .circle {
-      width: 8px;
-      height: 8px;
-      position: absolute;
-      top: 40%;
-      left: 23%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-      border-radius: 50%;
-      background-color: var(--main-bg-color);
-      border: 1px solid black;
+      gap: 0.625rem;
+
+      &::before {
+        display: block;
+      }
+
+      svg {
+        path {
+          stroke: var(--white);
+        }
+      }
+
+      img {
+        opacity: 1;
+      }
+
+      &.notactiveTab .innerContainer {
+        @media (min-width: 601px) {
+        }
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black !important;
+      }
+
+      &.notactiveTab .myLabel {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        left: 16px;
+        border-radius: 5px !important;
+        position: relative;
+        z-index: 2;
+        padding: 10px;
+      }
+
+      &.notactiveTab .myLabel .icon {
+        position: relative;
+        top: 2px;
+        margin-right: 10px;
+      }
+
+      &.notactiveTab .myLabel .labelText {
+        color: var(--black);
+        text-align: center;
+        font-family: var(--italianoldstylemtstd-regular);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 10px;
+        text-transform: uppercase;
+        position: relative;
+        top: 0px;
+        flex-grow: 1;
+      }
+      &.notactiveTab .circle {
+        background-color: red !important;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        position: absolute;
+        top: 40%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+      }
+
+      &.fill {
+        svg {
+          path {
+            fill: var(--white);
+          }
+        }
+      }
     }
 
     &.activeTab {
@@ -97,6 +149,8 @@
       }
 
       &.activeTab .innerContainer {
+        @media (min-width: 601px) {
+        }
         position: relative;
         display: flex;
         flex-direction: column;
@@ -106,13 +160,190 @@
 
       &.activeTab .myLabel {
         background-color: black;
-        width: 80px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        border-radius: 5px;
-        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        left: 16px;
+        flex-grow: 1; /* Added */
+        height: 34px;
+        border-radius: 5px !important;
         position: relative;
         z-index: 2;
+        padding: 10px;
+      }
+
+      &.activeTab .myLabel .icon {
+        position: relative;
+        top: 2px;
+        margin-right: 10px;
+        flex: 1;
+      }
+
+      &.activeTab .myLabel .labelText {
+        color: var(--white, #e8ebee);
+        text-align: center;
+        font-family: var(--italianoldstylemtstd-regular);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 10px;
+        text-transform: uppercase;
+        position: relative;
+        top: 0px;
+        flex-grow: 1; /* Added */
+      }
+      &.activeTab .circle {
+        background-color: red !important;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        position: absolute;
+        top: 40%;
+        left: 23%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+      }
+
+      &.fill {
+        svg {
+          path {
+            fill: var(--white);
+          }
+        }
+      }
+    }
+  }
+}
+
+.TabsGroup1 {
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+  color: black;
+  margin-top: 10px;
+  @media (min-width: 601px) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  & > button {
+    color: var(--black);
+    font-family: var(--italianoldstylemtstd-regular);
+    appearance: none;
+    outline: none;
+    img {
+      opacity: 0.5;
+    }
+
+    @media (min-width: 1280px) {
+      max-width: 134px;
+    }
+
+    svg {
+      path {
+        stroke: var(--grey);
+      }
+    }
+
+    &.fill {
+      svg {
+        path {
+          fill: var(--grey);
+        }
+      }
+    }
+
+    &.notactiveTab .innerContainer {
+      position: relative;
+      color: black !important;
+    }
+    &.notactiveTab .myLabel {
+      left: 16px;
+      width: 86px;
+      height: 30px;
+
+      padding-top: 10px;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    &.notactiveTab .myLabel .icon {
+      position: relative;
+      top: 4px;
+      left: -10px;
+    }
+    &.notactiveTab .myLabel .labelText {
+      position: relative;
+      top: -2px;
+    }
+    &.notactiveTab .emptyCircle {
+      background-color: var(--main-bg-color) !important;
+      border: 1px black solid;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      top: 40%;
+      left: 23%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+
+    &.activeTab {
+      color: white;
+      // background-color: black;
+      gap: 0.625rem;
+      width: 86px;
+      height: 30px;
+
+      &::before {
+        display: block;
+      }
+
+      svg {
+        path {
+          stroke: var(--white);
+        }
+      }
+
+      img {
+        opacity: 1;
+      }
+
+      &.activeTab .innerContainer {
+        @media (min-width: 601px) {
+        }
+        position: relative;
+        color: white !important;
+        width: 86px;
+        height: 30px;
+      }
+
+      &.activeTab .myLabel {
+        background-color: black;
+        left: 16px;
+        width: 86px;
+        height: 30px;
+
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+
+        position: relative;
+        z-index: 2;
+      }
+      &.activeTab .myLabel .icon {
+        position: relative;
+        top: 4px;
+        left: -10px;
+      }
+      &.activeTab .myLabel .labelText {
+        position: relative;
+        top: -2px;
       }
 
       &.activeTab .circle {

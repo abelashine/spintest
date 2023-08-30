@@ -38,7 +38,7 @@
       .modalTitle {
         margin: 37px 0 16px 0;
         text-transform: uppercase;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         font-size: 15px;
       }
       &__selectField {
@@ -48,15 +48,15 @@
         }
         &_label {
           font-size: 15px;
-          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-family: var(--abcdiatypesemi-mono-regular);
           margin: 0;
         }
         & > div[variant="underline"] {
-          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-family: var(--abcdiatypesemi-mono-regular);
           bottom: 0;
           input {
             width: 100%;
-            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-family: var(--abcdiatypesemi-mono-regular);
             bottom: 2px;
           }
         }
@@ -65,18 +65,18 @@
         margin-bottom: 11px;
         &_label {
           font-size: 15px;
-          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-family: var(--abcdiatypesemi-mono-regular);
           margin: 0;
           position: relative;
         }
         & > div[variant="underline"] {
-          font-family: var(--my-abcdiatypesemi-mono-regular);
+          font-family: var(--abcdiatypesemi-mono-regular);
           bottom: 0;
           height: 24px;
           margin: 5px 0;
           input {
             width: 100%;
-            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-family: var(--abcdiatypesemi-mono-regular);
             bottom: 2px;
             &::placeholder {
               font-size: 14px;

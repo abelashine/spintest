@@ -1,13 +1,15 @@
 .Vault {
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  color: var(--white);
 
   .header {
     display: flex;
     align-items: center;
+    color: var(--black);
+    margin-top: 10px;
+    margin-bottom: 30px;
 
     @media (min-width: 1280px) {
       justify-content: center;
@@ -20,15 +22,21 @@
 
     span {
       margin-left: 15px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
       font-size: 0.75rem;
     }
   }
 
   .wardrobeList {
+    // @media (min-width: 601px) {
+    //   width: 200px;
+    //   display: flex;
+    //   flex-direction: column-reverse;
+    //   justify-content: center;
+    // }
     display: flex;
     flex-direction: column-reverse;
-    margin: 0 0 26px 0;
+    margin-right: 10px;
     padding: 0;
     list-style-type: none;
     text-align: left;
@@ -39,6 +47,12 @@
     }
 
     .wardrobeItem {
+      @media (min-width: 601px) {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10%;
+        margin-right: 23.75%;
+      }
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -56,7 +70,7 @@
         display: flex;
         flex-grow: 1;
         cursor: pointer;
-        color: var(--white);
+        color: var(--black);
         .photoWrap {
           width: 64px;
           height: 64px;
@@ -87,7 +101,7 @@
           .wardrobeProductOwner,
           .wardrobeProductPrice {
             margin-top: 3px;
-            font-family: var(--my-abcdiatypesemi-mono-regular);
+            font-family: var(--abcdiatypesemi-mono-regular);
             font-size: 0.875rem;
           }
 
@@ -120,8 +134,8 @@
     width: 120px;
     margin-left: 20px;
     button {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
-      margin: 4px 7px 0 0;
+      font-family: var(--abcdiatypesemi-mono-regular);
+      margin: 4px 7x 0 0;
       width: 120px;
     }
     @media (max-width: 700px) {
@@ -134,6 +148,30 @@
       }
     }
   }
+  .buttonPassOn {
+    display: flex;
+    width: 112px;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--black, #0a0b0c);
+  }
+  .buttonGiveBack {
+    display: flex;
+    width: 112px;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #5858ed;
+  }
 }
 
 .EmptyVault {
@@ -142,20 +180,44 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .emptyValutImage {
+    position: absolute;
+
+    top: 52%;
+  }
   img {
     max-width: 101px;
   }
   .emptyVaultMessage {
+    @media (min-width: 601px) {
+      position: absolute;
+      top: 329px;
+    }
     margin-top: 34px;
     font-size: 1.125rem;
     text-align: center;
+    color: #929292;
+    font-family: var(--abcdiatypesemi-mono-regular);
   }
 }
 
 .piecesAmount {
-  margin-top: 6px;
+  margin-top: 16px;
+  @media (min-width: 601px) {
+    position: absolute;
+    left: 5.625%;
+    top: 5%;
+  }
 }
 
+.piecesAmountEmpty {
+  margin-top: 16px;
+  @media (min-width: 601px) {
+    position: absolute;
+    left: 5.625%;
+    top: 5%;
+  }
+}
 .settingsSvg {
   cursor: pointer;
   align-self: center;

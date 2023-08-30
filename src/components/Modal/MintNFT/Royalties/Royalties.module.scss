@@ -5,7 +5,7 @@
     margin: 21px 0;
     text-transform: uppercase;
     font-size: 15px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
   }
   &__addBtnblock {
     padding: 0 4px;
@@ -24,7 +24,7 @@
     }
     &_text {
       font-size: 15.5px;
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
     }
   }
   &__usersList {
@@ -78,7 +78,7 @@
       .profileSummary {
         flex-direction: column;
         margin-top: 7px;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         flex-grow: 1;
         .slug {
           padding-right: 17px;

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import routes from "../../../../routes";
 const log = (variable) => {
   //console.log(variable);
-}
+};
 const ProductTypeModal = ({
   productInfo,
   isProductTypeModal,
@@ -31,7 +31,8 @@ const ProductTypeModal = ({
               setIsProductTypeModal(false);
               setDigitalVal(false);
               setPhygitalVal(false);
-            }}>
+            }}
+          >
             <div className={styles.container}>
               <div className={styles.closeButtonParent}>
                 <img
@@ -49,9 +50,13 @@ const ProductTypeModal = ({
               <div className={styles.header}>Product type</div>
               <div
                 className={styles.borderContainer}
-                onClick={((e) => e.stopPropagation())}>
+                onClick={(e) => e.stopPropagation()}
+              >
                 {/*[Leo - 2210242151] Phygital stock*/}
-                {(productInfo?.product_type == 1 && productInfo?.stocks?.some(item => item?.type == 1 && item?.quantity > 0)) ? (
+                {productInfo?.product_type == 1 &&
+                productInfo?.stocks?.some(
+                  (item) => item?.type == 1 && item?.quantity > 0
+                ) ? (
                   <label htmlFor={"s"} className={styles.CheckboxBlack}>
                     <div className={styles.textContainer}>
                       <div className={styles.wrapper}>
@@ -83,16 +88,17 @@ const ProductTypeModal = ({
                         </div>
                       </div>
                       <p className={styles.passage}>
-                        Purchase the phygital + digital NFT for both physical use
-                        + digital use in augmented reality and virtual reality
+                        Purchase the phygital + digital NFT for both physical
+                        use + digital use in augmented reality and virtual
+                        reality
                       </p>
                     </div>
                   </label>
-                ) : (
-                  null
-                )}
+                ) : null}
                 {/*[Leo - 2210242151] Digital stock*/}
-                {productInfo?.stocks?.some(item => item?.type == 2 && item.quantity > 0) ? (
+                {productInfo?.stocks?.some(
+                  (item) => item?.type == 2 && item.quantity > 0
+                ) ? (
                   <label htmlFor={"m"} className={styles.CheckboxBlack}>
                     <div className={styles.textContainer}>
                       <div className={styles.wrapper}>
@@ -134,8 +140,11 @@ const ProductTypeModal = ({
               <div className={styles.selectButton}>
                 <Link
                   //[Leo - 2210170814] Change route on click of popup button. close the popup.
-                  to={`${isPublic ? routes.prelogin : `/checkoutProduct/${productInfo.slug}`
-                    }`}
+                  to={`${
+                    isPublic
+                      ? routes.prelogin
+                      : `/checkoutProduct/${productInfo.slug}`
+                  }`}
                   onClick={() => {
                     sessionStorage.setItem("lastUrl", pathname);
                     window.scrollTo(0, 0);
@@ -143,11 +152,9 @@ const ProductTypeModal = ({
                     //[Leo - 2210191059] can be improved using enum I think. Just dont have time to research on it
                     if (phygitalVal) {
                       setSelectedProductType("phygital");
-                    }
-                    else if (digitalVal) {
+                    } else if (digitalVal) {
                       setSelectedProductType("digital");
-                    }
-                    else {
+                    } else {
                       setSelectedProductType("");
                     }
                   }}
@@ -162,7 +169,6 @@ const ProductTypeModal = ({
                 </Link>
               </div>
             </div>
-
           </div>
         </div>
       ) : null}

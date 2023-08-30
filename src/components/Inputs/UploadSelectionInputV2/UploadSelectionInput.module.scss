@@ -5,26 +5,50 @@
   position: relative;
   cursor: pointer;
 
-  input {
+  .customInput {
     line-height: 20px;
-    width: 100%;
-    height: 28px;
-    margin-top: 9px;
     padding: 0px;
+    padding-top: 10px;
     padding-bottom: 8px !important;
     background-color: transparent;
     border: 1px solid var(--white);
-    border-width: 0 0 3px 0;
+    border-width: 0 0 1px 0;
     color: var(--white);
     border-radius: 0;
     -webkit-border-radius: 0px;
+    border: var(--main-bg-color);
+    background-color: #e8ebee;
+    color: #acb4bc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .cardIconHolder {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: flex-start !important;
   }
 
+  input {
+    border: var(--main-bg-color);
+    background-color: #e8ebee;
+    font-size: 16px;
+    font-family: var(--abcdiatypesemi-mono-regular);
+    padding-left: 20px;
+    color: #acb4bc;
+    &::placeholder {
+      color: var(--grey);
+    }
+
+    &[readOnly] {
+      cursor: pointer;
+    }
+  }
   .arrow {
     position: absolute;
     right: 8px;
     bottom: 11px;
-    transform: rotate(180deg);
+    transform: rotate(90deg);
     cursor: pointer;
   }
 
@@ -33,11 +57,24 @@
     top: 100%;
     left: 0;
     width: 100%;
-    z-index: 1;
-    background-color: var(--main-bg-color);
-    border-radius: 0 0 10px 10px;
+    z-index: 2;
+    background-color: #e8ebee;
 
     .arrow {
+      bottom: calc(100% + 10px);
+      transform: rotate(0deg);
+      z-index: -1;
+
+      &.opened {
+        transform: rotate(180deg);
+      }
+      &.notopened {
+        transform: rotate(0deg);
+      }
+    }
+
+    .blackarrow {
+      filter: brightness(0) saturate(100%);
       bottom: calc(100% + 10px);
       transform: rotate(-90deg);
       z-index: -1;
@@ -53,17 +90,16 @@
       margin: 0;
       padding: 10px;
       list-style-type: none;
-      background-color: var(--main-bg-color);
-      border: 1px solid var(--white);
+      background-color: #e8ebee;
       border-top: none;
       border-radius: 0 0 10px 10px;
-
-      li {
-        cursor: pointer;
-        &:not(:first-child) {
-          margin-top: 5px;
-        }
-      }
+      color: var(--black, #0a0b0c);
+      font-family: var(--abcdiatypesemi-mono-regular);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      // li {
     }
   }
 }

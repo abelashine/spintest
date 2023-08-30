@@ -1,7 +1,7 @@
 .Item {
   display: flex;
   flex-direction: row;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   margin: 25px;
 
   .waterIcon {
@@ -10,7 +10,7 @@
     justify-content: center;
     width: 61px;
     height: 61px;
-    border: 2px solid var(--white);
+    border: 2px solid black;
     border-radius: 50%;
   }
 
@@ -31,13 +31,14 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    color: black;
+    position: relative;
+    top: 7px;
   }
   .ItemFrom {
     text-align: left;
-
-    span {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
-    }
+    font-size: 16px;
+    font-family: var(--abcdiatypesemi-mono-medium);
 
     sub {
       font-size: 0.6rem;
@@ -50,6 +51,9 @@
 
     .info {
       min-width: 100%;
+      font-size: 14px;
+      font-family: var(--abcdiatypesemi-mono-regular);
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -60,7 +64,7 @@
     }
 
     span {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
+      font-family: var(--abcdiatypesemi-mono-regular);
     }
   }
 

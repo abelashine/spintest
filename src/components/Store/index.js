@@ -95,11 +95,7 @@ const Store = ({ match }) => {
     <section className={styles.Store} ref={storeRef}>
       <header className={styles.header}>
         <section className={styles.Store__titleBlock}>
-          {lookingTo && (
-            <h3 className={styles.mainTitle}>
-              {lookingTo?.business_role === "brand" ? "FASHION" : "STORE"}
-            </h3>
-          )}
+         
           {productsCount > 0 ? (
             <span className={styles.Store__titleBlock_nft}>
               ({productsCount} {productsCount > 1 ? "NFTs" : "NFT"})

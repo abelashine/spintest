@@ -32,9 +32,7 @@ const Worlds = () => {
         <GetWorld world={getWorldOpen} onClose={() => setGetWorldOpen(null)} />
       )}
       <section className={styles.Worlds__titleBlock}>
-        <h3>
-          ARCHITECTURE
-        </h3>
+        
         <span className={styles.Worlds__titleBlock_nft}>
           {userInfo?.business_role === "brand" ? "(0 NFTs)" :
             `(${worldsData.length} ${worldsData.length > 1 ? "NFTs" : "NFT"})`

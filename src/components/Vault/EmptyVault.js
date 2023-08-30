@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./Vault.module.scss";
-import vaulticonemptypage from "../../static/icons/vaulticonemptypage.svg";
+import vaulticonemptypage from "../../static/icons/empty-vault.png";
 
 const EmptyVault = () => {
   return (
     <div className={styles.EmptyVault}>
-      <img src={vaulticonemptypage} alt="vaulticonemptypage" />
+      <img  className={styles.emptyValutImage} src={vaulticonemptypage} alt="vaulticonemptypage" />
       <p className={styles.emptyVaultMessage}>
         Your vault is where all your <br />
         phygital NFTs are stored

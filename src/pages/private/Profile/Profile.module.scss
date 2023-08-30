@@ -1,17 +1,28 @@
 .Profile {
   @media (min-width: 601px) {
-    margin-left: 3% !important;
+    // position: fixed;
+    // right: 10px;
+    // width: 75vw;
+    // margin-left: 10px;
+    // // overflow: scroll;
+    // height: 100vw;
+    // border-left: 1px black solid;
+    position: fixed;
+    right: 0;
+    top: 0;
+    right: 0;
+    width: 67.36%;
+    height: 100vw;
+    // margin-left: 1.39%;
+    border-top: 1px black solid;
+    border-left: 1px black solid;
   }
   margin-bottom: 50px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   color: var(--white);
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-
-  .profileInfo {
-    padding: 13px 12px 27px;
-  }
 
   .chatButton {
     display: flex;
@@ -25,6 +36,7 @@
     }
   }
 }
+
 .overlay {
   position: fixed;
   top: 0;
@@ -45,14 +57,14 @@
 }
 .welcomeTitle {
   font-size: 29px;
-  margin-left:30px ;
+  margin-left: 30px;
   margin-bottom: 20px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
 }
 .welcomeContent {
   font-size: 20px;
   padding-top: 40px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
 }
 .button {
   width: 300px;
@@ -65,7 +77,7 @@
   color: var(--black) !important;
   font-size: 20px;
   border-radius: 40px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
 }
 .exploring {
   width: 300px;
@@ -75,12 +87,12 @@
   margin: 29px 0;
   border: none;
   color: white !important;
-  background-color:var(--light-blue) !important;
+  background-color: var(--light-blue) !important;
   color: var(--black) !important;
   font-size: 20px;
   border-radius: 40px;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
 }
-.exploringContent{
-  color:  white  !important;
+.exploringContent {
+  color: white !important;
 }

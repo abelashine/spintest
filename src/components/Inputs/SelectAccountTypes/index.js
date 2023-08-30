@@ -6,42 +6,44 @@ import backArrowV3 from "../../../static/icons/back-arrowV3.svg";
 import { accountTypes } from "../../../static/data/dataForForms";
 import OptionsList from "./OptionsList";
 
-const SelectGenderV2 = ({ name }) => {
+const SelectAccountTypes = ({ name }) => {
   const [field, meta, helpers] = useField(name);
   const [isFocus, setIsFocus] = useState(false);
   const [options, setOptions] = useState([]);
+  const [clicked, setClicked] = useState(false);
+  const [valuereceived, setvalueReceived] = useState("");
   const fieldWrapRef = useRef(null);
+
   useEffect(() => {
     if (isFocus) {
       fieldWrapRef.current.style.zIndex = "2";
-    } else fieldWrapRef.current.style.zIndex = "0";
+    } else {
+      fieldWrapRef.current.style.zIndex = "0";
+    }
   }, [isFocus]);
+
   useEffect(() => {
-    if (field.value) {
-      if (field.value.trim()) {
-        const filteredOptions = accountTypes.filter((g) =>
-          g.value.toLowerCase().includes(field.value.trim().toLowerCase())
-        );
-        setOptions(filteredOptions);
-      }
-    } else setOptions([]);
-  }, [field.value]);
+    setOptions(accountTypes);
+  }, []);
 
   const onBlurHandler = (e) => {
     field.onBlur(e);
     setIsFocus(false);
   };
-  const onChooseHandler = (value) => helpers.setValue(value);
 
-  const isOptionsListOpen = isFocus && options.length !== 0 && field.value;
+  const onChooseHandler = (value) => {
+    helpers.setValue(value);
+    setvalueReceived(value);
+    setClicked(!clicked);
+  };
+
   const fieldInvalid = meta.error && meta.touched && !isFocus;
   const arrowBtn = fieldInvalid ? backArrowV3 : backArrow;
-  const arrowBtnClass = isOptionsListOpen
-    ? styles.openArrowBtn
-    : styles.arrowBtn;
+  const arrowBtnClass = clicked ? styles.openArrowBtn : styles.arrowBtn;
   const inputPlaceHolder =
     isFocus && !field.value ? "Type here..." : fieldInvalid ? meta.error : "";
   const correctValue = field.value && !meta.error && !isFocus;
+
   return (
     <>
       <div
@@ -49,18 +51,32 @@ const SelectGenderV2 = ({ name }) => {
         data-invalid={fieldInvalid}
         data-focus={isFocus || correctValue}
         ref={fieldWrapRef}
-        onClick={() => setIsFocus(true)}
+        onClick={() => {
+          setvalueReceived("");
+          setClicked(!clicked);
+        }}
       >
-        <Field
-          name={name}
-          className={styles.field}
-          onBlur={onBlurHandler}
-          placeholder={inputPlaceHolder}
-          autoComplete="off"
-        />
-        <span className={styles.label}>Gender</span>
-        <img src={arrowBtn} alt="Arrow" className={arrowBtnClass} />
-        {isOptionsListOpen && (
+        <span
+          className={styles.label}
+          onClick={() => {
+            console.log("clie");
+            console.log(clicked);
+            setClicked(!clicked);
+          }}
+        >
+          Account Type
+        </span>
+        <br />
+        <span
+          className={styles.child}
+          style={{ position: "absolute", left: "10px" }}
+        >
+          {valuereceived.length > 1 && <span>{valuereceived}</span>}
+        </span>
+        <div>
+          <img src={arrowBtn} alt="Arrow" className={arrowBtnClass} />
+        </div>
+        {clicked && (
           <OptionsList options={options} onChooseHandler={onChooseHandler} />
         )}
       </div>
@@ -69,4 +85,4 @@ const SelectGenderV2 = ({ name }) => {
   );
 };
 
-export default SelectGenderV2;
+export default SelectAccountTypes;

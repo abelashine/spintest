@@ -21,7 +21,7 @@
     border: 1px solid black;
     border-radius: 40px 40px 40px 40px;
     color: black;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 0.9rem;
     font-weight: bolder;
     padding: 10px;
@@ -74,14 +74,14 @@
 
   &.transparent {
     background-color: transparent;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     border: 1px solid var(--white);
     color: var(--white);
   }
 
   &.warnTransparent {
     background-color: transparent;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     border: 2px solid var(--red-pink);
     color: var(--red-pink);
   }

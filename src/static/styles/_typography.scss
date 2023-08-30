@@ -1,18 +1,46 @@
 @font-face {
-  font-family: "ABCDiatypeSemi-Mono-Regular";
-  src: local("ABCDiatypeSemi-Mono-Regular"), url("../fonts/ABCDiatypeSemi-Mono-Regular.otf") format("opentype");
-  font-weight: 600;
+  font-family: "ABCDiatypeSemi-Mono-Regular-Light";
+  src: local("Italian Old Style MT Std Italic"),
+    local("ItalianOldStyleMTStd-Italic"),
+    url("../fonts/Diatype/ABCDiatypeSemi-Mono-Light.otf") format("opentype");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
-  font-family: "ItalianOldStyleMTStd-Italic";
-  src: local("Italian Old Style MT Std Italic"), local("ItalianOldStyleMTStd-Italic"),
-    url("../fonts/ItalianOldStyleMTStd-Italic.otf") format("opentype");
+  font-family: "ABCDiatypeSemi-Mono-Regular-Medium";
+  src: local("Italian Old Style MT Std Italic"),
+    local("ItalianOldStyleMTStd-Italic"),
+    url("../fonts/Diatype/ABCDiatypeSemi-Mono-Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ABCDiatypeSemi-Mono-Regular-Regular";
+  src: local("Italian Old Style MT Std Italic"),
+    local("ItalianOldStyleMTStd-Italic"),
+    url("../fonts/Diatype/ABCDiatypeSemi-Mono-Regular.otf") format("opentype");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 
-
+@font-face {
+  font-family: "ItalianOldStyleMTStd-Italic-Italic";
+  src: local("Italian Old Style MT Std Italic"),
+    local("ItalianOldStyleMTStd-Italic"),
+    url("../fonts/italian/ItalianOldStyleMTStd-Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ItalianOldStyleMTStd-Italic-Regular";
+  src: local("Italian Old Style MT Std Italic"),
+    local("ItalianOldStyleMTStd-Italic"),
+    url("../fonts/italian-regular/ItalianOldStyleMTStd.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}

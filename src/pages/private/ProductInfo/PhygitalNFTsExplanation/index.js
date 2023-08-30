@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import ShoesIcon from "../../../../static/icons/ShoesIcon.svg";
-import BagIcon from "../../../../static/icons/Bag.svg";
+import BagIcon from "../../../../static/icons/exhibit.png";
 import PaintingIcon from "../../../../static/icons/Painting.svg";
-import ARIcon from "../../../../static/icons/ARIcon.svg";
-import ShopIcon from "../../../../static/icons/Shop.svg";
-import vrMask from "../../../../static/icons/vr-mask-icon.svg";
+import ARIcon from "../../../../static/icons/ARICON.png";
+import ShopIcon from "../../../../static/icons/trade.png";
+import vrMask from "../../../../static/icons/vr.png";
 import shopIcon from "../../../../static/icons/shop-redisgn-icon.svg";
 import styles from "./PhygitalNFTsExplanation.module.scss";
 
@@ -17,7 +17,7 @@ const PhygitalNFTsExplanation = () => {
   } = useSelector((state) => state.profileReducer);
 
   const [productType, setProductType] = useState("phygital");
-  const [description, setDescription] = useState("Wear");
+  const [description, setDescription] = useState("Exhibit");
   const [nftTypeText, setNftTypeText] = useState("garments");
   const [descriptionIcon, setDescriptionIcon] = useState(BagIcon);
 
@@ -41,7 +41,7 @@ const PhygitalNFTsExplanation = () => {
     }
     else
     {
-      setDescription("Wear");
+      setDescription("Exhibit");
       setNftTypeText("garments");
       setDescriptionIcon(BagIcon);
     }
@@ -76,7 +76,7 @@ const PhygitalNFTsExplanation = () => {
 
       <div className={styles.container}>
         <div className={styles.iconContainer}>
-            <img src={vrMask} alt="VR mask" width="21px" height="23px" />
+            <img src={vrMask} alt="VR mask" width="21px" height="13px" />
         </div>
         <span>
           {description} in VR: {description.toLowerCase()} your {nftTypeText} in the digital world with SPIN, through your VR headset
@@ -88,7 +88,7 @@ const PhygitalNFTsExplanation = () => {
           <img src={ShopIcon} alt="Shop" width="21px" height="23px" />
         </div>
         <span>
-            Pass it on: re-sell, rent or swap your NFTs with the PASS ON feature from your VAULT
+            Trade it : re-sell, rent or swap your NFTs with the PASS ON feature from your VAULT
         </span>
       </div>
     </div>

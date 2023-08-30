@@ -8,7 +8,7 @@ import PhoneLineBlock from "../../Inputs/PhoneLineBlock/PhoneLineBlock";
 import styles from "./BusinessProfileModal.module.scss";
 import ImageUploader from "../../Inputs/ImageUploader";
 import { useFormikContext } from "formik";
-import CustomFileInput from "./CustomFileInput";
+import CustomFileInput from "../ProfileModal/CustomFileInput";
 
 const ThirdStageIndividiual = () => {
   const [phoneCodes, setPhoneCodes] = useState(phones);

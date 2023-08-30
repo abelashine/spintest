@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--main-bg-color);
-  font-family: var(--my-abcdiatypesemi-mono-regular);
+  font-family: var(--abcdiatypesemi-mono-regular);
   color: var(--white);
   overflow-y: auto;
   z-index: 1;
@@ -90,7 +90,7 @@
       padding: 0 35px;
 
       .textStyles {
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         font-size: 15.5px;
         color: #e9e9e9;
       }
@@ -178,7 +178,7 @@
       p {
         font-size: 13px;
         letter-spacing: 0.09px;
-        font-family: var(--my-abcdiatypesemi-mono-regular);
+        font-family: var(--abcdiatypesemi-mono-regular);
         margin: 0;
       }
     }

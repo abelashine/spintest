@@ -77,25 +77,27 @@ const Journey = ({ token }) => {
           text={isNotificationOpen}
         />
       )}
+
       <div className={styles.JourneyTextMain}>
         <p>
           To ensure transparency, the product journey and ownership of each item
-          is traced on the Blockchain
+          is traced on the{" "}
+          <br/> 
+          <a className={styles.link} href="https://flowscan.org/">
+            Blockchain
+          </a>
         </p>
-        <img src={infoicon} alt="infoicon" onClick={openBlockchainPage} />
+        {/* <img src={infoicon} alt="infoicon" onClick={openBlockchainPage} /> */}
       </div>
-      <div className={styles.Journey__commentsList}>
-        <div className={styles.verticalLine}></div>
-        {transactions.map((item, index) => (
-          <TransactionItem
-            key={item.slug + item.timestamp + item.avatar}
-            data={item}
-            productInfo={productInfo}
-            length={transactions.length}
-            index={index + 1}
-          />
-        ))}
-      </div>
+      {transactions.map((item, index) => (
+        <TransactionItem
+          key={item.slug + item.timestamp + item.avatar}
+          data={item}
+          productInfo={productInfo}
+          length={transactions.length}
+          index={index + 1}
+        />
+      ))}
       {isOwnerWatches && !isOwnRentalProduct && (
         <AddInfo
           productLink={token}

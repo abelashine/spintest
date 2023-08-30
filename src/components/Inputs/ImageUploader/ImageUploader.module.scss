@@ -84,4 +84,38 @@
     border-radius: 50%;
     cursor: pointer;
   }
+  .imagePlaceholder {
+    font-size: 18.5px;
+    color: black;
+    text-align: center;
+    font-family: var(--abcdiatypesemi-mono-regular);
+    font-size: 18.5px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.159px;
+  }
+
+  .labelTextTop {
+  }
+  .imgTop {
+    position: relative;
+    top: -30px;
+    right: -55px;
+  }
+  .imgTopCircle {
+    position: relative;
+    top: -50px;
+    right: -60px;
+  }
+  .imagePlaceholderTop {
+    color: var(--neutrals-spin-black, #0a0b0c);
+    text-align: center;
+
+    font-family: var(--abcdiatypesemi-mono-regular);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 }

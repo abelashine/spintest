@@ -1,7 +1,7 @@
 .Message {
-  color: white;
-  font-family: var(--my-abcdiatypesemi-mono-regular);
-
+  position: relative;
+  bottom: -20vw;
+  left: -2vw;
   .contentWrapper {
     position: relative;
     max-width: 254px;
@@ -15,21 +15,19 @@
       top: 12px;
       left: 0;
     }
+
   }
 
   .content {
     display: flex;
     flex-direction: column;
-    margin-top: 12px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    // margin-top: 12px;
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 16px;
+    padding: 8px 12px 12px 12px;
     border-radius: 20px;
     word-break: break-word;
     overflow: hidden;
-
-    strong {
-      font-family: var(--my-abcdiatypesemi-mono-regular);
-    }
   }
   .slugContainer {
     display: flex;
@@ -37,12 +35,14 @@
   }
   .messageSlug {
     color: #fff;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 9px;
     font-style: normal;
+    position: relative;
+    top: 5px;
     font-weight: 400;
     line-height: normal;
-    margin-right: 10px; /* Adjust the margin value as needed */
+    margin-right: 10px;
   }
 
   .user_message {
@@ -55,8 +55,9 @@
     }
 
     .content {
-      padding: 10px 9px 13px 13px;
+      font-size: 14px;
       background-color: #5858ec;
+      
     }
   }
 
@@ -67,13 +68,10 @@
 
     .content {
       position: relative;
-      top: -20%;
-      padding: 8px 13px 13px 9px;
+      font-size: 14px !important;
       background-color: rgb(44, 43, 53);
-      
+      color: white;
     }
-
-    
   }
 
   .image {
@@ -83,28 +81,40 @@
     min-height: 25px;
     margin: 0;
     border-radius: 50%;
+    position: relative;
+  }
+  .imageRental {
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+    min-height: 25px;
+    margin: 0;
+    border-radius: 50%;
+    position: relative;
   }
 
   .messageTimeUser {
-    margin-top: 5px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    // margin-top: 5px;
+    font-family: var(--abcdiatypesemi-mono-light);
     font-size: 9px;
     color: #7b7b7b;
-    float: right;
+    margin-top: 10px;
+    margin-left: auto;
   }
   .messageTime {
-    margin-top: 5px;
-    font-family: var(--my-abcdiatypesemi-mono-regular);
+    position: relative;
+    top: 5px;
+    font-family: var(--abcdiatypesemi-mono-regular);
     font-size: 9px;
     color: white;
     float: right;
   }
-  
+
   .productImage {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0 12px;
+    // margin: 10px 0 12px;
 
     img {
       width: 91px;

@@ -5,22 +5,34 @@
     position: relative;
     z-index: 2;
   }
-
-  label {
+  .title {
+    color: var(--neutrals-spin-black, #0a0b0c);
+    font-family: var(--italianoldstylemtstd-regular);
+    font-size: 18px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  span {
     display: flex;
     flex-direction: column;
     position: relative;
-
+    margin-top: 20px;
+    color: var(--black, #0a0b0c);
+    font-family: var(--italianoldstylemtstd-regular) !important;
+    font-size: 14px !important;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     ::selection {
       color: inherit;
     }
 
-    input {
+    .customInput {
       line-height: 20px;
-      width: 100%;
-      height: 28px;
-      margin-top: 9px;
       padding: 0px;
+      padding-top: 10px;
       padding-bottom: 8px !important;
       background-color: transparent;
       border: 1px solid var(--white);
@@ -28,7 +40,26 @@
       color: var(--white);
       border-radius: 0;
       -webkit-border-radius: 0px;
+      border: var(--main-bg-color);
+      background-color: #e8ebee;
+      color: #acb4bc;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .cardIconHolder {
+      display: flex !important;
+      justify-content: space-evenly !important;
+      align-items: flex-start !important;
+    }
 
+    input {
+      border: var(--main-bg-color);
+      background-color: #e8ebee;
+      font-size: 16px;
+      font-family: var(--abcdiatypesemi-mono-regular);
+      padding-left: 20px;
+      color: #acb4bc;
       &::placeholder {
         color: var(--grey);
       }
@@ -40,13 +71,16 @@
 
     .arrow {
       position: absolute;
-      right: 8px;
-      bottom: 11px;
-      transform: rotate(270deg);
+      right: 1px;
+      bottom: -5px;
+
+      transform: rotate(360deg);
+      padding: 10px;
       cursor: pointer;
+      // background-color: red($color: #000000);
 
       &.opened {
-        transform: rotate(90deg);
+        transform: rotate(180deg);
       }
     }
     .blackarrow {
@@ -54,7 +88,7 @@
       position: absolute;
       right: 8px;
       bottom: 11px;
-      transform: rotate(270deg);
+      transform: rotate(180deg);
       cursor: pointer;
 
       &.opened {
@@ -68,7 +102,7 @@
       left: 0;
       width: 100%;
       z-index: 2;
-      background-color: var(--main-bg-color);
+      background-color: #e8ebee;
 
       .arrow {
         bottom: calc(100% + 10px);
@@ -97,22 +131,12 @@
         margin: 0;
         padding: 10px;
         list-style-type: none;
-        background-color: var(--main-bg-color);
-        border: 1px solid var(--white);
+        background-color: #e8ebee;
         border-top: none;
         border-radius: 0 0 10px 10px;
+        font-size: 16px;
 
-        li {
-          &:hover {
-            text-decoration: underline;
-          }
-
-          cursor: pointer;
-
-          &:not(:first-child) {
-            margin-top: 5px;
-          }
-        }
+       
       }
     }
   }
